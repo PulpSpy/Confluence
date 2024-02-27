@@ -1,3 +1,5 @@
+# Solution 1
+
 This is a fun subject, I wanted to sketch an idea that could probably be massively improved. It is a slightly different threat model (in terms of a "trusted" or "untrusted" servers) than the proposed ones. It also requires very heavy computation for the servers (quadratic in the number of notes) but is lightweight for the client. It is adapted from these voting protocols: [JCJ](https://eprint.iacr.org/2002/165.pdf), [Selections](https://eprint.iacr.org/2011/166.pdf). 
 
 Consider a set of 10 servers (trustees). The user is asked to trust that at least 1 is honest. The trustees generate a shared 10-out-of-10 public key for a threshold encryption scheme that is partially homomorphic. One candidate is Elgamal where public keys are the same format as signature schemes like ECDSA and Schnorr.
@@ -53,7 +55,9 @@ Additional notes and optimizations:
 * Users can supply a batch of $\langle\mathsf{Enc}(Nym_{A,E1}),\mathsf{Enc}(Nym_{A,E2}),\ldots\rangle)$ values for a set of future epochs $E1,E2,E3,\ldots$ at the start of the protocol.
 * The threshold decryption can be m-out-of-n for different values of m and n. For example, if it were 7-of-10, then the protocol could proceed when 3 or less trustees were offline, however users would have to trust that at least 4 trustees are honest rather than 1. 
 
-## Solution 2 
+
+
+## Solution 2
 
 Here is another solution that pushes the work onto the sender rather than the receiver.
 

@@ -4,247 +4,112 @@
 
 ###### Open to collaboration
 
-
+------
 
 The cryptocurrency Bitcoin was created by an individual, or collection of individuals, using the name Satoshi Nakamoto. In October 2018, Satoshi released a whitepaper describing the Bitcoin protocol. A few months later, he released a software package for running the protocol. He then spent around two years maintaining the software, communicating with users over email, and promoting the currency in online forums. After two years, Satoshi unceremoniously promoted Gavin Andresen to lead developer and left the project. 
 
-Many have been captivated by the question of who Satoshi really is, including the media. At least a dozen guesses, with varying degrees of journalistic evidence, have been made in print by reputable journalists working for the New York Times, Newsweek, The New Yorker, Wired, Forbes, Fast Company, and others. A few notable examples are provided in the Table below.
+| Year | Candidate                  | Publication                                                  | Basis (Beyond Expertise)          |
+| ---- | -------------------------- | ------------------------------------------------------------ | --------------------------------- |
+| 2011 | Michael Clear              | J. Davis (*The New Yorker*)                                  | Circumstantial                    |
+| 2011 | N. King, V. Oksmas, C. Bry | A. Penenberg (*Fast Company*)                                | Stylometry                        |
+| 2013 | Ross Ulbritch              | D. Ron, A. Shamir (Academic Paper, *Financial Cryptography*) | Blockchain Forensics              |
+| 2014 | Dorian Nakamoto            | L. McGrath Goodman (*Newsweek*)                              | Circumstantial; Network Forensics |
+| 2014 | Hal Finney                 | A. Greenberg (*Forbes*)                                      | Circumstantial; Network Forensics |
+| 2015 | Nick Szabo                 | N. Popper (*NY Times*)                                       | Circumstantial                    |
+| 2015 | Craig Wright               | A. Greenberg, Gwern (*Wired*); S. Biddle, A. Cush (*Gizmodo*) | Access to Keys; Anecdotal         |
+| 2016 | Adam Back                  | I. Kaminska (*Financial Times*)                              | Circumstantial                    |
+| 2021 | Len Sassaman               | E. Hatch (Self Published, *Medium*)                          | Circumstantial                    |
 
+The media has been captivated by the question of who Satoshi really is. Many guesses, with varying degrees of journalistic evidence, have been made in print by reputable journalists working for the New York Times, Newsweek, The New Yorker, Wired, Forbes, Fast Company, and others. A few notable examples are provided in the Table above, along with primary basis (beyond basic demographics and expertise) for their conclusion. These types of evidence will be explored later in the paper.
 
-
-| Year | Candidate                  | Publication                                                  | Basis                                     |
-| ---- | -------------------------- | ------------------------------------------------------------ | ----------------------------------------- |
-| 2011 | Michael Clear              | J. Davis (*The New Yorker*)                                  | Circumstantial                            |
-| 2011 | N. King, V. Oksmas, C. Bry | A. Penenberg (*Fast Company*)                                | Stylometry                                |
-| 2013 | Ross Ulbritch              | D. Ron, A. Shamir (Academic Paper, *Financial Cryptography*) | Blockchain Forensics                      |
-| 2014 | Dorian Nakamoto            | L. McGrath Goodman (*Newsweek*)                              | Circumstantial; Network Forensics         |
-| 2014 | Hal Finney                 | A. Greenberg (*Forbes*)                                      | Circumstantial; Network Forensics         |
-| 2015 | Nick Szabo                 | N. Popper (*NY Times*)                                       | Circumstantial                            |
-| 2015 | Craig Wright               | A. Greenberg, Gwern (*Wired*); S. Biddle, A. Cush (*Gizmodo*) | Access to Keys; Circumstantial; Anecdotal |
-| 2016 | Adam Back                  | I. Kaminska (*Financial Times*)                              | Circumstantial                            |
-| 2021 | Len Sassaman               | E. Hatch (Self Published, *Medium*)                          | Circumstantial                            |
-
-
-
-
-
-
-
-It seems inevitable that the media will continue positing new Satoshi’s and readers will keep reading them. Academics will throw their arms in the air and say, “probably not but who can really know?” Bitcoin enthusiasts will follow Gavin Andresen in believing "Satoshi's identity doesn't matter"
-
-
-
-Many in the Bitcoin community 
-
-Despite the important consequences an answer to this question might hold, the topic of Satoshi’s identity is considered to be in the realm of speculation, gossip, and circumstantial evidence. We challenge this notion by attempting to say something scientific about the subject of Satoshi’s identity. 
-
-
-
-| Who Cares?       | Basis                                                        |
+| Who Cares?       | Example                                                      |
 | ---------------- | ------------------------------------------------------------ |
-| Candidate        | D. Nakamoto was subjected to a "media frenzy" after being reported |
-| Friends & Family | Families of more than one candidate, in particular the candidates who are no longer living, report insistent inquiries from Bitcoin enthusiasts |
-| Investors        | Business deal between nCrypt and C. Wright was reported to be contingent on Wright being able to prove claim of being Satoshi |
-| Experts          | Experts G. Adresen & N. Courtois were retained to assess C. Wright's claim |
-| Courts           | Various actions, such as *COPA v. C. S. Wright*, give legal consideration to who owns aspects of Bitcoin's technology |
-| Reporters        | L. McGrath Goodman reports threats of violence in retaliation for her article identify a Satoshi candidate |
-| Retail Investors | From personal experience of first author, friends make investments in blockchain technologies associated with Satoshi candidates |
+| Candidates       | D. Nakamoto was subjected to a "media frenzy" after being reported. |
+| Friends & Family | Families of more than one candidate, in particular candidates who are no longer living, report unwelcome inquiries from Bitcoin enthusiasts. |
+| Investors        | A business deal between nCrypt and C. Wright was reported to be contingent on Wright being able to prove claim of being Satoshi. |
+| Retail Investors | Some people make investments in blockchain technologies associated with Satoshi candidates. |
+| Experts          | Experts G. Adresen & N. Courtois were retained to assess C. Wright's claim. |
+| Courts           | Various actions, such as *COPA v. C. S. Wright*, give legal consideration to who owns aspects of Bitcoin's technology. |
+| Reporters        | L. McGrath Goodman reports threats of violence in retaliation for her article identify a Satoshi candidate. |
 
+Generally, academics have maintained an aversion to the subject of Satoshi's identity, chalking up endeavours to uncover it as gossip, speculation, and not in the realm of science. Our position is that the subject of Satoshi matters to enough people (see table above) that academics should not remain quiet. We do not affirm new attempts to de-anonymize Satoshi. Rather we believe those with relevant expertise can help establish rules of evidence and ensure that weak evidence is not left unquestioned.
 
+## Investigative Methods
 
-"I wish you wouldn’t keep talking about me as a mysterious shadowy figure, the press just turns that into a pirate currency angle. Maybe instead make it about the open source project and give more credit to your dev contributors; it helps motivate them."
+Journalists (and others) seeking to identify Satoshi Nakamoto will argue about their candidate using a set of evidence (or "fact pattern)". But the evidence need to be part of a larger framework to establish if the facts are meaningful, sufficient, and complete. There is also the possibility of bias. Our goal is to outline (1) possible frameworks, (2) possible biases, and (3) possible evidence. A takeaway is that journalists (and others) should be more rigours in terms of (1), and guard better against (2), as most of the evidence (3) is not conclusive enough to be relied on alone.
 
+It is also important to distinguish between "doxing" and "vetting" investigations. In a doxing investigation, the journalist is finding and proposing a candidate that does not want to be identified as Satoshi. This candidate will not provide new evidence that could help prove they are Satoshi, but might offer new evidence to suggest they are not. In a vetting investigation, the candidate is claiming to be Satoshi and therefore is positioned to back up their claim with new evidence. A takeaway from our paper is that there is not enough known about Satoshi to sufficiently dox him without new collaborating evidence. However there are types of evidence that can be created by Satoshi that would be close to sufficient in vetting his identity.
 
+| Potential Evidence               | Synapsis                                                     |
+| -------------------------------- | ------------------------------------------------------------ |
+| Basic demographics [D,V]         | Appropriately aged in 2018 with access to a computer and internet connection. |
+| Basic expertise [D,V]            | At least modest skills with C++, P2P application development, and cryptography. |
+| Access to cryptographic keys [V] | Demonstrated knowledge of secret keys used to produce addresses holding the earliest BTC created or transacted. |
+| Access to web accounts [V]       | Demonstrated knowledge of private correspondence between Satoshi and other individuals. |
+| Anecdotal evidence [V]           | Convincing with experts in private conversations.            |
+| Stylometry [D,V]                 | Mathematical comparison of Satoshi's writing and coding to other candidates. |
+| Circumstantial evidence [D,V]    | Explanations of word choice, time of activities, locations, etc. (see table below). |
 
+A preview of the evidence is given in the table above. The circumstantial evidence is further broken down into its own table below. The symbol [D,V] indicates the type of evidence is relevant to doxing and vetting investigations, whereas evidence marked [V] would only show up in a vetting investigation.
 
+| Circumstantial Evidence [D,V] | Synapsis                                                     |
+| ----------------------------- | ------------------------------------------------------------ |
+| Double space after period     | A typing pattern, common at the time (including Satoshi, 17 of 28 (61%) participants on the cryptography mailing list in Nov 2008 used it) |
+| Colloquialisms                | Word choices and spellings include: bloody, colour, defence, eat crow, grey, maths, neighbours, sweet |
+| Activities                    | Less active between midnight and 6am ET, whitepaper generated with MT setting |
+| IP address                    | IP address 68.164.57.219 (from 10 Jan 2009) traces to Van Nuyes, CA, USA |
+| UK proximity                  | Newspaper quote (from 03 January 2009) taken from a physically distributed newspaper based in London, UK |
+| Japanese culture              | Used the name Satoshi Nakamoto                               |
+| Mailing list                  | Was familiar with and first advertised on the cryptography mailing list and later on other online forums |
+| Birthdate                     | P2P Foundation account registered with birthdate of 5 April 1975 |
+| Software                      | Used Windows and OpenOffice                                  |
+| Occupation                    | Describes himself as "not a lawyer"                          |
+| Academic Pedigree             | Aware of linked timestamping and hashcash; unaware initially of b-money, bit gold, and reusable proof of work (RPOW). |
+| Blockchain forensics          | Using artifacts of the Bitcoin protocol to identify which addresses appear to belong to Satoshi. |
 
+Later in the article, we will walk through each piece of evidence one-by-one. At this time, we want to first discuss frameworks and biases. However providing a preview of the evidence will allow us to illustrate the frameworks and biases with concrete examples pulled from the evidence. 
 
+### Frameworks
 
-| Method                       | Synapsis                                                     |
-| ---------------------------- | ------------------------------------------------------------ |
-| Access to cryptographic keys | Strong evidence                                              |
-| Access to web accounts       | Knowledge of private correspondence and posts from online accounts |
-| Circumstantial evidence      | Rigorous application Bayesian inference need to not under-estimate priors |
-| Anecdotal evidence           | Assessments of evidence done in private and reported publicly relies on trustworthiness and diligence of the assessor |
-| Network forensics            | One suspected IP address of Satoshi Nakamoto points to network access from near LA, California, USA |
-| Blockchain Forensics         |                                                              |
-| Sylometry                    | False positive rate is too high to be reliable               |
-|                              |                                                              |
-|                              |                                                              |
-|                              |                                                              |
-|                              |                                                              |
-|                              |                                                              |
-|                              |                                                              |
-|                              |                                                              |
+| Possible Frameworks | Explanation                                                  |
+| ------------------- | ------------------------------------------------------------ |
+| MMO                 | Determining the motive, means, and opportunity for creating Bitcoin |
+| Profiling           | Matching a candidate to the predicted psychology of Satoshi  |
+| Bayesian inference  | A rule of probability for evaluating evidence                |
+| Guess who           | A board game that provides a simpler mental model than Bayesian inference |
+| Occam's razor       | Preferring simple explanations to complex ones               |
 
+Several possible frameworks are listed in the table above. Each is used at least once by a journalist or other investigator. They are not a complete set of frameworks, nor are they are not a mutually exclusive set of frameworks----an investigator could use any combination of them in addition to other possible methods. However understanding this set of frameworks will help illustrate the momentous nature of the task of identifying Satoshi. 
 
+### MMO Framework
 
-## Motivation for anonymity
+An investigator could take an approach used, to some extent, by law enforcement (and to a large extent by law enforcement on TV): establishing the *motive*, *means*, and *opportunity*. 
 
-Copyright: Surety and Chaum - two of the most litigious people, fretting:
+Satoshi's *motive* for creating Bitcoin is to try an approach not used in other centralized cryptography projects. As noted by Ducrée [Duc22], Satoshi is relatively apolitical. While many early Bitcoin adopters exhibited a fondness for libertarianism and/or a cypherpunk philosophy, Satoshi does not strongly align himself with either. He once marked Bitcoin as "a new territory of freedom." The genesis block of Bitcoin includes the quote: "chancellor on brink of second bailout for banks," which is taken as a criticism of bailouts. Such a position aligns with both populism and libertarianism---bailouts were pursued by both the chancellor's left-leaning Labour Party in the UK and the right-leaning Republican Party in the US over the same time-period. Aside from mildly political statements like these, Satoshi sticks to technical discussions. 
 
-https://lists.gnu.org/archive/html/gzz-dev/2003-07/msg00043.html
+*Motive* can also go to anonymity. In a foreword to a popular Bitcoin textbook, Clark [Cla16] considers reasons why Satoshi would choose anonymity at a time when BTC was not even deployed and had no value. Pragmatic reasons could be avoiding legal issues (operators of e-gold pled guilty to financial crimes a few months before Bitcoin's whitepaper) or patent issues (mailing list participants were known to fret about both [Surety patents](https://lists.gnu.org/archive/html/gzz-dev/2003-07/msg00043.html) and [DigiCash patents](http://marc.info/?l=cypherpunks&m=95280154628360&w=2)), while philosophical reasons could include alignment with the cypherpunk movement. Satoshi once stated, "I wish you wouldn’t keep talking about me as a mysterious shadowy figure, the press just turns that into a pirate currency angle." For candidates with projects and research papers that are not released anonymously, inconsistency requires justification.
 
-http://marc.info/?l=cypherpunks&m=95280154628360&w=2
+*Means* captures the ability to design and deploy Bitcoin, which requires technical skills like C++ app development, knowledge of cryptography, and the ability to use anonymity technology. As these skills are taken as evidence ("basic expertise" in the Table above), we will discuss these specifically later in the article.
 
-Group or individual? Occam's razor
+*Opportunity* creates limits on the *time* and *place* of candidates. For Bitcoin, time is an important consideration, while location is largely open as Satoshi interacted solely online with efforts at making tracing infeasible. The circumstantial evidence (in the Table above) does include some location-based facts which we will examine later. Time and place can also eliminate candidates (i.e., provide an alibi). For example, the McGrath-Goodman investigation ruled out Nick Szabo for having an incompatible timeline before centring on Dorian Nakamoto [tkcite]. Another candidate, Hal Finny, ran in an organized marathon with registration and finish-line photographs at the same time Satoshi Nakamoto was sending emails [tkcite].
 
-https://bitcoinmagazine.com/technical/what-happened-when-bitcoin-creator-satoshi-nakamoto-disappeared
+### Profiling
 
+On a recent podcast, L. McGrath Goodman defends the methodology used by her and Newsweek in identifying Dorian Nakamoto [tkcite]. The main basis she relied on is "profiling" which, like the MMO framework, was developed by law enforcement (pioneered by FBI agent John E. Douglas and popularized by TV shows Mindhunters and Criminal Minds). Investigators develop a psychological profile of the candidate that fits the evidence. For McGrath Goodman, this meant interviewing major Bitcoin developers (she notes it was early enough in Bitcoin history that they were easy to contact and willing to talk) and deducing Satoshi was someone secretive, reclusive, able to maintain confidentiality, and intelligent. When she found Dorian Nakamoto, she felt he matched the profile (his work was classified and his family stated he was secretive about his work). Ducrée [Duc22] also builds a psychological profile of Satoshi, which overlaps with McGrath Goodman, rooted in ingenuity, persistence, motivated by ideals, and confidentiality []. Even if a profile is right, it is of limited use if it is not specific. Dorian Nakamoto is not the only person in the world to fit the profile. In both cases, these profiles are taken in combination with other forms of evidence (tables above).
 
+In the case of a candidate that claims to be Satoshi, profiling can be used in two ways. As above, the Satoshi profile can be used to vet the candidate. However, since most people who are not Satoshi do not claim to be Satoshi (even if they happen match the profile or the evidence), candidates should also be vetted against a profile of anti-social behaviour and deception. E.G. Sirer writes in a blog post, "There’s a big difference between a case that has weak evidence and a case where the evidence contains forged elements. The latter requires a full explanation of the forger, their relationship to the story, and should put the entire story at risk. You can’t just look past that inexplicable problem and focus on the rest. The story changes the moment a piece of the evidence is forged. [tkcite]"
 
-## Related Work
+### Bayes Theorem
 
-https://arxiv.org/pdf/2206.10257.pdf?ref=blog.lopp.net
+The most precise tool for evaluating evidence is Bayes theorem, however its usefulness is limited by our ability to generate probabilities for many of the things around us. Bayes theorem is often used loosely (e.g., Superforecasting, author of Death Note script, criminal allegations against Judge Kavanaugh) 
 
+Did Kavanaugh Do It?. Math Helps Us Decide | by Eric Saund | Medium
 
+Who Wrote The <em>Death Note</em> Script? · Gwern.net
 
 
 
-## Access to cryptographic keys
 
-
-
-## Access to web accounts
-
-satoshi@vistomail.com
-
-satoshin@gmx.com (birthdate: 5 April 1975) (Vice reports hacked in 2014: https://www.vice.com/en/article/jp5dk8/the-satoshi-nakamoto-email-hacker-says-hes-negotiating-with-the-bitcoin-founder https://bitcointalk.org/index.php?topic=775174.0)
-
-anonymousspeech.com
-
-Satoshi on bitcointalk
-
-gmx?
-
-p2p foundation -> I am not Dorian Nakamoto ("Satoshi Nakamoto is now a member of P2P Foundation Feb 11, 2009")
-
-
-
-## Circumstantial evidence
-
-
-
-Anecdotes
-
-Many Satoshi arguments are anecdotes about the candidate with cherry-picked circumstantial evidence. An example might read like the following.
-
-When Satoshi created Bitcoin, Alice was a graduate student in cryptography and computer science at the University of Waterloo (overlapping with undergradate Vitalik Buterin, a creator of Ethereum). A high school student up in the 1990s, Alice was taught to double-space after periods; Canadians, part of the British commonwealth, use British spellings and colloquialisms; and as a grad student, Alice maintained an unruly schedule, working late into the night and maintaining a timezone closer to California than Eastern. Alice's research was in cryptography, where she worked with David Chaum, the cryptography pioneer who invented digital cash (working throughout his career with people like Nick Szabo, zooko, Len Sassasan). Her whereabouts are unaccounted for   is uncertain if Alice visited Chaum in 20XX, who lived near Van Nuys Blvd in Sherman Oakes, California (IP address). At the time Satoshi wrote he was "moving on to other projects," Alice was preparing... Put results on Bitcoin and wrote 3rd paper on it. Beacons and times of london. Tor Other research subjects including random beacons (using quotes from newspapers to timestamp) and the Tor anonymity network. Lurked and occasionally posted on cryptography mailing list. Later Alice is photographed at the infamous Princeton roundtable. Windows Vista. Libertarian. 
-
-Sounds pretty good right? Well, consider the following:
-
-Bitcoin was written in C++ while Alice's projects were written in Java. Alice did not directly program the application but focused on protocols and prototyping in high level languages like Mathematica. Despite learning to type with two spaces after a period, zero of Alice's prolific online writing demonstrates this hallmark. 
-
-
-
-“Kaminsky ticked off the skills Nakamoto would need to pull it off. “He’s a world-class programmer, with a deep understanding of the C++ programming language,” he said. “He understands economics, cryptography, and peer-to-peer networking. Either there’s a team of people who worked on this,” Kaminsky said, “or this guy is a genius.” Source
-
-“The idiosyncratic construction of Bitcoin’s code also suggests that Satoshi had an academic background. It has been described as “brilliant but sloppy”, eschewing conventional software development practices like unit testing but exhibiting cutting-edge security architecture and an expert understanding of academic cryptography and economics.” Source
-
-
-
-| Circumstantial Evidence               |                                                              |
-| ------------------------------------- | ------------------------------------------------------------ |
-| C++ developer experience              | Described as "brilliant but sloppy"                          |
-| Uses double space after period        | Employed by 17 of 28 (61%) participants on the cryptography mailing list in Nov 2008 (including Satoshi) |
-| Uses anglo colloquialisms/spelling    | "bloody"                                                     |
-| Timezone                              | Active                                                       |
-| Crypto-experience                     | Described                                                    |
-| App development (networking, UI, etc) |                                                              |
-| Latex / Open office                   | Used OpenOffice (14 March 2009)                              |
-| Japan                                 |                                                              |
-| Mialing list                          |                                                              |
-| Time of online activities             | Hal Finney running race when Satoshi mails Hearn             |
-| IP address                            | 68.164.57.219 (from 10 Jan 2009) traces to ISP in Van Nuyes, CA, USA |
-| The Times of London                   | Quote (from XX Oct 2008) taken from a physically distributed newspaper based in London, UK |
-| Cryptography mailinglist              |                                                              |
-|                                       |                                                              |
-|                                       |                                                              |
-|                                       |                                                              |
-|                                       |                                                              |
-|                                       |                                                              |
-|                                       |                                                              |
-
- 
-
-Think about playing the game "Guess Who" with 6 billion faces instead of 24. Does the table above arm you with enough questions to win? 
-
-
-
-Double-spacing
-
-
-
-Hal Finney is not Satoshi: https://blog.lopp.net/hal-finney-was-not-satoshi-nakamoto/
-
-
-
-Slang: "Sweet, I was looking for a group like that..." SN
-
-
-
-Leah McGrath Goodman (2020):
-
-* https://podcasts.apple.com/ca/podcast/the-pomp-podcast/id1434060078
-* Talked with Gavin
-* Profile based on people who emailed with Satoshi
-  * Build best profile and interview candidates
-  * Bitcoin took two years, study the timeline
-  * Excluded Szabo because too busy over the two years 
-  * Gavin: Code came from one individual
-  * Satoshi emailed Hal and asked for a crash file to debug something; claims IP address for email in California
-  * Discussed over email for several weeks before meeting, including correspondence about Bitcoin and a paper wallet from Gavin (so he knew what it was about)
-  * Showed up for in-person interview, Dorian clammed up
-  * Dorain worked on classified things (aerospace)
-  * His brother had a pipebomb put in his car (he survived?) (people thought brother put it there himself)
-  * Email said "mountain spring"
-  * Family says he is private, think he could have been involved but wouldn't confirm it. Still think he was involved (basically he was sus and so why not bitcoin, but nothing specific to bitcoin)
-  * 
-* Interviewed his family
-* Did not expect "the level that went to"
-
-
-
-Crypto: "But EC-DSA can't encrypt messages like RSA, it can only be used to verify signatures." SN
-
-Non: Cypherpunk 
-
-| Biases             |                                                        |
-| ------------------ | ------------------------------------------------------ |
-| Streetlight effect | Satoshi candidates are picked from known individuals   |
-| Cherry-picking     | Only circumstantial evidence that matches is presented |
-| Base rate fallacy  | Being Satoshi is a low probability that requires high  |
-| Occam's razor      | Simple                                                 |
-| Subterfuge         |                                                        |
-|                    |                                                        |
-|                    |                                                        |
-|                    |                                                        |
-|                    |                                                        |
-
-https://philosophy.stackexchange.com/questions/108229/logical-fallacy-no-one-would-be-so-dumb-to
-
-
-
-"**#2 It Would Require An Exceptionally Elaborate False Trail** There are volumes of forum and email messages between Satoshi and Andresen. If these were faked, Satoshi must have spent more time writing fake emails to convince the world he wasn’t Gavin Andresen than he did writing code for Bitcoin."
-
-Establishing a prior probability
-Base rate fallacy
-Drunkard and lost keys
-Example: Linus Torvalds - Finnish grad student, must have been a team, guess other high profile OS people: Ken Thompson, Dennis Ritchie (disregards why they would rival their own) or most colourful: Richard Stallman
-
-
-
-Subterfuge: this we need to think about. Should be British, because bloody and times of london. BUT IF YOU WRE SATOSHI, wouldn’t you exactly want to do that to throw people off? Wouldn’t you want to converse with yourself (Hal)? Best way for Hal to hide being Satoshi is to go wholehog into Bitcoin (as oppose to never mention it ever?)
-
-
-
-"If I had forged that document, then it would be perfect." Craig Wright
-
-
-
-“I am a lawyer and this [financial law] is my area of speciality,” whereas the [real Satoshi](https://web.archive.org/web/20190319211741/https://plan99.net/~mike/satoshi-emails/thread2.html), when asked about how a financial law applied to Bitcoin, said, “I am not a lawyer and I can’t possibly answer that.”
-
-## Aside: Bayes Theorem
 
 One mathematical tool for evaluating evidence is Bayes theorem. It superpowers 
 
@@ -255,9 +120,7 @@ Bayes theorem is a mathematical relationship between probabilities that most peo
 
 
 
-Did Kavanaugh Do It?. Math Helps Us Decide | by Eric Saund | Medium
 
-Who Wrote The <em>Death Note</em> Script? · Gwern.net
 
 Model Comparison and Occam's Razor
 
@@ -345,20 +208,158 @@ Example: probability the coin will flip heads given it is raining. Say the proba
 
 
 
+https://bitcoinmagazine.com/technical/what-happened-when-bitcoin-creator-satoshi-nakamoto-disappeared
 
 
+
+### Guess Who
+
+### 
+
+One blog post [ZG21] purports a mathematical proof that C. Wright is Satoshi Nakamoto, providing both a method and an application of the method. The article is informal and our assessment is that it is ultimately fallacious, but we commend the author for articulating a concrete methodology. After a false start of explaining, but failing to use, Bayes theorem (an appropriate method we address below), it instead uses an approach that we will describe as the "Guess Who" method.
+
+Consider the board game "Guess Who" (if unfamiliar, see short explanation on [Wikipedia](https://en.wikipedia.org/wiki/Guess_Who%3F)). Imagine playing the game with 6 billion faces instead of 24 faces. If you used a sequence of questions, each eliminating half of the remaining candidates, how many questions would you have to ask to find Satoshi? 33 questions. If each question eliminated 90% of the candidates, 10 questions would be sufficient.
+
+
+
+### Occam's Razor
+
+Clark [Cla16] argues Satoshi is most likely a single individual (Occam's razor is discussed below) as years of communication was self-consistent and displayed deep knowledge of all aspects of Bitcoin. 
+
+ 
+
+| Biases             | Explanation                                                  |
+| ------------------ | ------------------------------------------------------------ |
+| Streetlight effect | Candidates are picked from known individuals                 |
+| Cherry-picking     | Only circumstantial evidence that matches is presented       |
+| Subterfuge         | Matching circumstantial evidence is real and non-matching circumstantial evidence is subterfuge |
+| Base rate fallacy  | The probability that anyone is Satoshi starts from a low prior |
+| Salience bias      | Highlighting that a candidate might say "bloody" and "maths" over an inability to program in C++ |
+
+
+
+# Evidence
+
+
+
+
+
+## Basic demographics
+
+
+
+## Basic expertise
+
+"In general, professors typically have a fairly narrow expertise, and uncovering secret identities is not one of them... But all professors have one particular skill: to be able to size up someone’s technical understanding and characterize where he or she has technical misconceptions." EGS
+
+## Access to cryptographic keys
+
+
+
+## Access to web accounts
+
+satoshi@vistomail.com
+
+satoshin@gmx.com (birthdate: 5 April 1975) (Vice reports hacked in 2014: https://www.vice.com/en/article/jp5dk8/the-satoshi-nakamoto-email-hacker-says-hes-negotiating-with-the-bitcoin-founder https://bitcointalk.org/index.php?topic=775174.0)
+
+anonymousspeech.com
+
+Satoshi on bitcointalk
+
+gmx?
+
+p2p foundation -> I am not Dorian Nakamoto ("Satoshi Nakamoto is now a member of P2P Foundation Feb 11, 2009")
 
 
 
 ## Anecdotal evidence
 
-
-
 Andresen recently walked back his position: “I now know it was a mistake to trust Craig Wright as much as I did. I regret getting sucked into the ‘who is (or isn’t) Satoshi’ game,” he wrote in February 2023 in a [revision](http://gavinandresen.ninja/satoshi) to an earlier blog post.
 
 
 
-## Network forensics
+## Blockchain forensics
+
+
+
+Satoshi blocks
+
+Flow approach - Shamir et al - Dustin Trammell
+
+
+
+## Stylometry
+
+
+
+Stylometry - Patents 
+
+
+
+Sytlometry: not understanding FP // rarest disease on earth // drunkard
+
+
+
+## Circumstantial evidence
+
+Anecdotes
+
+Many Satoshi arguments are anecdotes about the candidate with cherry-picked circumstantial evidence. An example might read like the following.
+
+When Satoshi created Bitcoin, Alice was a graduate student in cryptography and computer science at the University of Waterloo (overlapping with undergradate Vitalik Buterin, a creator of Ethereum). A high school student up in the 1990s, Alice was taught to double-space after periods; Canadians, part of the British commonwealth, use British spellings and colloquialisms; and as a grad student, Alice maintained an unruly schedule, working late into the night and maintaining a timezone closer to California than Eastern. Alice's research was in cryptography, where she worked with David Chaum, the cryptography pioneer who invented digital cash (working throughout his career with people like Nick Szabo, zooko, Len Sassasan). Her whereabouts are unaccounted for   is uncertain if Alice visited Chaum in 20XX, who lived near Van Nuys Blvd in Sherman Oakes, California (IP address). At the time Satoshi wrote he was "moving on to other projects," Alice was preparing... Put results on Bitcoin and wrote 3rd paper on it. Beacons and times of london. Tor Other research subjects including random beacons (using quotes from newspapers to timestamp) and the Tor anonymity network. Lurked and occasionally posted on cryptography mailing list. Later Alice is photographed at the infamous Princeton roundtable. Windows Vista. Libertarian. ECC
+
+Sounds pretty good right? Well, consider the following:
+
+Bitcoin was written in C++ while Alice's projects were written in Java. Alice did not directly program the application but focused on protocols and prototyping in high level languages like Mathematica. Despite learning to type with two spaces after a period, zero of Alice's prolific online writing demonstrates this hallmark. Never used the term "maths."
+
+
+
+“Kaminsky ticked off the skills Nakamoto would need to pull it off. “He’s a world-class programmer, with a deep understanding of the C++ programming language,” he said. “He understands economics, cryptography, and peer-to-peer networking. Either there’s a team of people who worked on this,” Kaminsky said, “or this guy is a genius.” Source
+
+“The idiosyncratic construction of Bitcoin’s code also suggests that Satoshi had an academic background. It has been described as “brilliant but sloppy”, eschewing conventional software development practices like unit testing but exhibiting cutting-edge security architecture and an expert understanding of academic cryptography and economics.” Source
+
+C++ developer experience  Described as "brilliant but sloppy"
+
+
+
+
+
+Double-spacing
+
+
+
+Hal Finney is not Satoshi: https://blog.lopp.net/hal-finney-was-not-satoshi-nakamoto/
+
+
+
+
+
+Crypto: "But EC-DSA can't encrypt messages like RSA, it can only be used to verify signatures." SN
+
+Non: Cypherpunk 
+
+"**#2 It Would Require An Exceptionally Elaborate False Trail** There are volumes of forum and email messages between Satoshi and Andresen. If these were faked, Satoshi must have spent more time writing fake emails to convince the world he wasn’t Gavin Andresen than he did writing code for Bitcoin."
+
+Establishing a prior probability
+Base rate fallacy
+Drunkard and lost keys
+Example: Linus Torvalds - Finnish grad student, must have been a team, guess other high profile OS people: Ken Thompson, Dennis Ritchie (disregards why they would rival their own) or most colourful: Richard Stallman
+
+
+
+Subterfuge: this we need to think about. Should be British, because bloody and times of london. BUT IF YOU WRE SATOSHI, wouldn’t you exactly want to do that to throw people off? Wouldn’t you want to converse with yourself (Hal)? Best way for Hal to hide being Satoshi is to go wholehog into Bitcoin (as oppose to never mention it ever?)
+
+
+
+"If I had forged that document, then it would be perfect." Craig Wright
+
+
+
+Anecdotal
+
+List of questions in Duc22 that are good
+
+
 
 
 
@@ -388,32 +389,8 @@ IRC channel #bitcoin on 10 Jan 2009 (1 day after block #1)
 * i=x9342860 gateway/tor/x-bacc5813d7825a9a - adminstrator of the channel; connected via Tor
 * 207.71.226.132 - Hal Finney's user account static IP address; also hosts his websites; ISP Silicon Beach Communications in Lompoc, CA, USA.
 * 68.164.57.219 - Satoshi Nakamoto's user account; ISP Covad Communications in Van Nuys, CA, USA.
-* 
 
-## Blockchain forensics
-
-
-
-Satoshi blocks
-
-Flow approach - Shamir et al - Dustin Trammell
-
-
-
-
-## Sylometry
-
-
-
-Stylometry - Patents 
-
-
-
-Sytlometry: not understanding FP // rarest disease on earth // drunkard
-
-
-
-## Academic Pedigree
+#### Academic Pedigree
 
 Most citations are relevant or provenance (conversations about citing specific papers)
 
@@ -443,75 +420,48 @@ The first instance of the citation is not that interesting, it is included in a 
 
 
 
-## Rough Notes
+
+
+# References 
+
+[Cla16] J. Clark, "Preface — The Long Road to Bitcoin" from [NBFM16]
+
+[Duc22] J. Ducrée, "Satoshi Nakamoto and the Origins of Bitcoin – The Profile of a 1-in-a-Billion Genius," online: https://arxiv.org/pdf/2206.10257.pdf
+
+[Gao21] Z.M. Gao, "Mathematical proof that Dr. Craig S. Wright is Satoshi Nakamoto," online (archived): https://web.archive.org/web/20220206233842/https://zemgao.com/a-mathematical-proof-that-craig-s-wright-is-satoshi-nakamoto
+
+[NBFM16] A. Narayanan, J. Bonneau, E.W. Felten, A. Miller, S. Goldfeder, "Bitcoin and Cryptocurrency Technologies," Princeton University Press, 2016.
 
 
 
-## CSW Timeline
+# Rough Notes
 
-08 Oct 07 - DAK & CSW book
+##### Leah McGrath Goodman (2020):
 
-?? Dec 08 - DAK & CSW conf paper
+* https://podcasts.apple.com/ca/podcast/the-pomp-podcast/id1434060078
+* Talked with Gavin
+* Profile based on people who emailed with Satoshi
+  * Build best profile and interview candidates
+  * Bitcoin took two years, study the timeline
+  * Excluded Szabo because too busy over the two years 
+  * Gavin: Code came from one individual
+  * Satoshi emailed Hal and asked for a crash file to debug something; claims IP address for email in California
+  * Discussed over email for several weeks before meeting, including correspondence about Bitcoin and a paper wallet from Gavin (so he knew what it was about)
+  * Showed up for in-person interview, Dorian clammed up
+  * Dorain worked on classified things (aerospace)
+  * His brother had a pipebomb put in his car (he survived?) (people thought brother put it there himself)
+  * Email said "mountain spring"
+  * Family says he is private, think he could have been involved but wouldn't confirm it. Still think he was involved (basically he was sus and so why not bitcoin, but nothing specific to bitcoin)
+* Interviewed his family
+* Did not expect "the level that went to"
 
-03 Jan 09 - Genesis block
-
-21 Jan 09 - DAK mail list
-
-25 Mar 10 - DAK mail list (last)
-
-30 Apr 13 - DAK obituary
-
-07 Feb 14 - MT Gox suspends 
-
-?? Feb 14 - CSW contacts DAK family
-
-12 Feb 14 - DAK father post
-
-08 Sep 14 - P2P account hack warning
-
-?? Nov 15 - Tips to Gizmodo
-
-JVP @haq4good - story about conf, backtracked on it being CSW (BitcoinBelle)
-
-Iang @iang_fc 
-
-@dr_craig_wright -> iang & JVP & XS
-
-Jon Mateos 
+##### CSW
 
 https://medium.com/hackernoon/bitcoin-belles-ccme-the-woman-who-brought-you-craig-satoshi-wright-strikes-again-f74e4ef129a4
-
-
 
 https://bitcoinmagazine.com/business/op-ed-how-many-wrongs-make-wright
 
 https://www.wired.com/story/craig-wright-satoshi-nakamoto-trial/
-
-
-
-Quote from artice: 
-
-[What we know and can prove](https://www.reddit.com/r/btc/comments/b318ih/in_honor_of_craig_wrights_ragequit_from_twitter_i/eiwho2w/) is that:
-
-- He has a documented history of questionable statements and activities.
-- He has a history of appearing to exaggerate his academic credentials.
-- He has made a multitude of technical errors in his writings that call his understanding of Bitcoin and internet technology into question.
-- His [writing style](https://www.ibtimes.com/craig-wright-not-bitcoin-creator-satoshi-nakamoto-according-new-text-analysis-2276141) (according to text analysis) and demeanor do not appear to be the same as those of the Satoshi whose writings are [archived here](https://satoshi.nakamotoinstitute.org/).
-- [Wright once said](https://web.archive.org/web/20190307144326/https:/twitter.com/ProfFaustus/status/1102886416206520322): “I am a lawyer and this [financial law] is my area of speciality,” whereas the [real Satoshi](https://web.archive.org/web/20190319211741/https://plan99.net/~mike/satoshi-emails/thread2.html), when asked about how a financial law applied to Bitcoin, said, “I am not a lawyer and I can’t possibly answer that.”
-- [Wright once said](https://archive.fo/qljA9#selection-349.52-349.108): “At no point have I said that Bitcoin is a cryptocurrency,” and yet [Satoshi called Bitcoin a cryptocurrency](https://www.reddit.com/r/btc/comments/b479rk/please_excuse_the_craig_wright_spam_but_this_is/) on several occasions.
-- [Wright once said](https://www.ccn.com/craig-wright-rants-about-why-satoshi-fcking-abandoned-bitcoin/) that he is an “academic coder” who has no idea about “real world coding” but [Satoshi has said](https://satoshi.nakamotoinstitute.org/emails/cryptography/12/#selection-89.82-89.126), “I’m better with code than with words though.”
-- In 2008, just six months before the anonymous Satoshi Nakamoto appeared, Wright [made a public post](https://seclists.org/basics/2008/Mar/42) stating, “Anonymity is the shield of cowards, it is the cover used to defend their lies. My life is open and I have little care for my privacy.”
-- In February 2011, he seemed unaware of Bitcoin at all, as he was thinking about [starting a gold-backed payment system](https://archive.is/3UwA7).
-- In August 2011, he began to mention Bitcoin in his writings, but he [called it “Bit Coin](https://theconversation.com/lulzsec-anonymous-freedom-fighters-or-the-new-face-of-evil-2605#comment_6162), whereas Satoshi [didn’t use a space or capital *C*](https://satoshi.nakamotoinstitute.org/) in emails or forum posts. There was [one instance of “BitCoin”](https://github.com/bitcoin/bitcoin/blob/e071a3f6c06f41068ad17134189a4ac3073ef76b/readme.txt#L1) in the early codebase, but Satoshi himself [later corrected the capitalization](https://sourceforge.net/p/bitcoin/code/28/).
-- He [actively bought and traded coins](https://np.reddit.com/r/Bitcoin/comments/4hx3q9/according_to_the_mtgox_leaks_from_early_2014_our/) on Mt. Gox [in 2013 and 2014](https://www.reddit.com/r/Bitcoin/comments/4hqbux/fun_fact_craig_wright_lost_14_in_mtgox/).
-- He [once asked](https://archive.fo/TEykO) why you would use *X*s rather than zeros in a burn address. Satoshi Nakamoto invented the [Base58 encoding scheme](https://en.wikipedia.org/wiki/Base58) used for these addresses, which intentionally excludes numbers and letters that look similar, such as zero and the letter *O*.
-- He [once claimed](https://archive.fo/FYsWT) that Bitcoin’s block size was set in the block header (it’s not).
-- He [once claimed](https://web.archive.org/web/20171029130922/https:/twitter.com/proffaustus/status/924242722810195968) that Satoshi chose the secp256k1 curve due to bi-linear pairing properties but [Satoshi once said](https://plan99.net/~mike/satoshi-emails/thread3.html) that “I didn't find anything to recommend a curve type so I just ... picked one.”
-- In [an interview with GQ](https://www.youtube.com/watch?v=7YUTq7_vO3A&feature=youtu.be&t=304), Wright claimed, "I haven’t moved [any bitcoins]. I have sent them to Hal Finney and Zooko and that was it. Full stop." But in 2009 Satoshi Nakamoto [sent 82.51 BTC to developer Mike Hearn](https://plan99.net/~mike/satoshi-emails/thread1.html).
-- He has thus far failed to provide simple cryptographic proof that he controls keys belonging to Satoshi [**after promising to do so**.](https://gizmodo.com/craig-wright-claims-he-will-move-satoshi-nakamotos-bitc-1774443766)
-- The cryptographic “proof” he did provide has been widely debunked by numerous experts including [Patrick McKenzie](https://github.com/patio11/wrightverification/blob/master/README.md), [Dan Kaminsky](https://dankaminsky.com/2016/05/02/validating-satoshi-or-not/) and [Robert Graham](https://blog.erratasec.com/2016/05/satoshi-how-craig-wrights-deception.html).
-
-
 
 Faketoshi articles: https://mylegacykit.medium.com
 
@@ -551,11 +501,4 @@ Faketoshi articles: https://mylegacykit.medium.com
 
 
 
-
-
-
-
-
-
-
-
+a
