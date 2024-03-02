@@ -1,24 +1,11 @@
-**Crypto Fraud**
+# **Crypto Fraud**
 
+I often hear Bitcoin described by skeptics as a big "ponzi" scheme or "pyramid" scheme. Technically, it is neither. That does not mean Bitcoin isn't some kind of fraud or bad thing, it just means it is not specifically a Ponzi or Pyramid. 
 
+I prefer to think in terms of a "bubble." In a bubble, herd mentality drives price up and then they crash, but the crash is not to zero like in a fraud. Housing prices underwent a bubble around 2008 and crashed, however that does not mean houses are worthless or the housing market is a fraud. It just means things were overvalued.
 
-Ponzi scheme
+Notes on Easy Money by Ben McKenzie and Jacob Silverman
 
-- It is a bubble
-
-
-
-Pyramid scheme
-
-- Alice tells Bob about BTC
-- Bob buys BTC
-- Alice profits?
-
-
-
-The House
-
-- Easy Money by Ben McKenzie and Jacob Silverman
 - Gambling
   - Zero sum: Alice makes money by Bob losing
   - (Not true, crypto might all go up or down)

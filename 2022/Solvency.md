@@ -1,27 +1,19 @@
 **Proof of Solvency**
 
-Provisions 2.0
+Things Provisions does not solve well:
 
+* Succinct O(1) verifier for PoL and PoA
+* Incremental updates to PoL and PoA
+* Dispute resolution for PoL
+* Hide changes in size day-to-day (leaks commercial data)
 
-
-- Assets and mapping private keys into a pairing group
-  - SNARK with sk as witness that KeyGen(sk) in secp256k1 and KeyGen(sk) is pasta produce the public keys pk1 and pk2
-- Incremental updates to proof
-- Liabilities - dispute resolution if wrong
-- Size (daily changes leak info)
-- Clash attack
-- Proof of asset - hot wallet 
-  - Use signatures ? Share?
-- Accumulators / proof carrying data
-- Zero out account balances attack
-- Network profile users who won’t check 
-  - User encrypt each blob, now can be public, broadcast (trivial PIR) or PIR 
-  - Need to log in to check because it is private information 
-  - Role for third party auditor
-- Complete knowledge 
-- PIR 
-- Clash attack
-- Fake accounts to hide users (upper limit though?)
-- Incentive for checking
-- Someone runs RSV protocol on it
-- Lottery fair - government sits on free tickets. 
+- Clash attacks
+- PoA requires a hot wallet, can we cert chain to an ephemeral key?
+  - Risky for lending assets between insolvent exchanges
+- Exchange profiles users who check and who do not
+  - Offer PoL checks as ciphertexts, users fetch via (trivial or no trivial) PIR
+  - Third party host
+- Augment with complete knowledge to prevent encumbering keys to share them?
+- Does offering incentives for checking work
+  - Arguably no: users are already financially incentivized to check
+  - Psychologically though, an explicit incentive rather than implicit one might work better

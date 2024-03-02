@@ -1,37 +1,23 @@
-**Policies SoK**
-
-🛂 🛂 🛂
-
-
+## Policies
 
 - Policies are conflated with social engineering -> separate them out
 - Model checking -> insights?
 
+Are all policy failures unique and specific to the circumstances. Or are they variants on a few root causes?
 
-
-Root Causes
-
-- Permit override
-  - Address change with US postal service
-  - OCSP response
-  - Alloy: model DoS attacks 
-- Wide circle of trust
-  - US intelligence with top secret clearance: Snowden, 
-  - TSA master key
-  - Alloy: trembling hand
-- Authenticate on adversary controlled info
-  - SIM swapping based on last 3 phone calls
-  - @mat attack based on adding credit card 
-- Complexity is the enemy of security
-  - Soghian no fly list attack
-  - Certificate validation and DNS
-- Privacy adjacent
-  - Facebook and 2FA phone numbers
-  - Apple AirTags and stalker ware
-- AI gone rogue
-  - Apple neuralMatch
-- Game theory
-  - SWATing
-- Grind
-  - @N and needing 2 digits = 100 phone calls
-  - 
+| Root Causes                  | Examples                                                     | Model Checking (Alloy) |
+| ---------------------------- | ------------------------------------------------------------ | ---------------------- |
+| Permit override              | USPS change of address policy; OCSP browser policy           |                        |
+| Wide circle of trust         | TSA master key; top secret clearance                         | Trembling hand         |
+| Authenticate on tainted data | @mat attack on adding a new credit card; SIM swapping based on last 3 phone calls |                        |
+| Cross-organization           | Soghoian no fly list attack; sslcertificates@live.com attack |                        |
+| Grinding                     | @N and needing 2 digits = 100 phone calls                    |                        |
+|                              |                                                              |                        |
+|                              |                                                              |                        |
+|                              |                                                              |                        |
+|                              |                                                              |                        |
+|                              |                                                              |                        |
+| Name?                        | SWATing                                                      |                        |
+| Name?                        | Facebook and 2FA phone numbers                               |                        |
+| Name?                        | Apple AirTags and stalkerware                                |                        |
+| Name?                        | Apple neuralMatch                                            |                        |
