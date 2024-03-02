@@ -5,8 +5,6 @@ In becoming a TA, I will do the following (but might need reminders):
 1) Add you to Slack so we can talk easily
 2) Add you to Moodle so you can see the course and its content
 
-
-
 Here are some general guidelines for marking assignments (especially for the first time):
 
 * We now use Moodle for receiving assignments and for entering grades and returning the grades to the students.

@@ -30,55 +30,6 @@ As a PhD student, I took a course on requirements engineering (RE) with a profes
 
 The solution is a methodology. It goes in four stages: elicitation, negotiation, specification, implementation. Elicitation is figuring out what people want from a potential solution, either by thinking hard about it, learning from what people have written about it, or (best yet) actually talking to people who might benefit from (or be harmed by) it. The list of "what people want" are called requirements, hence the name. Turning what people write or say in an open-ended way (say they recount an experience they had) into requirements is not precisely covered by RE. However a field called qualitative analysis can fill the gap. I have had great luck in assigning tags to the themes in the things I read (using software like NVIVO), and then looking theme by theme for an underlying requirement (thematic analysis). Requirements should be descriptive ("a stolen password should not be enough to impersonate a user at log-in") instead of proscriptive ("use two-factor authentication").
 
-Once you have gathered requirements, you might have conflicting requirements where different people want different things. Sometimes I model this formally with a table of who wants what (see stakeholder conflict table in [X]). Deciding on which requirements to prioritize, assuming you cannot do them all, is the output of the negotiation step. Next you design "on paper" your solution at some level detail. Next you iterate through the first three steps---elicitation, negotiation, specification---adding more detail to your specification, ensuring you are capturing all the requirements, trying to solve trade-offs between conflicting requirements. You continue 
+Once you have gathered requirements, you might have conflicting requirements where different people want different things. Sometimes I model this formally with a table of who wants what (see stakeholder conflict table in [X]). Deciding on which requirements to prioritize, assuming you cannot do them all, is the output of the negotiation step. Next you design "on paper" your solution at some level detail. Next you iterate through the first three steps---elicitation, negotiation, specification---adding more detail to your specification, ensuring you are capturing all the requirements, trying to solve trade-offs between conflicting requirements. 
 
- to turn the themes into requirements. 
-
-
-
-, and a basic technique is to identify themes in what they right and say (thematic analysis) 
-
- Requirements should be descriptive ()
-
-
-
-It will not lead to good idea necessarily, just try to stop you from 
-
-
-
-I have never seen someone use technique A to solve problem B so I'll do it and figure out 
-
-
-
- propose something that The good idea of RE is that you front-load as much of the design as possible before you write a line of code.
-
-
-
-
-
-
-
-, y But what if you design new algorithms or new cryptographic protocols or propose new secure systems?
-
-Formal methods, proofs, 
-
-
-
-
-
-
-
- is obviously not very useful . I could follow the same 
-
-
-
-: (1) you probably already use a methodology, you just don't have a name for it. 
-
-
-
-
-
- your methodology in real life? 
-
----
-
+Not finished...
