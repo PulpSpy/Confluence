@@ -4,9 +4,7 @@
 
 ###### Jeremy Clark
 
-Steven Pinker's new book *Rationality* is a good synthesis of a bunch of scientific non-fiction over the years. I am definitely not the target audience for the book; I think nearly every topic he covers was already in one or more of the books I've read (including off the top of my head): *The Undoing Project; The Drunkard's Walk; Nudge; Predictable Irrational; Fooled by Randomness; Thinking, Fast and Slow; The Signal and the Noise; Freakonomics; Superforecasting; Innumeracy; (Mis)Behavior of Markets; etc., etc.* 
-
-Given all this, Rationality is still an enjoyable read. I would recommend it to friends who haven't read the 20+ other books as a very adequate summary. 
+Steven Pinker's new book *Rationality* is a good synthesis of a bunch of scientific non-fiction over the years. I am definitely not the target audience for Pinker's book. I think nearly every topic he covers was already in one or more of the books I've read (including off the top of my head: *The Undoing Project; The Drunkard's Walk; Nudge; Predictable Irrational; Fooled by Randomness; Thinking, Fast and Slow; The Signal and the Noise; Freakonomics; Superforecasting; Innumeracy; (Mis)Behavior of Markets; etc., etc.*). Given all this, *Rationality* is still an enjoyable read. I think it is nearly a complete stand-in for 20+ other books, as many of those have only a few key ideas. 
 
 I did learn a few new things as well! One topic that comes up a lot in this literature is the Monty Hall problem. From Wikipedia, it is described as:
 

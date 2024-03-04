@@ -1,12 +1,8 @@
-Gadgets 
+# Gadgets 
 
-♾️ ♾️ ♾️
+# MPC
 
-Tests, proofs, operations
-
-
-
-=== MULT (MPC)
+### === MULT (MPC)
 
 MPC
 
@@ -28,7 +24,7 @@ Note: Requires decryption of arbitrarily large ciphertexts
 
 
 
-=== MULT (Precomp)
+### === MULT (Precomp)
 
 Trustees
 
@@ -56,7 +52,7 @@ Note: Requires decryption of arbitrarily large ciphertexts
 
 
 
-=== MULT (BGN-like lattice)
+### === MULT (BGN-like lattice)
 
 Trustees
 
@@ -74,7 +70,7 @@ Apply Beaver’s method above: only works if you can decrypt arbitrary ciphertex
 
 
 
-=== MULT (CONDITIONAL)
+### === MULT (CONDITIONAL)
 
 Trustee
 
@@ -94,7 +90,7 @@ Compute [xb]=[x’]b’
 
 
 
-=== MULT (BITWISE)
+### === MULT (BITWISE)
 
 Trustees
 
@@ -112,7 +108,7 @@ Compute [xy] = [x1*y] + [x2*y]2 + [x3*y]4 + …
 
 
 
-=== COMMITTED SCALAR
+### === COMMITTED SCALAR
 
 Given [x], compute [x]^a=[xa] and ReRand, proving a matches [a]
 
@@ -122,13 +118,13 @@ For exponential Elgamal, prove: [g] [g^x] [g^a] [g^(xa)] for a and publicly gene
 
 
 
-=== LUT
+### === LUT
 
 Mix and Match
 
 
 
-=== n-AND
+### === n-AND
 
 Compute:
 
@@ -156,7 +152,7 @@ Cheaper than LUT for whole operation (order n instead of 2^n)
 
 
 
-=== n-OR
+### === n-OR
 
 Compute:
 
@@ -184,7 +180,7 @@ Cheaper than LUT for whole operation (order n instead of 2^n). If you are ready 
 
 
 
-=== XOR
+### === XOR
 
 2PC
 
@@ -212,7 +208,7 @@ xy	y’	xy’	y-xy’
 
 
 
-=== NAND/XOR/2 Gate
+### === NAND/XOR/2 Gate
 
 Danezis, Fournet, Groth, Kohlweiss
 
@@ -238,7 +234,7 @@ If zero, use other [ci] as output
 
 
 
-=== NAND
+### === NAND
 
 2PC
 
@@ -267,7 +263,7 @@ Cases:
 
 
 
-=== SELECT
+### === SELECT
 
 Trustees
 
@@ -281,7 +277,7 @@ Also: can do with add-homomorphic with nested encryptions: explore more
 
 
 
-=== SELECT CONDITIONAL
+### === SELECT CONDITIONAL
 
 Toft
 
@@ -293,7 +289,7 @@ If b=0, C is A. If b=1, C is B.
 
 
 
-=== SELECT CONDITIONAL 
+### === SELECT CONDITIONAL 
 
 Chou & Orlandi
 
@@ -307,7 +303,7 @@ Alice encrypts m1 under k1=B^a and m2 under k2=(B/A)^a
 
 
 
-=== ZERO SHARING
+### === ZERO SHARING
 
 Hao, Ryan, Zielinski
 
@@ -331,13 +327,13 @@ Zero shares are used to blind messages (that are not otherwise encrypted) and wi
 
 ============
 
-TESTS
+# TESTS
 
 ============
 
 
 
-=== MEMBERSHIP
+### === MEMBERSHIP
 
 Trustees
 
@@ -357,7 +353,7 @@ To show x is {0,1}, normal BGN suffices, otherwise you’ll need somewhat-homomo
 
 
 
-=== EQUALITY / INEQUALITY
+### === EQUALITY / INEQUALITY
 
 Trustees
 
@@ -373,7 +369,7 @@ Return true upon d=0; otherwise false
 
 
 
-=== RANGE
+### === RANGE
 
 Adapted for the Trustees
 
@@ -411,7 +407,7 @@ From Peng, Boyd, Dawson, Okamoto
 
 
 
-=== PARITY
+### === PARITY
 
 Given [x], return 0 if odd and 1 if even
 
@@ -431,7 +427,7 @@ OPEN ?? (Useful -> could do binary decomposition under encryption)
 
 
 
-=== COMPARISON
+### === COMPARISON
 
 Given [x] and [y], return: [-1] if x<y, [0] if x=y, and [1] if x>y
 
@@ -443,7 +439,7 @@ Requires binary representation so [x] and [y], and uses MULT (CONDITIONAL)
 
 
 
-=== COMPARISON
+### === COMPARISON
 
 Given [x] and [y], return: true if x<y
 
@@ -459,13 +455,13 @@ The value b does not perfectly blind x-y but can be shown to be good enough
 
 ============
 
-PROOFS
+## PROOFS
 
 ============
 
 
 
-=== Membership Proof
+### === Membership Proof
 
 Interactive
 
@@ -483,7 +479,7 @@ Upon tails, Alice chooses value of x from list (say x=d) and computes: [x]-[d]=0
 
 
 
-=== Equality Proof
+### === Equality Proof
 
 Interactive
 
@@ -501,7 +497,7 @@ Prover decrypts and determines a
 
 
 
-=== Range Proof
+### === Range Proof
 
 Non-interactive
 
@@ -521,7 +517,7 @@ Compute: [x] = [x1]+[x2]2+[x3]4+[x4]8…+…[xd]2^(d-1)
 
 
 
-=== Range Proof
+### === Range Proof
 
 Non-interactive
 
@@ -551,7 +547,7 @@ x is [x1]+[x2]2+[x3]3+[x4]6+[x5]13+[x6]26
 
 
 
-=== Range Proof
+### === Range Proof
 
 Non-interactive
 
@@ -577,7 +573,7 @@ Trick: Decrypt [z] requires knowing the private key in Zn^3 given that you know 
 
 
 
-=== Range Proof
+### === Range Proof
 
 Interactive
 
@@ -599,7 +595,7 @@ Upon tails, Alice computes x’=[x+a] and x’’=[x+b], decrypts, and shows the
 
 
 
-=== Polynomial Commitments
+### === Polynomial Commitments
 
 Setup: random s, compute g, g^s, g^(s^2), g^(s^3), …, destroy s
 
@@ -627,7 +623,7 @@ P(s)=?Pw(s)(s-w)+P(w)
 
 
 
-=== Inequality via Non-Zero Proof
+### === Inequality via Non-Zero Proof
 
 Brands
 
@@ -651,7 +647,7 @@ b*g^chal =? comm^d1 * h^d2
 
 
 
-=== Inequality via Non-Zero Proof
+### === Inequality via Non-Zero Proof
 
 Prove [[a]] is not commitment to b
 
@@ -667,7 +663,7 @@ Prove < g, [[d]], [[d^-1]], g> is a DDH-tuple
 
 
 
-=== Inequality Proof
+### === Inequality Proof
 
 Given [[x]] and [[y]], prove x!=y
 
@@ -685,7 +681,7 @@ Note: if x and y are equal, d=0 and no such e exists
 
 
 
-=== Inequality Proof
+### === Inequality Proof
 
 Interactive
 

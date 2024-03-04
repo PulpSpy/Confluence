@@ -237,7 +237,6 @@ Age
 * satoshin@gmx.com (birthdate: 5 April 1975) 
   * (Vice reports hacked in 2014: https://www.vice.com/en/article/jp5dk8/the-satoshi-nakamoto-email-hacker-says-hes-negotiating-with-the-bitcoin-founder https://bitcointalk.org/index.php?topic=775174.0)
 * satoshi@anonymousspeech.com
-* Satoshi on bitcointalk
 * s_nakamoto@users.sourceforge.net
 * nakamoto2@users.sourceforge.net
 * p2p foundation -> I am not Dorian Nakamoto ("Satoshi Nakamoto is now a member of P2P Foundation Feb 11, 2009")

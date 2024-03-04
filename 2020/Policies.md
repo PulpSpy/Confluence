@@ -1,7 +1,6 @@
 ## Policies
 
-- Policies are conflated with social engineering -> separate them out
-- Model checking -> insights?
+
 
 Are all policy failures unique and specific to the circumstances. Or are they variants on a few root causes?
 
@@ -14,10 +13,10 @@ Are all policy failures unique and specific to the circumstances. Or are they va
 | Grinding                     | @N and needing 2 digits = 100 phone calls                    |                        |
 |                              |                                                              |                        |
 |                              |                                                              |                        |
-|                              |                                                              |                        |
-|                              |                                                              |                        |
-|                              |                                                              |                        |
 | Name?                        | SWATing                                                      |                        |
 | Name?                        | Facebook and 2FA phone numbers                               |                        |
 | Name?                        | Apple AirTags and stalkerware                                |                        |
 | Name?                        | Apple neuralMatch                                            |                        |
+|                              |                                                              |                        |
+|                              |                                                              |                        |
+|                              |                                                              |                        |

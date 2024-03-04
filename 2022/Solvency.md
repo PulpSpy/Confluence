@@ -1,4 +1,4 @@
-**Proof of Solvency**
+# Proof of Solvency
 
 Things Provisions does not solve well:
 
