@@ -26,21 +26,25 @@ Against Satohsi's best wishes ("I wish you wouldn’t keep talking about me as a
 
 | Who Cares?       | Example                                                      |
 | ---------------- | ------------------------------------------------------------ |
-| Candidates       | D. Nakamoto was subjected to a "media frenzy" after being reported. H. Finney (then quadriplegic with late stage ALS) was extorted and when he did not pay, was swatted at home. |
+| Candidates       | D. Nakamoto was subjected to a "media frenzy" after being suggested. H. Finney (then quadriplegic with late stage ALS) was extorted and when he did not pay, was swatted at home.[^1] |
 | Friends & Family | Families of more than one candidate, in particular candidates who are no longer living, report unwelcome inquiries from Bitcoin enthusiasts. |
 | Investors        | A business deal between nCrypt and C. Wright was reported to be contingent on Wright being able to prove claim of being Satoshi. |
-| Retail Investors | Some users report investing savings in blockchain technologies associated with Satoshi candidates. |
+| Retail Investors | Some users report investing savings in blockchain technologies and tokens associated with Satoshi candidates. |
 | Experts          | Experts (e.g., G. Andresen & N. Courtois) have been retained to assess a candidate's claim to being Satoshi and to sever as expert witnesses in legal matters (e.g.,  S. Meiklejohn). |
 | Courts           | A six week trial gave legal consideration to ownership of Bitcoin's technology vis-a-vis whether a candidate is Satoshi; finding the candidate is overwhelmingly not, on balance of probabilities. |
 | Journalists      | L. McGrath Goodman reports threats of violence in retaliation for her article identify a Satoshi candidate. |
 
-Generally, academics have maintained an aversion to the subject of Satoshi's identity, chalking up endeavours to uncover it as gossip, speculation, and not in the realm of science. Our position is that the subject of Satoshi matters to enough people (see table above) that academics should not remain quiet. We do not affirm new attempts to de-anonymize Satoshi. Rather we believe those with relevant expertise can help establish rules of evidence and ensure that weak evidence is not left unquestioned.
+[^1]: Note that the extortion of H. Finney was motivated by Finney's large holdings of BTC, not specifically for being Satoshi Nakamoto; however like Finney, Nakamoto holds BTC of great value.
+
+Generally, academics have maintained an aversion to the subject of Satoshi's identity, chalking up endeavours to uncover it as gossip, speculation, and not in the realm of science. Our position is that the subject of Satoshi matters to enough people (see table above) that academics should no longer remain quiet. This article does not affirm new attempts to de-anonymize Satoshi. Rather we believe those with relevant expertise can help establish rules of evidence and ensure that weak evidence is not left unquestioned. 
+
+One main takeaway can be visualized as follows: image taking everyone on earth alive in 2008 and filtering out candidates based on every detail we know about Satoshi Nakamoto. How many people are left? One? A dozen? The facts known about Satoshi are scarce, sparse, and scant. You cannot do much better than being left with a small city, like Boise, Idaho, of candidates. In other words, in the absence of new evidence, it is not worth pursuing.
 
 ## A Preview of the Evidence
 
 Journalists (and others) seeking to identify Satoshi Nakamoto will argue about their candidate using a set of evidence (or a "fact pattern)". But the evidence needs to be part of a larger framework to establish if the facts are meaningful, sufficient, and complete. There is also the possibility of bias. Our goal is to outline (1) possible frameworks, (2) possible biases, and (3) possible evidence. A takeaway is that investigators should be more rigours in terms of (1), and guard better against (2), as most of the evidence (3) is not conclusive enough to be relied on alone.
 
-It is also important to distinguish between "doxing" and "vetting" investigations. In a doxing investigation, the investigator is finding and proposing a non-cooperative candidate that does not want to be identified as Satoshi. Such a candidate will not provide new evidence in favour of being Satoshi, but might offer new evidence to suggest they are not. In a vetting investigation, the candidate is claiming to be Satoshi and therefore is positioned to back up their claim with new evidence. A takeaway from our paper is that there is not enough known about Satoshi today to sufficiently dox him, without discovering new corroborating evidence. However there are types of evidence that can be created by Satoshi (such as issuing digital signatures) that would be close to sufficient in vetting his identity.
+Two types of investigations can be distinguish from each other: "doxing" and "vetting." In a doxing investigation, the investigator finds and proposes a new non-cooperative candidate that does not want to be identified as Satoshi. Such a candidate will not provide new evidence in favour of being Satoshi, but might offer new evidence to suggest they are not. In a vetting investigation, a candidate claims to be Satoshi and is positioned to back up their claim with new evidence. As mentioned, our hypothesis is that there is not enough known about Satoshi today to sufficiently dox him, without discovering new corroborating evidence. However there are types of evidence that can be created by Satoshi (such as issuing digital signatures) that would be close to sufficient in vetting his identity.
 
 | Potential Evidence               | Synapsis                                                     |
 | -------------------------------- | ------------------------------------------------------------ |
@@ -93,13 +97,13 @@ Satoshi's *motive* for creating Bitcoin is to try an approach not used in other 
 
 *Means* captures the ability to design and deploy Bitcoin, which requires technical skills like C++ app development, knowledge of cryptography, and the ability to use anonymity technology. As these skills are taken as evidence ("basic expertise" in the Table above), we will discuss these specifically later in the article.
 
-*Opportunity* creates limits on the *time* and *place* of candidates. For Bitcoin, time is an important consideration, while location is largely open as Satoshi interacted solely online with efforts at making tracing infeasible. The circumstantial evidence (in the Table above) does include some location-based facts which we will examine later. Time and place can also eliminate candidates (i.e., provide an alibi). For example, the McGrath-Goodman investigation ruled out Nick Szabo for having an incompatible timeline before centring on Dorian Nakamoto [tkcite]. Another candidate, Hal Finny, ran in an organized marathon with registration and finish-line photographs at the same time Satoshi Nakamoto was sending emails [tkcite].
+*Opportunity* creates limits on the *time* and *place* of candidates. For Bitcoin, time is an important consideration, while location is largely open as Satoshi interacted solely online with efforts at making tracing infeasible. The circumstantial evidence (in the Table above) does include some location-based facts which we will examine later. Time and place can also eliminate candidates (i.e., provide an alibi). For example, the McGrath-Goodman investigation ruled out Nick Szabo for having an incompatible timeline before centring on Dorian Nakamoto [MG20]. Another candidate, Hal Finny, ran in an organized marathon with registration and finish-line photographs at the same time Satoshi Nakamoto was sending emails [Lop23].
 
 ### Profiling
 
-On a recent podcast, L. McGrath Goodman defends the methodology used by her and Newsweek in identifying Dorian Nakamoto [tkcite]. The main basis she relied on is "profiling" which, like the MMO framework, was developed by law enforcement (pioneered by FBI agent John E. Douglas and popularized by TV shows Mindhunters and Criminal Minds). Investigators develop a psychological profile of the candidate that fits the evidence. For McGrath Goodman, this meant interviewing major Bitcoin developers (she notes it was early enough in Bitcoin history that they were easy to contact and willing to talk) and deducing Satoshi was someone secretive, reclusive, able to maintain confidentiality, and intelligent. When she found Dorian Nakamoto, she felt he matched the profile (his work was classified and his family stated he was secretive about his work). Ducrée [Duc22] also builds a psychological profile of Satoshi, which overlaps with McGrath Goodman, rooted in ingenuity, persistence, motivated by ideals, and confidentiality [tkcite]. Even if a profile is right, it is of limited use if it is not specific. Dorian Nakamoto is not the only person in the world to fit the profile. In both cases, these profiles are taken in combination with other forms of evidence (tables above).
+On a recent podcast, L. McGrath Goodman defends the methodology used by her and Newsweek in identifying Dorian Nakamoto [MG20]. The main basis she relied on is "profiling" which, like the MMO framework, was developed by law enforcement (pioneered by FBI agent John E. Douglas and popularized by TV shows Mindhunters and Criminal Minds). Investigators develop a psychological profile of the candidate that fits the evidence. For McGrath Goodman, this meant interviewing major Bitcoin developers (she notes it was early enough in Bitcoin history that they were easy to contact and willing to talk) and deducing Satoshi was someone secretive, reclusive, able to maintain confidentiality, and intelligent. When she found Dorian Nakamoto, she felt he matched the profile (his work was classified and his family stated he was secretive about his work). Ducrée [Duc22] also builds a psychological profile of Satoshi, which overlaps with McGrath Goodman, rooted in ingenuity, persistence, motivated by ideals, and confidentiality [MG20]. Even if a profile is right, it is of limited use if it is not specific. Dorian Nakamoto is not the only person in the world to fit the profile. In both cases, these profiles are taken in combination with other forms of evidence (tables above).
 
-In the case of a candidate that claims to be Satoshi, profiling can be used in two ways. As above, the Satoshi profile can be used to vet the candidate. However, since most people who are not Satoshi do not claim to be Satoshi (even if they happen match the profile or the evidence), candidates should also be vetted against a profile of anti-social behaviour and deception. E.G. Sirer writes in a blog post, "There’s a big difference between a case that has weak evidence and a case where the evidence contains forged elements. The latter requires a full explanation of the forger, their relationship to the story, and should put the entire story at risk. You can’t just look past that inexplicable problem and focus on the rest. The story changes the moment a piece of the evidence is forged. [tkcite]"
+In the case of a candidate that claims to be Satoshi, profiling can be used in two ways. As above, the Satoshi profile can be used to vet the candidate. However, since most people who are not Satoshi do not claim to be Satoshi (even if they happen match the profile or the evidence), candidates should also be vetted against a profile of anti-social behaviour and deception. E.G. Sirer writes in a blog post, "There’s a big difference between a case that has weak evidence and a case where the evidence contains forged elements. The latter requires a full explanation of the forger, their relationship to the story, and should put the entire story at risk. You can’t just look past that inexplicable problem and focus on the rest. The story changes the moment a piece of the evidence is forged. [Sir15]"
 
 ### Bayes Theorem
 
@@ -171,13 +175,19 @@ Investigations in Satoshi's identity can be subverted by subtle biases the inves
 
 ### Streetlight effect
 
-Consider the following parable, as quoted (via Wikipedia) from [tkcite]:
+Consider the following parable, as quoted (via Wikipedia) from [Fre10]:
 
 > A policeman sees a drunk man searching for something under a streetlight and asks what the drunk has lost. He says he lost his keys and they both look under the streetlight together. After a few minutes the policeman asks if he is sure he lost them here, and the drunk replies, no, and that he lost them in the park. The policeman asks why he is searching here, and the drunk replies, "this is where the light is."
 
-When looking for a Satoshi candidate, it is impossible to consider every human on earth. Therefore investigations might need to start with a shortlist of candidates. Examples include: "people named Satoshi Nakamoto" [Newsweek], "people who wrote about digital cash before Bitcoin" [New York Times], "people who used a particular phrase like 'computationally impractical to reverse' in text that is searchable online" [Fast Company], or "people who attended CRYPTO 2011" [The New Yorker]. Does the real Satoshi fit any or all of these criteria? Bayesian analysis would command us to think about the world of people left outside of this criteria and suggest that is more probably where Satoshi is.
+When looking for a Satoshi candidate, it is impossible to consider every human on earth. Therefore investigations often start with a shortlist of candidates based on some easy to apply criteria. Examples include: "people named Satoshi Nakamoto" [*Newsweek*], "people who talked about digital cash before Bitcoin in text that is searchable online" [*New York Times*], "people who used a particular phrase like 'computationally impractical to reverse' in text that is searchable online" [*Fast Company*], or "people who attended *CRYPTO* 2011" [*The New Yorker*]. Does the real Satoshi fit any or all of these criteria? Bayesian analysis would command us to think about the sheer number of people left out by this kind of selection criteria, and suggest that much larger crowd is where you would more likely find Satoshi. 
 
-* Contradicts 
+To illuminate, consider one of those examples. Joshua Davis writes in *The New Yorker*:
+
+> [Stuart] Haber [co-author of the linked time-stamping system cited in Bitcoin's whitepaper] noted that the community of cryptographers is very small: about three hundred people a year attend the most important conference, the annual gathering in Santa Barbara. In all likelihood, Nakamoto belonged to this insular world. If I wanted to find him, the Crypto 2011 conference would be the place to start.
+
+Satoshi may indeed have been at *CRYPTO* in 2011, but the field of cryptography is not as small as implied. *CRYPTO* is a niche academic event, specialized in highly technical documents with full formal proofs, usually leaning toward theoretical—basically everything the Bitcoin whitepaper is not. Attendance for 2011 is reported at 412 people. This alone is a small fraction of the 9148 authors who have published at least one paper through the IACR (the organization behind *CRYPTO*), including "eprints" that are not peer-reviewed. And the 9148 number omits all the people with cryptography experience who have never published a paper via IACR—students, developers, government employees, and hobbyists. For example, 21 of the 25 developers listed as important contributors to Bitcoin Core by the Bitcoin Wiki[^2] have never published via IACR. Assume for every 1 person with an IACR paper there are another 10 with a moderate level of competency in cryptography. Then *CRYPTO* 2011 was a mere 0.4% of the community of cryptographers. It is rather absurd for a reporter to go to there, circle the names of the only 9 participants based in/near the UK (based on Satoshi using a quote from the Times of London), eliminate those who dislike Bitcoin or do not know C++, and, *viola*, the one name left: Trinity College Dublin graduate student Michael Clear is Satoshi Nakamoto (Clear denies it, stating "even limited searches yield candidates who fit the profile far better than I think I do." [Cle13]).
+
+An additional challenge with the streetlight effect is Satoshi's anonymity. Candidates find themselves in the "streetlight" by putting their names on their ideas and accomplishments. Why would the same person who put their name on bit gold or Mixmaster or Hashcash, but not want to put their name on Bitcoin? 
 
 ### Cherry-picking and salience bias
 
@@ -363,13 +373,19 @@ Age
 
 [Cla16] J. Clark, "Preface — The Long Road to Bitcoin" from [NBFM16]
 
+[Cle13] M. Clear, "Clarifications on Joshua Davis' Article on Bitcoin in the New Yorker," updated 2013. Online: http://www.clearmp.one/clarif.html
+
 [Duc22] J. Ducrée, "Satoshi Nakamoto and the Origins of Bitcoin – The Profile of a 1-in-a-Billion Genius," 2022. Online: https://arxiv.org/pdf/2206.10257.pdf
 
-[Duc2X] 
+[Duc23] J. Ducrée, "Satoshi Nakamoto & the Origins of Bitcoin - The Greatest Mystery in the Entire History of Science & Technology," self-published, 2023.
+
+[Fre10]  D.H. Freedman, "Wrong: Why Experts Keep Failing Us," *Little, Brown and Company,* 2010.
 
 [Gao21] Z.M. Gao, "Mathematical proof that Dr. Craig S. Wright is Satoshi Nakamoto," 2021. Online: https://web.archive.org/web/20220206233842/https://zemgao.com/a-mathematical-proof-that-craig-s-wright-is-satoshi-nakamoto
 
 [Gwe09] Gwern, "Who Wrote The <em>Death Note</em> Script?," *gwern.net*, 2009. Online: https://gwern.net/death-note-script
+
+[Lop23] J. Lopp, "Hal Finney is not Satoshi," *blog.lopp.net*, 2023. Online: https://blog.lopp.net/hal-finney-was-not-satoshi-nakamoto/
 
 [MG20] L. McGrath Goodman (guest) and Anthony “*Pomp*” Pompliano (host), *The Pomp Podcast*, 2020. Online: https://podcasts.apple.com/ca/podcast/the-pomp-podcast/id1434060078
 
@@ -377,9 +393,11 @@ Age
 
 [Sau18] E. Saund, "Did Kavanaugh Do It?. Math Helps Us Decide," *Medium*, 2018. Online: https://medium.com/@saund/did-kavenaugh-do-it-9fb3e08bb2a3
 
-[Lop23] J. Lopp, "Hal Finney is not Satoshi," *blog.lopp.net*, 2023. Online: https://blog.lopp.net/hal-finney-was-not-satoshi-nakamoto/
+[Sir15] E.G. Sirer, "How to Spot Bitcoin Inventor Satoshi Nakamoto," *MIT Technology Review*, 2015.
 
 
+
+[^2]: Yes: P. Wuille, G. Maxwell, H. Finney, M. Hearn. No: G. Andresen, T. Blummer, M. Corallo, L. Dashjr, J. Garzik, A. Forz, M. Hendrix, M. Karpeles, M. Malmi, V. Marchenko, J. McCarthy, J. McCaleb, T. Mayer, P. McFarland, G. Rowe, P. Strateman, N. Schneider, A. Schildbach, A. Taaki, S. Thomas, P. Todd, W. J. van der Laan
 
 # Appendix (Rough Notes)
 
