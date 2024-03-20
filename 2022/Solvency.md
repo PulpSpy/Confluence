@@ -17,3 +17,6 @@ Things Provisions does not solve well:
 - Does offering incentives for checking work
   - Arguably no: users are already financially incentivized to check
   - Psychologically though, an explicit incentive rather than implicit one might work better
+- Two insolvent exchanges share assets through an encumbered key
+- Does not solve rug pull
+- In Merkle tree model, length of path (user check) leaks max size of tree 

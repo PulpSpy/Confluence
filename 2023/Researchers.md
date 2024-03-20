@@ -34,13 +34,13 @@
 
 | Comapny              | Description | People                                                       |
 | -------------------- | ----------- | ------------------------------------------------------------ |
-| a16z crypto research |             | Tim Roughgarden, Joseph Bonneau, Valeria Nikolaenko, Justin Thaler |
+| a16z crypto research |             | Tim Roughgarden, Joseph Bonneau, Valeria Nikolaenko, Justin Thaler, Pranav Garimidi, Scott Duke Kominers |
 | Aztec                |             | Ariel Gabizon, Zac Williamson                                |
 | Coinbase             |             | Yehuda Lindell                                               |
+| Espresso             |             | Ben Fisch, Benedikt Bunz, Jill Gunter                        |
 | Protocol Labs        |             | Marko Vukolić, Rosario Gennaro                               |
 | Starkware            |             | Eli Ben-Sasson, Oded Naor                                    |
 | Visa Research        |             | Panagiotis Chatzigiannis, Duc V. Le, Wanyun Catherine Gu     |
-|                      |             |                                                              |
 |                      |             |                                                              |
 |                      |             |                                                              |
 

@@ -4,7 +4,7 @@
 
 A subset membership proof takes a committed value $[[x]]$ and a publicly known set of values like $\langle 5,67,302,145,678 \rangle$ and demonstrates $x$ is one of these values without revealing which one.
 
-A range proof is a special case of a subset membership proof where the set is $\langle 0,1,2,3,\ldots,\mathsf{max} \rangle$ up to a maximum number $\mathsf{max}$. It however is generally not efficient and is linear in the size of the set.
+A range proof is a special case of a subset membership proof where the set is $\langle 0,1,2,3,\ldots,\mathsf{max} \rangle$ up to a maximum number $\mathsf{max}$. It however is generally linear in the size of the set.
 
 #### Bit Decomposition
 
@@ -20,7 +20,9 @@ To adjust the range from $[0,2^{d-1}]$ to the range $[\mathsf{min},\mathsf{max}]
 
 
 
-#### Subset Membership of {0,1}
+#### Subset Membership for $\langle 0,1 \rangle$
+
+Bit decomposition requires a subset membership for $\langle 0,1 \rangle$. 
 
 **Disjunction**
 
