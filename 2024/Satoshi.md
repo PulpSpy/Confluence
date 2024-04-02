@@ -211,7 +211,7 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 
 ### Unfalsifiable subterfuge [tk]
 
-
+The main issue with cherrypicking is what to be done. 
 
 It is commonly held that certain facts about Satoshi Nakamoto are fake, such as the name Satoshi Nakamoto or the birthdate provided by Satoshi when registering an online account. 
 

@@ -1,335 +1,424 @@
-# Gadgets 
+# Crypto Gadgets
 
-# MPC
+A collection of gadgets for computing and proving.
 
-### === MULT (MPC)
+# Two Party Computation (2PC)
 
-MPC
+Generally these protocols:
 
-Due to Cramer, Damgard, Neilson (CDN)
+* denote encryption/commitment/shares of $x$ as $\boxed{x}$​
+* assume addition (mod q) is free
+* are honest-but-curious only
+* follow the paradigm of: 
+  * Alice blinds the data
+  * Bob unblinds the data, does something with it, and reblinds it
+  * Alice does something with it and unblinds it
+  * If Alice sees what Bob sees, or vice-versa, privacy is broken.
 
-Given [x], [y], find [xy]
 
-Each party chooses [ri]
 
-Compute x’ = [x] + [r1] + [r2] +… and DECRYPT
+## NAND
 
-Each party broadcasts: [y]^(-ri)=[-y*ri]
+Represent every 0 as 01 and 1 as 10. Thus:
 
-Compute: [xy] = [y]^(x’)+[-y*r1]+[-y*r2]+…
+* $\mathsf{in}_l=\langle \mathsf{in}_{l,0},\mathsf{in}_{l,1} \rangle$
 
-Note: Committed scalar protocol below can prove each party does it correctly
+* $\mathsf{in}_r=\langle \mathsf{in}_{r,0},\mathsf{in}_{r,1} \rangle$​
 
-Note: Requires decryption of arbitrarily large ciphertexts
+Do the following:
 
+* Trustee 1: shuffle the bits within $\mathsf{in}_l$ and remember
+* Trustee 2: Open $\mathsf{in}_l$
+  * If $\langle0,1\rangle$, output $\langle0,1,\mathsf{in}_{r,0},\mathsf{in}_{r,1}\rangle$ to T1
+  * if $\langle1,0\rangle$, output $\langle\mathsf{in}_{r,0},\mathsf{in}_{r,1},0,1\rangle$ to T1
+* Trustee 1:
+  * If did not shuffle, output first two numbers
+  * If shuffled, output last two numbers
 
 
-### === MULT (Precomp)
+Full logic table:
 
-Trustees
+| in   | in   | shuffle | inter | out  |
+| ---- | ---- | ------- | ----- | ---- |
+| 0    | 0    | 0       | 0101  | 01   |
+| 0    | 1    | 0       | 0110  | 01   |
+| 1    | 0    | 0       | 0101  | 01   |
+| 1    | 1    | 0       | 1010  | 10   |
+| 0    | 0    | 1       | 0101  | 01   |
+| 0    | 1    | 1       | 1001  | 01   |
+| 1    | 0    | 1       | 0101  | 01   |
+| 1    | 1    | 1       | 0110  | 10   |
 
-Beaver’s Trick
 
-Given [x], [y], find [xy]
 
-Precompute (somehow) [a], [b], [ab] for random a,b
+## MULT
 
-Compute:
+This is due to Cramer, Damgard, Neilson (CDN). 
 
-x’ = [x]-[a] and DECRYPT
+Problem: compute $\boxed{x\cdot y}$  given $\boxed{x}$ and $\boxed{y}$
 
-y’ = [y]-[b] and DECRYPT
+* Alice chooses $r_a$ and sends $\boxed{r_a}$
+* Bob choose $r_b$ and sends $\boxed{r_b}$
+* Both compute $\boxed{\tilde{x}}=\boxed{x}+\boxed{r_a}+\boxed{r_b}$ and recover $\tilde{x}$​
+  * This requires recovery of $z$​ from an arbitrarily large message space
+  * Exponential Elgamal, BGN, Pedersen, and similar cannot be used
+  * Paillier and Shamir secret sharing can
+  * If encryption is used, decryption key is shared 2-out-of-2 between Alice and Bob
+* Alice computes and sends $\boxed{y_a}=r_a\cdot\boxed{y}$​
+* Bob computes and sends $\boxed{y_b}=r_b\cdot\boxed{y}$​
+* Both compute $\boxed{x\cdot y}=\tilde{x}\cdot\boxed{y}+\boxed{y_a}+\boxed{y_b}$​
+  * $\tilde{x}\cdot y-y_a-y_b=(x+r_a+r_b)\cdot y-r_ay - r_by=xy$
 
-[xy] 	= x’y’+ x’[b] + y’[a] + [ab]
+The protocol is honest-but-curious but can be made malicious with a ZKP that covers the construction of $y_a$ (and conversely $y_b$). This is the same as showing that $\langle\boxed{1},\boxed{y},r_a\cdot\boxed{1},r_a\cdot\boxed{y}\rangle$​ is a DDH tuple (but you are probably not in the DL setting).
 
-​	= [x-a][y-b]+[xb-ab]+[ya-ab]+[ab]
+## SELECT
 
-​	= [xy - xb - ya + ab + xb - ab + ya - ab + ab]
+Due to Chou & Orlandi
 
-​	= [xy]
+Specific to Elgamal style encryption and presented as oblivious transfer.
 
-Note: Requires decryption of arbitrarily large ciphertexts
+Problem: Alice has $x_0$ and $x_1$. Bob has bit $b$. Output to Bob is $x_b$.
 
+* Alice chooses $r_a$ and sends $y_a=g^{r_a}$
+* Bob chooses $r_b$ and sends $y_b={y_a}^b g^{r_b}=\begin{cases}g^{r_b} & b=0 \\ y_ag^{r_b} & b=1 \end{cases}$
+* Alice computes $k_0={y_b}^{r_a}$ and sends $c_0=\mathsf{Enc}_{k_0}(x_0)$​​
+* Alice computes $k_1=(\frac{y_b}{y_a})^{r_a}$ and sends $c_1=\mathsf{Enc}_{k_1}(x_1)$
+* Bob sets key to $k_b={y_a}^b=g^{r_ar_b}$ and decrypts $c_b$ 
 
+Remarks
 
-### === MULT (BGN-like lattice)
+* Honest but curious in terms of constructing the values correctly
+* In both cases, Bob gets an extra ciphertext encrypted with a junk key
+  * When $b=0$, $c_1$ is encrypted with $k=g^{r_a(r_b-r_a)}$​
+  * When $b=1$, $c_0$ is encrypted with $k=g^{r_a(r_b+r_a)}$​
+  * Computing $g^{{r_a}^2}$ from $g^{r_a}$ is computationally infeasible
 
-Trustees
 
-Original idea
 
-Uses BGN-like encryption with full decryption (no Elgamal, BGN)
+## Conditional
 
-Given [x], [y], find [xy]
+Due to Schoenmakers and Tuyls
 
-Coin toss [a] and [b]
+Problem: given $\boxed{x}$ and bit $\boxed{b}$, return $\boxed{c}=\begin{cases}\boxed{-x}&b=0\\\boxed{x}&b=1\end{cases}$​
 
-Compute [ab] with pairing
+Protocol
 
-Apply Beaver’s method above: only works if you can decrypt arbitrary ciphertexts
+* Map $\boxed{b}$ from $\{0,1\}$ to $\{-1,1\}$ : $\boxed{\hat{b}}=2\cdot\boxed{b}-1$​
 
+* Alice chooses $r_a\in\{-1,1\}$ and multiplies it into $\boxed{x}$ and $\boxed{\hat{b}}$
 
+* Bob chooses $r_b\in\{-1,1\}$ and multiplies it after Alice
 
-### === MULT (CONDITIONAL)
+* Result is $\boxed{x'}=r_a \cdot r_b \cdot \boxed{x}$ 
 
-Trustee
+* Result is  $\boxed{b'}=r_a \cdot r_b \cdot \boxed{\hat{b}}$
 
-Schoenmakers and Tuyls
+* Recover $b'$ from $\boxed{b'}$​ and assert $b'\in\{-1,1\}$​
 
-Given [x] and “bit” [b] from {-1,1}, return [x] if b=1; else [-x]
+* Compute $\boxed{c}=b' \cdot \boxed{x'}$
 
-Each party selects r from {-1,1} and successively blinds both [x] and [b]:
+  
 
-[x’]=[x*r1*r2*…]
+## XOR
 
-b’=[b*r1*r2*…] and DECRYPT
+Due to Schoenmakers and Tuyls
 
-Check that b’ is {-1,1}
+Problem: given bits $\boxed{x}$ and $\boxed{y}$, compute $\boxed{z}=\boxed{x\oplus y}$​​
 
-Compute [xb]=[x’]b’
+Protocol:
 
+* Run $\mathtt{Conditional}(\boxed{x},\boxed{y})$ to obtain $\boxed{c}=\begin{cases}\boxed{-x}&y=0\\\boxed{x}&y=1\end{cases}$
+* Compute $\boxed{z}=\boxed{y}-\boxed{c}$​ 
 
+Full Logic Table:
 
-### === MULT (BITWISE)
+| x    | y    | c    | y-c  |      |
+| ---- | ---- | ---- | ---- | ---- |
+| 0    | 0    | 0    | 0    |      |
+| 0    | 1    | 0    | 1    |      |
+| 1    | 0    | -1   | 1    |      |
+| 1    | 1    | 1    | 0    |      |
 
-Trustees
 
-Schoenmakers and Tuyls
 
-Given [x] in binary [x1],[x2],[x3],… and [y], find [xy]
+## MULT (Binary)
 
-Map [xi] from {0,1} to {-1,1} with [xi] = 2[xi] - 1
+Due to Schoenmakers and Tuyls
 
-Compute [x1][y], [x2][y], [x3][y], … using MULT (CONDITIONAL)
+Problem: compute $\boxed{x\cdot y}$  given $\boxed{x}$ and $\boxed{y}$ and binary decomposition of $\boxed{x}: \boxed{x_0},\boxed{x_1},\ldots$
 
-Map [xi*y] from {-y,y} to {0,y} with [xi*y] = ([xi*y] + [y])/2
+* Red tape: need decomposition of $x$ at start of protocol. You get $(x\cdot y)$ only as a whole integer at end of protocol. Thus you can only do this once.
 
-Compute [xy] = [x1*y] + [x2*y]2 + [x3*y]4 + …
+Protocol:
 
+* For each bit $\boxed{x_i}$, run $\mathtt{Conditional}(\boxed{y},\boxed{x_i})$ to obtain $\boxed{c_i}=\begin{cases}\boxed{-y}&x_i=0\\\boxed{y}&x_i=1\end{cases}$
+* Map $\boxed{c_i}$ from $\{-y,y\}$ to $\{0,y\}$ by computing $\boxed{\hat{c_i}}=(\boxed{c_i}+\boxed{y})/2$
+* Compute $\boxed{x\cdot y}=(2^0)\boxed{c_0}+(2^1)\boxed{c_1}+(2^2)\boxed{c_2}\ldots$
 
 
-### === COMMITTED SCALAR
 
-Given [x], compute [x]^a=[xa] and ReRand, proving a matches [a]
 
-Intuition: publishing [a] lets you prove properties about it
 
-For exponential Elgamal, prove: [g] [g^x] [g^a] [g^(xa)] for a and publicly generated [g]
+# Multiparty Computation (MPC) 
 
+Generally these protocols:
 
+* denote encryption/commitment/shares of $x$ as $\boxed{x}$​
+* assume addition (mod q) is free
+* are malicious or, more strongly, publicly verifiable
+  * malicious means misbehaviour is detectable by participants in the protocol given a transcript
+  * publicly verifiable means misbehaviour is detectable by anyone given a transcript
 
-### === LUT
 
-Mix and Match
 
+## NAND (LUT)
 
+This is due to Jakobsson and Juels (Mix and Match)
 
-### === n-AND
+Problem: given a lookup table (LUT) that implements function $f$, compute: $\mathsf{out}=f(\mathsf{in_l},\mathsf{in_r})$​
 
-Compute:
+* Illustrated with a NAND, but works for any lookup table (multiple inputs, multiple outputs), however efficiency is proportional to size of table.
 
-[b1]+[b2]+[b3]+…+[bn] = [b]
+Protocols
 
+* The trustees implement distributed/threshold encryption
+* Leader trustee starts with the lookup table in plaintext:
 
+| $\mathsf{In_l}$ | $\mathsf{In_r}$ | $\mathsf{Out}$ |
+| --------------- | --------------- | -------------- |
+| 0               | 0               | 1              |
+| 0               | 1               | 1              |
+| 1               | 0               | 1              |
+| 1               | 1               | 0              |
 
-LUT:
+* Each bit is encrypted and each trustee randomly shuffles the rows of the table (pre-computation, along with a Neff proof of shuffle)
+* This is repeated for each LUT needed (once a table is used once, it is discarded)
+* The final table might look as follows:
 
-[b]	Out
+| $\mathsf{In_l}$ | $\mathsf{In_r}$ | $\mathsf{Out}$ |
+| --------------- | --------------- | -------------- |
+| $[[1]]$         | $[[1]]$         | $[[0]]$        |
+| $[[0]]$         | $[[0]]$         | $[[1]]$        |
+| $[[1]]$         | $[[0]]$         | $[[1]]$        |
+| $[[0]]$         | $[[1]]$         | $[[1]]$        |
 
-[0]	[0]
+* When the trustees have two input values $\boxed{x}$ and $\boxed{y}$, they do a plaintext equality test (EQUAL under ZKTs below) between $\boxed{x}$ and each value in the first column of the shuffled lookup table. Then they take $\boxed{y}$ and do a plaintext equality with each value in the second column. For the row that evaluates true/true (second row in the example assuming $x=0$ and $y=0$), they output the encrypted value in the third column:
 
-[1]	[0]
+| $\mathsf{In_l}$ | $\mathsf{In_2}$ | $\mathsf{Out}$ |
+| --------------- | --------------- | -------------- |
+| False           | False           | $[[0]]$        |
+| True            | True            | $[[0]]$ ✅      |
+| False           | True            | $[[1]]$        |
+| True            | False           | $[[1]]$        |
 
-[2]	[0]
 
-…
 
-[n]	[1]
+## NAND (LUT+SSP)
 
+Adapted from Danezis, Fournet, Groth, Kohlweiss
 
+Works in the trustees model
 
-Cheaper than LUT for whole operation (order n instead of 2^n) 
+Illustrated for NAND gates but works for any binary gate with a change of equation.
 
+Square spanning program (SSP): $\omega=\mathsf{in}_l+\mathsf{in}_r+2\cdot\mathsf{out}-2$. If and only if $\omega=\{0,1\}$, then $\mathtt{NAND}(\mathsf{in}_l,\mathsf{in}_r)=\mathsf{out}$. For proof systems, $\omega=\{0,1\}$ is a witness that the NAND gate was computed correctly. For MPC systems, we can compute two candidates for $\mathsf{out}$ called $\lambda_0$ and $\lambda_1$ as below. The (only) one in $\{0,1\}$ is the correct value of $\mathsf{out}$.
 
+$\mathsf{out}=\frac{\{0,1\}+2-\mathsf{in}_l-\mathsf{in}_r}{2}$​
 
-### === n-OR
+$\lambda_0=\frac{2-\mathsf{in}_l-\mathsf{in}_r}{2}$​
 
-Compute:
+$\lambda_1=\frac{3-\mathsf{in}_l-\mathsf{in}_r}{2}$
 
-[b1]+[b2]+[b3]+…+[bn] = [b]
+Full logic table:
 
+| $\mathsf{in}_l$ | $\mathsf{in}_r$ | $\mathsf{out}$ | $\omega$ | $\lambda_0$   | $\lambda_1$   |
+| --------------- | --------------- | -------------- | -------- | ------------- | ------------- |
+| 0               | 0               | 1              | 0        | 1             | $\frac{3}{2}$ |
+| 0               | 1               | 1              | 1        | $\frac{1}{2}$ | 1             |
+| 1               | 0               | 1              | 1        | $\frac{1}{2}$ | 1             |
+| 1               | 1               | 0              | 0        | 0             | $\frac{1}{2}$ |
 
+A lookup table for NAND is 4 rows. A lookup table for $\lambda_0$ is 3 rows. The drawback is the LUT cannot be constructed until $\lambda_0$ and $\lambda_1$ are known values, as they are outputs in the table, ruling out pre-computation as is done in Mix and Match. Still, this is 3 PETS worst case, 1.5 PETS average case. 
 
-LUT:
+|   $\lambda_0$ | $\mathsf{out}$ |
+| ------------: | -------------: |
+|             0 |    $\lambda_0$ |
+| $\frac{1}{2}$ |    $\lambda_1$ |
+|             1 |    $\lambda_0$ |
 
-[b]	Out
+This drawback (no pre-computation of LUTs) can be sidestepped with the following protocol. Encrypt a helper pair of bits 0 and 1 and shuffle them during precomputation. Thus $\chi=\langle\chi_0,\chi_1\rangle=\langle0,1\rangle$ or $\langle1,0\rangle$. Compute $z=\mathsf{in}_l+\mathsf{in}_r-2\cdot\chi_0$​.
 
-[0]	[0]
+Full logic table:
 
-[1]	[1]
+| $\mathsf{in}_l$ | $\mathsf{in}_r$ | $\chi_0$ | $\chi_1$ | $z$  | $\mathsf{out}$ |
+| --------------- | --------------- | -------- | -------- | ---- | -------------- |
+| 0               | 0               | 0        | 1        | 0    | $\chi_0$       |
+| 0               | 1               | 0        | 1        | 1    | $\chi_0$       |
+| 1               | 0               | 0        | 1        | 1    | $\chi_0$       |
+| 1               | 1               | 0        | 1        | 2    | $\chi_1$       |
+| 0               | 0               | 1        | 0        | -2   | $\chi_1$       |
+| 0               | 1               | 1        | 0        | -1   | $\chi_1$       |
+| 1               | 0               | 1        | 0        | -1   | $\chi_1$       |
+| 1               | 1               | 1        | 0        | 0    | $\chi_0$       |
 
-[2]	[1]
+Create a NAND-SSP-LUT with just an input (no output) of 0 and 1. Compute $z$ and run through LUT. If it matches, output $\chi_0$. If it bounces out of the LUT without matching, output $\chi_1$. Note that this revealed bit (matches LUT or does not match LUT?) does not leak any information about inputs as each input combination matches exactly once and does not match exactly once. 
 
-…
+A NAND-LUT is 4 PETS worst case, 2 average case. NAND-SSP-LUT is 2 PETS worst case, 1.75 average case. 
 
-[n]	[1]
 
 
+## n-AND & n-OR (LUT)
 
-Cheaper than LUT for whole operation (order n instead of 2^n). If you are ready to reveal, you can just PET with [0] once and decide if the output should be [0] (PET->true) or [1] (PET->false)
+Problem: compute an AND or OR across $n$ values: $b_0,b_1,b_2,\ldots,b_n$
 
+* Compute $\boxed{b}=\boxed{b_0}+\boxed{b_1}+\boxed{b_2}+\ldots+\boxed{b_n}$​
+* Use LUT operation (see above) on the following n-AND table
 
+| Input: $\boxed{b}$ | Out (n-AND) |
+| ------------------ | ----------- |
+| $\boxed{0}$        | $\boxed{0}$ |
+| $\boxed{1}$        | $\boxed{0}$ |
+| $\boxed{2}$        | $\boxed{0}$ |
+| ...                | ...         |
+| $\boxed{n}$        | $\boxed{1}$ |
 
-### === XOR
+* Use LUT operation (see above) on the following n-OR table
 
-2PC
+| Input: $\boxed{b}$ | Out (n-OR)  |
+| ------------------ | ----------- |
+| $\boxed{0}$        | $\boxed{0}$ |
+| $\boxed{1}$        | $\boxed{1}$ |
+| $\boxed{2}$        | $\boxed{1}$ |
+| ...                | ...         |
+| $\boxed{n}$        | $\boxed{1}$ |
 
-Schoenmakers and Tuyls
+Operation is O(n) rather than doing n LUTs at O(2^n).
 
-Given [x] and [y], compute [x + y mod 2]=[x]+[y]-2[x][y] using any general MULT above or the following
+## MULT (CDN)
 
-Map [y] from {0,1} to {-1,1}: [y’]=2[y]-1
+The Cramer, Damgard, Neilson (CDN) protocol described above under 2PC can be extended to MPC.
 
-Run CONDITIONAL on [x] and [y’] to obtain [xy’]
 
-Compute xor [x+y mod 2]=[y]-[xy’]
 
+## MULT (Beaver)
 
+Problem: compute $\boxed{x\cdot y}$  given $\boxed{x}$ and $\boxed{y}$
 
-xy	y’	xy’	y-xy’
+Pre-computation step:
 
-00 	-1	0	0
+* Somehow choose a random $a$ and $b$
+* Compute $\langle\boxed{a},\boxed{b},\boxed{ab}\rangle$
+  * This called a multiplication triple or Beaver triple
+  * Generally expensive and might resort to FHE circuits
 
-01	1	0	1
+Multiplication step
 
-10	-1	-1	1
+* Consume $\langle\boxed{a},\boxed{b},\boxed{ab}\rangle$
+  * Can only be used for one multiplication and then discarded
+* Compute $\boxed{\tilde{x}}=\boxed{x}-\boxed{a}$ and $\boxed{\tilde{y}}=\boxed{y}-\boxed{b}$​
+* Recover $\tilde{x}$ and $\tilde{y}$
+  * This requires recovery from an arbitrarily large message space
+  * Exponential Elgamal, BGN, Pedersen, and similar cannot be used
+  * Paillier and Shamir secret sharing can
+  * If encryption is used, decryption key is shared 2-out-of-2 between Alice and Bob
+* Compute $\boxed{xy}=\tilde{x}\cdot\tilde{y}+\tilde{x}\cdot\boxed{b}+\tilde{y}\cdot\boxed{a}+\boxed{ab}$​
+  * $\tilde{x}\tilde{y}+\tilde{x}b+\tilde{y}a+ab=(x-a)(y-b)+(x-a)b+(y-b)a+ab=xy-ya-xb+ab+xb+-ab+ya-ab+ab=xy$
 
-11	1	1	0
 
 
+## MULT (BGN-esque)
 
-### === NAND/XOR/2 Gate
+Problem: compute $\boxed{x\cdot y}$  given $\boxed{x}$ and $\boxed{y}$
 
-Danezis, Fournet, Groth, Kohlweiss
+Assume encryption allows arbitrary additions and one multiplication (like BGN), however assume also that you can decrypt arbitrarily large messages (unlike BGN). Assume distributed/threshold key generation and decryption. One candidate might be "A Simple BGN-type Cryptosystem from LWE."
 
-Trustees
+Non-solution:
 
-BGN encryption
+* Use the multiplication operation to compute $\boxed{xy}$
+  * This can only be done once, we would like to do it for arbitrary multiplications
 
-Given [a] and [b]
+Protocol:
 
-Shuffle [c=0] and [c=1]
+* Coin toss a random ciphertext $\boxed{a}$
+* Coin toss a random ciphertext $\boxed{b}$
+* Use the multiplication operation to compute $\boxed{ab}$
+* Generate $\boxed{1}$ and use multiplication to compute: $\langle\boxed{x\cdot 1},\boxed{y\cdot 1},\boxed{a\cdot 1},\boxed{b\cdot 1}\rangle$​ 
+  * This maps all the values in to the post-multiplication group (which is often different than pre-multiplication)
+  * We will abuse notation and continue to call the outputs $\boxed{x},\boxed{y},\boxed{a},\boxed{b}$​
+* Compute $\boxed{\tilde{x}}=\boxed{x}-\boxed{a}$ and $\boxed{\tilde{y}}=\boxed{y}-\boxed{b}$​
+* Recover $\tilde{x}$ and $\tilde{y}$​
+  * This requires recovery from an arbitrarily large message space
+* Compute $\boxed{xy}=\tilde{x}\cdot\tilde{y}+\tilde{x}\cdot\boxed{b}+\tilde{y}\cdot\boxed{a}+\boxed{ab}$
 
-For NAND, compute square span program with first [ci]
 
-[z] = [a]+[b]-2[ci]
 
-Compute [z]([z]-1), blind, and decrypt
+## SELECT
 
-Alternatively, for Elgamal, do a PET with 0 and a PET with 1
+**Protocol 1:** Due to Toft
 
-If non-zero (not a match), use [ci] as output
+Problem: Provided with a pair of ciphertexts $\boxed{x_0},\boxed{x_1}$ and a selector bit $\boxed{b}\in\{\boxed{0},\boxed{1}\}$, output $\boxed{x_b}$
 
-If zero, use other [ci] as output
+* $\boxed{x_b}=\boxed{x_0}-\boxed{b}\cdot\boxed{x_0}+\boxed{b}\cdot\boxed{x_1}$
+  * Requires a MULT operation (see above)
 
 
 
-### === NAND
+**Protocol 2:** due to Jacobsson & Juels
 
-2PC
+Do a LUT operation (see above) for the following lookup table:
 
-Represent 0 as [0][1] and 1 as [1][0]
+| Input: $\boxed{b}$ | Output        |
+| ------------------ | ------------- |
+| $\boxed{0}$        | $\boxed{x_0}$ |
+| $\boxed{1}$        | $\boxed{x_1}$ |
 
-Given [a][a] and [b][b]
 
-T1: Shuffle [a][a]
 
-T2: Open aa
+## ZERO Sharing
 
-T2: If aa=0: output [0][1][b][b]
+Due to Hao, Ryan, Zielinski and improves upon Kiayais and Yung
 
-T2: If aa=1: output [b][b][0][1]
+Problem: a set of $n$ people generate a set of shares $g^{x_i}$ such that $\Sigma x_i = 0$
 
-T1: If shuffled, take [0][1] otherwise [b][b]: Result is AND
+Protocol
 
-T1&2: Swap cards: NOT
+* Each party posts $X_i=g^{x_i}$
+* Each party computes $Z_i=X_0X_1 \ldots X_{n-2}^{-1}X_{n-1}^{-1}=g^{z_i}=g^{x_0}g^{x_1}g^{x_2}\ldots g^{-x_{n-2}}g^{-x_{n-1}}$
+  * The positive values are the people in front of you
+  * The negative values are the people behind you
+  * You do not include your own exponent (yet)
+  * You do not actually learn $z_i$ , it just for notation
+* Each party computes their final share as: $Z_i^{x_i}=g^{x_i \cdot z_i}$​
 
-Cases:
+Logic table for four parties:
 
-- a=0, shuffle=0: [1][0]
-- a=0, shuffle=1: [1][0]
-- a=1, shuffle=0: [b][b]
-- a=1, shuffle=1: [b][b]
+| Party | Initial   | w/ Alice     | w/ Bob        | w/ Carol      | w/ David      | Final          |
+| ----- | --------- | ------------ | ------------- | ------------- | ------------- | -------------- |
+| Alice | $g^{x_0}$ | –            | $g^{-x_0x_1}$ | $g^{-x_0x_2}$ | $g^{-x_0x_3}$ | Product of Row |
+| Bob   | $g^{x_1}$ | $g^{x_0x_1}$ | –             | $g^{-x_1x_2}$ | $g^{-x_1x_3}$ | Product of Row |
+| Carol | $g^{x_2}$ | $g^{x_0x_2}$ | $g^{x_1x_2}$  | –             | $g^{-x_2x_3}$ | Product of Row |
+| David | $g^{x_3}$ | $g^{x_0x_3}$ | $g^{x_1x_3}$  | $g^{x_2x_3}$  | –             | Product of Row |
 
 
 
-### === SELECT
+# Zero-Knowledge Test (ZKTs)
 
-Trustees
+Zero knowledge tests are essentially a 2PC or MPC but they are for checking a small thing about the encrypted data, and the check is usually that the input is one of a few values. 
 
-Adida and Wikstrom
+## EQUAL
 
-Given [x] and bit [b], return [x] if b=1; else [0]
+Due to Jakobsson and Juels
 
-Compute (with BGN or any MULT mechanism above): [x]*[b]
+Problem: given $\boxed{x}$ and $\boxed{y}$, determine if and only if $x=y$ 
 
-Also: can do with add-homomorphic with nested encryptions: explore more
+Protocol:
 
-
-
-### === SELECT CONDITIONAL
-
-Toft
-
-C <- {A,B} | b
-
-If b=0, C is A. If b=1, C is B.
-
-[C]=[A]+[b]([B]-[A])
-
-
-
-### === SELECT CONDITIONAL 
-
-Chou & Orlandi
-
-1-of-2 obvious transfer
-
-Alice sends A=g^a and receives B=g^b when bit is 0 and B=A*g^b when bit is 1
-
-Alice encrypts m1 under k1=B^a and m2 under k2=(B/A)^a
-
-
-
-
-
-### === ZERO SHARING
-
-Hao, Ryan, Zielinski
-
-Improves Kiayais and Yung
-
-A set of people generate shares that sum to 0 (or multiply to 1)
-
-Round one: each party posts g^x and PoK(x) in a queue
-
-Round two: each party computes share=(g^z)^x=g^xz
-
-g^z = (g^x)(g^x)(g^x)…(g^-x)(g^-x)(g^-x)
-
-Where the original terms are the people in front of you and the inverted terms are the people after you
-
-The product of all g^xz terms is 1 (i.e., g^0)
-
-Zero shares are used to blind messages (that are not otherwise encrypted) and will cancel out if the messages are summed (in the exponent)
-
-
-
-============
-
-# TESTS
-
-============
+* Mix and Match introduces a sub-protocol called a "plaintext equality test" (PET) that allows trustees, for an $m$-out-of-$n$ threshold encryption scheme that is additively homomorphic, to determine if two ciphertexts encrypt the same value or not (and learn nothing beyond that). 
+* Since there is no "prover" who knows the answer, this is a zero-knowledge test (as opposed to zero-knowledge proof). 
+* The scheme is fairly simple: the trustees subtract the values homomorphically resulting in either an encryption of 0 (plaintexts are equal) or an encryption of a non-zero integer (plaintexts are not equal). 
+* Since decrypting the non-zero integer would leak some partial information about the original plaintexts (the difference between them), each trustee then homomorphically blinds the value by selecting a random (non-zero) integer and multiplying it into the encrypted value (as a plaintext value). 
+* Note that an encryption of 0 will remain 0 after this operation, while an encryption of a non-zero integer will get mapped to a random integer. 
+* Once each trustees has acted and proved (with a zero-knowledge proof) they followed the protocol, the result is decrypted. If the result is 0, the original ciphertexts encrypt the same value, otherwise they do not. 
 
 
 
@@ -453,11 +542,11 @@ The value b does not perfectly blind x-y but can be shown to be good enough
 
 
 
-============
 
-## PROOFS
 
-============
+# ZK Proofs
+
+
 
 
 
