@@ -403,22 +403,39 @@ Logic table for four parties:
 
 # Zero-Knowledge Test (ZKTs)
 
-Zero knowledge tests are essentially a 2PC or MPC but they are for checking a small thing about the encrypted data, and the check is usually that the input is one of a few values. 
+Zero knowledge tests are technically a special case of a 2PC or MPC. A 2PC/MPC usually is about computing an output from a set of inputs. A ZKT is about determining a fact about an input without learning it fully or computing with it. The fact is usually a conditional (it is or is not equal to another value; it is or is not from a certain range; etc.). 
+
+* Unlike a zero-knowledge proof, the person who encrypted/committed/shared the input value is no longer around to prove the fact that everyone is interested in learning. 
+
+* Typically the trustees performing the test have the power to fully recover the value, they choose to recover the fact about the value instead of the value.
+
+* This is enforced with an honest majority (non-collusion) assumption on the trustees
+
+  
 
 ## EQUAL
 
 Due to Jakobsson and Juels
 
-Problem: given $\boxed{x}$ and $\boxed{y}$, determine if and only if $x=y$ 
+Trustee model with additively homomorphic encryption and distributed/threshold key generation and decryption
+
+Problem: given $\boxed{x}$ and $\boxed{y}$, determine if (and only if) $x=y$ 
 
 Protocol:
 
-* Mix and Match introduces a sub-protocol called a "plaintext equality test" (PET) that allows trustees, for an $m$-out-of-$n$ threshold encryption scheme that is additively homomorphic, to determine if two ciphertexts encrypt the same value or not (and learn nothing beyond that). 
-* Since there is no "prover" who knows the answer, this is a zero-knowledge test (as opposed to zero-knowledge proof). 
-* The scheme is fairly simple: the trustees subtract the values homomorphically resulting in either an encryption of 0 (plaintexts are equal) or an encryption of a non-zero integer (plaintexts are not equal). 
-* Since decrypting the non-zero integer would leak some partial information about the original plaintexts (the difference between them), each trustee then homomorphically blinds the value by selecting a random (non-zero) integer and multiplying it into the encrypted value (as a plaintext value). 
-* Note that an encryption of 0 will remain 0 after this operation, while an encryption of a non-zero integer will get mapped to a random integer. 
-* Once each trustees has acted and proved (with a zero-knowledge proof) they followed the protocol, the result is decrypted. If the result is 0, the original ciphertexts encrypt the same value, otherwise they do not. 
+* Compute $\boxed{\delta}=\boxed{x}-\boxed{y}$
+  * Note $\delta=0$ iff $x=y$; otherwise $\delta$ is the difference
+  * Recovering $\delta$ would reveal the difference between $x$ and $y$ even if they are different
+* Each trustee choose random $r_i$ and computes $\boxed{\hat{\delta_i}}=r_i\cdot\boxed{\hat{\delta}_{i-1}}$​
+  * Initial value $\boxed{\hat{\delta}_{-1}}=\boxed{\delta}$
+
+* Trustees recover $\hat{\delta}_n$ from final value $\boxed{\hat{\delta}_n}$​
+  * It is ok if the trustees cannot fully recover $\hat{\delta}_n$ as long as they can determine if it is 0 or not 0 (i.e., protocol works with exponential Elgamal, BGN, etc. which will let you recover $g^{\hat{\delta}_n}$)
+
+* If $\hat{\delta}_n=0$, the original values are equal: $x=y$; else, they are different.
+  * As long as one trustee maintains secrecy over $r_i$, the difference between $x$ and $y$, in the case they are not equal to start with, is maintained.
+  * Each step of the protocol can be covered with a simple $\Sigma$​-protocol to provide public verifiability against a malicious trustee.
+
 
 
 
@@ -442,19 +459,7 @@ To show x is {0,1}, normal BGN suffices, otherwise you’ll need somewhat-homomo
 
 
 
-### === EQUALITY / INEQUALITY
 
-Trustees
-
-From Jacobson and Juels
-
-Do [x] and [y] encrypt the same thing?
-
-Compute [d]=[x]-[y]
-
-Blind d’=[d]b and DECRYPT
-
-Return true upon d=0; otherwise false
 
 
 
@@ -516,27 +521,41 @@ OPEN ?? (Useful -> could do binary decomposition under encryption)
 
 
 
-### === COMPARISON
+### === COMPARISON 1
 
-Given [x] and [y], return: [-1] if x<y, [0] if x=y, and [1] if x>y
+Due to Schoenmakers and Tuyls
 
-Can be simplified to binary cases (e.g., x>y or x=y)
-
-From Schoenmakers and Tuyls
+Problem: Given [x] and [y], return: [-1] if x<y, [0] if x=y, and [1] if x>y
 
 Requires binary representation so [x] and [y], and uses MULT (CONDITIONAL)
 
+To add
 
 
-### === COMPARISON
 
-Given [x] and [y], return: true if x<y
+## COMPARISON (Statistical)
 
-Compute [x-y] and blind with bounded b: b[x-y]
+Due to ???
 
-Decrypt and determine if b(x-y) is negative or positive
+Problem: Given $\boxed{x}$ and $\boxed{y}$, determine if $x>y$ or $x=y$ or $x<y$
 
-The value b does not perfectly blind x-y but can be shown to be good enough
+* This differs from $\mathtt{COMPARISON1}$​ in that the result is returned in plaintext and not ciphertext (making it simpler)
+* Compare this to $\mathtt{EQUAL}$ above for some omitted details
+
+Protocol:
+
+* Compute $\boxed{\delta}=\boxed{x}-\boxed{y}$
+* Each trustee choose a **small** random $r_i$ and computes $\boxed{\hat{\delta_i}}=r_i\cdot\boxed{\hat{\delta}_{i-1}}$​
+  * Initial value $\boxed{\hat{\delta}_{-1}}=\boxed{\delta}$​
+  * $r_i$ is chosen such that the multiplication of each $r_i$ with $\delta$ will never exceed $q$ (group size) and trigger a modular reduction
+* Trustees recover $\hat{\delta}_n$ from final value $\boxed{\hat{\delta}_n}$​
+  * If $\hat{\delta}_n=0$ then  $x=y$
+  * If $\hat{\delta}_n<0$ then  $x<y$​
+  * Else $\hat{\delta}_n>0$ then  $x>y$
+
+Remarks: 
+
+* This is only statistically hiding (of the difference between $x$ and $y$) and has a lot of red tape around parameterizing the values (maximum size of $x$ and $y$ and $r$'s).
 
 
 
