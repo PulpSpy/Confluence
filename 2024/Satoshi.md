@@ -1,8 +1,8 @@
 # Who is Satoshi Nakamoto?
 
-###### Early draft by Jeremy Clark (Concordia University)
+**Early draft by Jeremy Clark (Concordia University)**
 
-###### Open to collaboration
+**Open to collaboration**
 
 ------
 
@@ -22,7 +22,7 @@ The cryptocurrency Bitcoin was created by an individual, or collection of indivi
 
 Against Satohsi's best wishes ("I wish you wouldn’t keep talking about me as a mysterious shadowy figure, the press just turns that into a pirate currency angle"), the media has been captivated by the question of who Satoshi really is. Many guesses, with varying degrees of journalistic evidence, have been made in print by reputable journalists working for the *New York Times*, *Newsweek*, *The New Yorker*, *Wired*, *Forbes*, *Fast Company*, and others. A few notable examples are provided in the Table above, along with primary basis (beyond basic demographics and technical expertise) for their conclusion. Each type of evidence will be examined later in this article.
 
-### Why should we care?
+## Why should we care?
 
 Generally, academics have maintained an aversion to the subject of Satoshi's identity, chalking up endeavours to uncover it as gossip, speculation, and not in the realm of science. Our position is that the subject of Satoshi matters to enough people (see table below) that academics should no longer remain quiet. This article does not affirm new attempts to de-anonymize Satoshi. Rather we believe those with relevant expertise can help establish rules of evidence and ensure that weak evidence is not left unquestioned. 
 
@@ -381,7 +381,7 @@ For vetting someone claiming to be Satoshi, the production of early unknown comm
 
 
 
-# Discussion and conclusions
+## Discussion and conclusions
 
 * When you find someone from Portland...
 * 
@@ -392,7 +392,7 @@ For vetting someone claiming to be Satoshi, the production of early unknown comm
 
 
 
-# References 
+## References 
 
 [Cla16] J. Clark, "Preface — The Long Road to Bitcoin" from [NBFM16]
 
@@ -432,7 +432,7 @@ For vetting someone claiming to be Satoshi, the production of early unknown comm
 
 
 
-# Footnotes
+## Footnotes
 
 [^1]: Note that the extortion of H. Finney was motivated by Finney's large holdings of BTC, not specifically for being Satoshi Nakamoto; however like Finney, Nakamoto holds BTC of great value.
 
@@ -440,9 +440,9 @@ For vetting someone claiming to be Satoshi, the production of early unknown comm
 
 
 
-# Appendix (Rough Notes)
+## Appendix (Rough Notes)
 
-##### Timeline
+### Timeline
 
 | Date        | Event                                                        |
 | ----------- | ------------------------------------------------------------ |

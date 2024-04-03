@@ -306,14 +306,14 @@ Problem: compute $\boxed{x\cdot y}$  given $\boxed{x}$ and $\boxed{y}$
 
 Pre-computation step:
 
-* Somehow choose a random $a$ and $b$
-* Compute $\langle\boxed{a},\boxed{b},\boxed{ab}\rangle$
+* Somehow choose a random $a$ and $b$ and compute $\langle\boxed{a},\boxed{b},\boxed{ab}\rangle$
   * This called a multiplication triple or Beaver triple
   * Generally expensive and might resort to FHE circuits
+  * Pre-computation step and can be done before knowing $\boxed{x}$ or $\boxed{y}$ which is why it is not used to directly multiply $\boxed{x\cdot y}$ (once you have this step done, computing $\boxed{x\cdot y}$ can be done with only decryption/addition/scalar multiplication)
 
 Multiplication step
 
-* Consume $\langle\boxed{a},\boxed{b},\boxed{ab}\rangle$
+* Consumes one triple $\langle\boxed{a},\boxed{b},\boxed{ab}\rangle$
   * Can only be used for one multiplication and then discarded
 * Compute $\boxed{\tilde{x}}=\boxed{x}-\boxed{a}$ and $\boxed{\tilde{y}}=\boxed{y}-\boxed{b}$​
 * Recover $\tilde{x}$ and $\tilde{y}$
@@ -439,89 +439,7 @@ Protocol:
 
 
 
-### === MEMBERSHIP
-
-Trustees
-
-Generalization of BGN paper
-
-Given [x], want to show x is in {a,b,c,d,…} without revealing x
-
-Compute polynomial with roots equal to members
-
-[p]=([x]-a)([x]-b)([x]-c)…
-
-Decrypt p and see if it is 0
-
-The number of multiplications you can do is equivalent to the size of the set
-
-To show x is {0,1}, normal BGN suffices, otherwise you’ll need somewhat-homomorphic encryption
-
-
-
-
-
-
-
-### === RANGE
-
-Adapted for the Trustees
-
-Given [x], is x in [0,3r]?
-
-Let r be prime and (p-1)=a*r
-
-Compute shares [si] such that [s1+…+st]=[x]
-
-Give one share to each trustee (proxy-reencryption) to decrypt
-
-Each trustee decrypts [si] and asserts [si] and [ui] = [si mod r]
-
-Above requires a proof, probably possible by showing some [fi] such that [ui]*[fi]=[si] and doing some range proofs on [u] and [fi]???
-
-Perform 5 PETS
-
-[u1+…+ut] =? [x]
-
-[u1+…+ut] =? [x+q]
-
-[u1+…+ut] =? [x+(p mod q)]
-
-[u1+…+ut] =? [x+a]
-
-[u1+…+ut] =? [x+(p mod q)+q]
-
-Shuffle PET output before final decryption
-
-In Range: One PET is true
-
-Out of Range: All PETs are false (knowing which one leaks info about x)
-
-From Peng, Boyd, Dawson, Okamoto
-
-
-
-### === PARITY
-
-Given [x], return 0 if odd and 1 if even
-
-OPEN ?? (Useful -> could do range tests:
-
-2[x]:	Even		x: {0,q}
-
-​	Odd		x: {q,p}
-
-4[x]:	Even		x: {0,q/2} or {q,3q/4}
-
-​	Odd		x: {q/2,q} or {3q/4,q}
-
-Given [x], return [0] if odd and [1] if even
-
-OPEN ?? (Useful -> could do binary decomposition under encryption)
-
-
-
-### === COMPARISON 1
+## COMPARISON (tk)
 
 Due to Schoenmakers and Tuyls
 
@@ -529,7 +447,9 @@ Problem: Given [x] and [y], return: [-1] if x<y, [0] if x=y, and [1] if x>y
 
 Requires binary representation so [x] and [y], and uses MULT (CONDITIONAL)
 
-To add
+Protocol:
+
+* To add
 
 
 
@@ -555,77 +475,140 @@ Protocol:
 
 Remarks: 
 
-* This is only statistically hiding (of the difference between $x$ and $y$) and has a lot of red tape around parameterizing the values (maximum size of $x$ and $y$ and $r$'s).
+* This is only statistically hiding (of the difference between $x$ and $y$) and has a lot of red tape around parameterizing the values (maximum size of $x$ and $y$ and $r$​'s).
 
+  
 
+## MEMBERSHIP
 
+Due to Boneh, Goh, Nissam
 
+Problem: given $\boxed{x}$, determine if $x \in \{\mathsf{val}_0, \mathsf{val}_1, \mathsf{val}_2, \ldots\}$ for a set of values
+
+Protocol
+
+* Compute $\boxed{z}=(\boxed{x}-\mathsf{val}_0)\cdot(\boxed{x}-\mathsf{val}_1)\cdot(\boxed{x}-\mathsf{val}_2)\ldots$​​
+  * Requires $\mathtt{MULT}$ to compute
+  * Specifically it requires n-1 $\mathtt{MULT}$ operations for n values in the set
+  * For 1 value, no multiplication and reduces to $\mathtt{EQUAL}$​ above
+  * For 2 values, one multiplication is required and BGN can be used
+  * For 3+ values, many multiplications are required and fully homomorphic encryption or MPC is required
+* Recover $z$ from $\boxed{z}$
+* If $z=0$, then $x \in \{\mathsf{val}_0, \mathsf{val}_1, \mathsf{val}_2, \ldots\}$; otherwise it is not.
+  * It is ok if the trustees cannot fully recover $z$ as long as they can determine if it is 0 or not 0 (i.e., protocol works with exponential Elgamal, BGN, etc. which will let you recover $g^z$​​; of course, these might not work as you also need to do multiplications as above.)
+  * Important: if $x$ is not in set of values, $z$ will leak partial information about $x$. For protocols where $x$ may or may not be in the set, insert a round of blinding (see $\mathtt{EQUAL}$ above for how) to prevent this. For protocols where $x$ must be in the set and this ZKT is enforcing honesty, it probably does not hurt to leak information about badly constructed $x$ values.
 
 
 
 # ZK Proofs
 
+There are **uncommon** proofs of small things that are not direct applications of $\Sigma$​-protocols or zk-SNARKs. Many are based around cut-and-choose (CNC) protocols. 
 
 
 
+## MEMBERSHIP (CNC)
 
-### === Membership Proof
+Problem: given $\boxed{x}$, prove that $x \in \{\mathsf{val}_0, \mathsf{val}_1, \mathsf{val}_2, \ldots\}$​ for a set of values
 
-Interactive
+**Protocol 1:**
 
-Benaloh’s capsule
+* Use a $\Sigma$​-protocol
 
-Given [x], want to show x is in {a,b,c,d,…} without revealing x
+**Protocol 2:**
 
-Alice permutes {[d],[b],[a],…}
-
-Bob flips coin
-
-Upon heads, Alice shows permutation is well-formed
-
-Upon tails, Alice chooses value of x from list (say x=d) and computes: [x]-[d]=0 and decrypts to show it is zero
-
-
-
-### === Equality Proof
-
-Interactive
-
-Cut-and-Choose
-
-Requires homomorphic encryption
-
-Prover sends [[x]] and [[y]]
-
-Verifier picks one at random ([[z]]=[[x]] or [[z]]=[[y]]) and multiplies in a: [[z]]^a = [[z*a]] 
-
-Prover decrypts and determines a 
-
-(If x!=y, Prover finds two possible a values and must guess with 1/2 probability)
+* Due to Benaloh
+* Prover: encrypt and shuffle the list of values: $V=\{\boxed{\mathsf{val}_2}, \boxed{\mathsf{val}_n},\ldots , \boxed{\mathsf{val}_3}\}$​ and send it to verifier
+* Verifier: flip a coin
+* Prover: if heads, open all values in $V$ to show it is properly constructed
+* Prover: if tails, compute $\boxed{\delta}= \boxed{x}-\boxed{\mathsf{val}_j}$ for the value in $V$ that matches $x$ and recover $\delta$
+* Verifer: check that $\delta=0$
+  * Alternative: do a ZK proof of shuffle, send the index of the matching item, and send $\delta$ with a ZK proof of decryption
 
 
 
-### === Range Proof
+## EQUAL (CNC)
 
-Non-interactive
+Problem: given $\boxed{x_0}$ and $\boxed{x_1}$, prove that $x_0=x_1$.
 
-Number has n-d leading zeros
+**Protocol 1:**
 
-Due to Mao (Chaum et al?)
+* Use a $\Sigma$​-protocol
 
-Is [x] less than 2^d ?
+**Protocol 2:**
 
-Requires binary encryption of x: [x1],[x2],[x3],…[xd]
-
-Show there are no more than d [xi’s]
-
-Prove [xi] is 0 or 1 for each [x1]
-
-Compute: [x] = [x1]+[x2]2+[x3]4+[x4]8…+…[xd]2^(d-1)
+* Prover sends $\boxed{x_0}$ and $\boxed{x_1}$ to verifier
+* Verifier flips a coin $b=\{0,1\}$ and picks a random number $r$
+* Verifier computes $\boxed{z}=r*\boxed{x_b}$  and sends $\boxed{z}$
+* Prover recovers $z$ and replies with $r$
+  * If messages are not the same, it gets two possible values for $r$ ($r_0=z/x_0$ and $r_1=z/x_1$​ ) and must guess which is correct
 
 
 
-### === Range Proof
+## RANGE (Binary) 
+
+This approach addresses the inefficiency of a subset membership proof by performing a smaller subset membership multiple times. The smallest (non-trival) subset membership proof is between two values, such as $\langle 0,1\rangle$. The idea here is provide a "bit decomposition" of $[[x]]$ which means convert $x$ into a binary form and give individual commitments to each bit $\langle [[b_0]], [[b_1]], [[b_2]], \ldots \rangle$. To use this as a range proof, the value of $\mathsf{max}$ is taken to be (near) a perfect power of two, $2^{d}$-1, and we prove $x$ is between $0$ and $2^{d}-1$ (If $\mathsf{max}$​ needs to be something more specific, we can accommodate that but set that detail aside for now).
+
+The proofs consists of three ideas:
+
+1) If only $d$ bits are given, the number cannot be larger than $2^{d}-1$. Since anyone can count the number of commitments, anyone can know there are only $d$ commitments.
+2) If $d$ commitments are given, we need to verify they are actually bits and not commitments to larger numbers. For this, we can do $d$ subset membership proofs between $[[b_i]]$ and $\langle 0,1 \rangle$. Notice that the set is size $2^d$ but we are getting a proof for with only $d$ (as opposed to $2^d$) cases (this is sometimes called divide-and-conquer).
+3) To issue a range proof for $[[x]]$ (the entire number), we have to show that $\langle [[b_0]], [[b_1]], [[b_2]], \ldots \rangle$ is the proper bit decomposition of $x$. Anyone can check this, starting with the committed bits and building them back into $[[x]]$, if the commitment scheme is additively homomorphic: $[[x]]=\sum_{i=0}^{d-1} [[b_i]]*2^i$  where the values of $2^i$ are publicly known (i.e., they are just the powers of two: $1, 2, 4, 8,16 \ldots$).
+
+To adjust the range from $[0,2^{d-1}]$ to the range $[\mathsf{min},\mathsf{max}]$​ for any values, one can tk
+
+### MEMBERSHIP for $\langle 0,1 \rangle$
+
+Bit decomposition requires a subset membership for $\langle 0,1 \rangle$. 
+
+**Disjunction**
+
+* Prove x=0 or x=1 using an "or" or "disjunctive" proof
+* Possible with $\Sigma$-protocols
+
+**Inner Product**
+
+* Choose y
+  - If x=0, set y=1
+  - If x=1, set y=0
+* Produce [[y]]
+* Prove [[x]]*[[y]] = 0
+* Prove [[x]]+[[y]] = 1
+* Theorem is [[x]] is any value other than 0 or 1, there is no single value of y that satisfies both equations simultaneously
+
+**Multiplication**
+
+* Compute $[[z]]=([[x]]-0)\cdot([[x]]-1)$​ 
+* Open $[[z]]$ which will be 0 when $x=0$ or when $x=1$, and will not be 0 for any other value. 
+
+**Polynomials**
+
+* Compute Z() = P()(1-P()) and show it is vanishing polynomial on domain
+
+
+
+## RANGE (Sum of squares)
+
+- 4 squares theorem
+
+  - Every zero/positive integer can be written as the sum of 4 squares
+  - Find {x1, x2, x3, x4} such that x = x1^2 + x2^2 + x3^2 + x4^2
+  - xi can be 0
+
+- Prove [[x]] is between [a,b]
+
+  - Generate [[x-a]] and show this is non-negative (just [[x]] for a=0)
+
+  - Generate [[b-x]] and show this is non-negative when b is a natural integer (Z) rather than a modular amount. 
+
+  - Requires a special commitment scheme that shows [[x]] is a commitment over the integers Z and not just Zp
+
+    - RSA setting typically but some complex later works might work
+
+    - Patch with cross-group commitments???
+
+      
+
+## RANGE (Cards)
 
 Non-interactive
 
@@ -655,152 +638,27 @@ x is [x1]+[x2]2+[x3]3+[x4]6+[x5]13+[x6]26
 
 
 
-### === Range Proof
+## INEQUAL
 
-Non-interactive
+Problem: given $\boxed{a}$ and $\boxed{b}$, show they do not encrypt the same value.
 
-Paillier Setting
+Protocol:
 
-Adapted from Szepieniec & Preneel
+* Compute $\boxed{\delta}=\boxed{a}-\boxed{b}$​ 
+* Compute $\delta^{-1}$ and send $\boxed{\delta^{-1}}$​
+  * If $a=b$ then $\delta=0$ and $\delta^{-1}$ does not exist
+* Prove $\langle g, \boxed{\delta}, \boxed{\delta^{-1}}, g \rangle$ is a DDH-tuple with a $\Sigma$​-protocol like Chaum-Pedersen
 
-Define Lift(c) as embedding ciphertext c from Zn^2 to Zn^3
 
-Given Enc(a) and range R
 
-Compute: [delta]=R-[a]
+## INEQUAL (CNC)
 
-Compute: [z]=(Lift[R]-Lift([a]) - Lift([delta))
+Problem: given $\boxed{x_0}$ and $\boxed{x_1}$, show they do not encrypt the same value.
 
-Decrypt [z]
+Protocol:
 
-If z=0, a<R
-
-Otherwise z will be some multiple of n and a>R
-
-Trick: Decrypt [z] requires knowing the private key in Zn^3 given that you know the private key in Zn^2; requires some algebraic group structure
-
-
-
-### === Range Proof
-
-Interactive
-
-Brickell/Chaum/Damgard/Van de Graaf
-
-Adpated from Boudot (note error in Boudot concerning ranges leads to ambiguity, think following is correct)
-
-Given [x], show [x] is in range {0,100}
-
-Alice choses random [a] from {0,100} and computes [b] = 1-a
-
-Bob flips coin
-
-Upon heads, Alice shows [a] and [b] are well-formed
-
-Upon tails, Alice computes x’=[x+a] and x’’=[x+b], decrypts, and shows they are in {-100,200}
-
-
-
-
-
-### === Polynomial Commitments
-
-Setup: random s, compute g, g^s, g^(s^2), g^(s^3), …, destroy s
-
-Polynomial: P() = c0 + c1*x + c2*x^2 + c3*x^3 +…
-
-Commit to P() == Commit to P(s): g^P(s) = [(g)^c0] * [(g^s)^c1] * [(g^(s^2))^c2] + …
-
-To open at point w, commit to P(w): Compute a new polynomial Pw() = P() - P(w) / (x-w)
-
-Note that Pw(s)*(x-w) + P(w) = P(s) 
-
-Then commit to Pw() by committing to Pw(s) and produce {w,z=P(w),Pw(s)} as proof
-
-Verify {w,z} by computing: e(g^P(s),g) =? e(g^Pw(s), (g^s)/(g^w)) * e(g,g)^z
-
-e(g,g)^P(s) =? e(g^Pw(s), g^(s-w)) * e(g,g)^z
-
-e(g,g)^P(s) =? e(g,g)^Pw(s)(s-w) * e(g,g)^z
-
-e(g,g)^P(s) =? e(g,g)^(Pw(s)(s-w)+P(w))
-
-P(s)=?Pw(s)(s-w)+P(w)
-
-
-
-
-
-### === Inequality via Non-Zero Proof
-
-Brands
-
-Given com=g^m*h^r=Commit[m,r], prove that m is not zero
-
-Note that m=0 is simple by proving knowledge of r such that h^r=c (since g disappears)
-
-Choose random r and t, compute b=(c)^r * h^-t
-
-Compute chal = H(c1)
-
-Compute d1 = s + chal * m^(-1) 
-
-Compute d2 = t + chal * m^(-1) * r
-
-Output {b, chal, d1, d2}
-
-Verify b =? comm^d1 * (g^(-chal) * h^(d2))
-
-b*g^chal =? comm^d1 * h^d2
-
-
-
-### === Inequality via Non-Zero Proof
-
-Prove [[a]] is not commitment to b
-
-Compute [[a-b]] = [[d]]
-
-Problem is now: prove [[d]] not a commitment to 0
-
-Compute d^-1 and show [[d^-1]] as a witness
-
-If d=0, there is no inverse
-
-Prove < g, [[d]], [[d^-1]], g> is a DDH-tuple 
-
-
-
-### === Inequality Proof
-
-Given [[x]] and [[y]], prove x!=y
-
-Publicly compute [[d]] = [[y]]*[[-x]] = [[y-x]]
-
-Privately compute e such that ed=1 (mod q)
-
-Compute [[ed]] = [[d]]^e and prove knowledge of e
-
-Example: [[1]], [[d]], [[1]]^e, [[d]]^e is a DH tuple
-
-Prove [[ed]] = [[1]]
-
-Note: if x and y are equal, d=0 and no such e exists
-
-
-
-### === Inequality Proof
-
-Interactive
-
-Cut-and-Choose
-
-Requires re-randomizable encryption
-
-Prover sends [[x]] and [[y]]
-
-Verifier picks one at random, rerandomizes it and sends back
-
-Prover decrypts and asserts whether it matches [[x]] or [[y]]
-
-(If x==y, Prover must guess with 1/2 probability)
+* Verifier flips a coin $b=\{0,1\}$ and rerandomizes $\boxed{x_b}$​ 
+* Verifier sends $\boxed{x_b}$
+* Prover recovers $x_b$ and matches it to either $x_0$ or $x_1$
+* Prover asserts value of $b$
+  * If they are equal, prover does not know which and guesses (50% probability of being right)
