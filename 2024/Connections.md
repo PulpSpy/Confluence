@@ -2,7 +2,7 @@
 
 https://www.nytimes.com/games/connections
 
-Connections is a puzzle game offered by the New York Times alongside Wordle and crosswords. It shows a grid of 16 words and challenges you to pick out the set of 4 words that have some connection to each other. You do this 4 times and you are done. Although not well-explained, the connections are rated from easy to hard, which is denoted with a colour scheme that is revealed when you find a matching set of 4 words: yellow (easiest), green (easy), blue (hard), purple (hardest). 
+Connections is a puzzle game offered by the _New York Times_ alongside Wordle and crosswords. It shows a grid of 16 words and challenges you to pick out the set of 4 words that have some connection to each other. You do this 4 times and you are done. Although not well-explained, the connections are rated from easy to hard, which is denoted with a colour scheme that is revealed when you find a matching set of 4 words: yellow (easiest), green (easy), blue (hard), purple (hardest). 
 
 A key feature of Connections  is that once you've found 3 of the 4 sets of words, the 4 remaining, unused words must be the last set. This means you do not have to identify all 4 sets, you can win by only finding 3 of the 4. This is similar to a crossword where you might not know a word, but if you solve all (or most) of the "cross" words, you can still guess the word you do not know.
 
@@ -10,7 +10,7 @@ Connections allows only 4 wrong guesses. However if a wrong guess includes 3 of 
 
 ## Cheatsheet
 
-Now that hundreds of puzzles have been released, we can look at the patterns used and determine that most sets fall into a few categories. Knowing this is not enough to solve the puzzle, but it gives you a list that you can work through when looking for connections.
+Now that hundreds of puzzles have been released, we can see that certain patterns are commonly used. Most sets fall into one of a few categories. Knowing this is not enough to solve the puzzle, but it gives you a list that you can work through when looking for connections.
 
 | Pattern                              | Example                                                |
 | ------------------------------------ | ------------------------------------------------------ |
@@ -107,9 +107,9 @@ The category I find the hardest are when the four words **share a common propert
 
 ## Other Hints
 
-Here are some other hints when playing Connections. Everyone gets the same starting order which sometimes contain an easy to see spurious connection. Be wary of the opening grid. If there is an "obvious" connection, often they work hard to place each word in a different set, so sometimes this can be useful to know.
+Here are some other hints when playing Connections. Everyone gets the same starting order which sometimes contain an easy to see **spurious connection**. Be wary of the opening grid. If there is an "obvious" connection, often they work hard to place each word in a different set, so sometimes this can be useful to know.
 
-Probably most frustrating than not seeing a connection is when you have 5 words with the same connection, and you don't know which should be left out. In this case, start by looking for a subtle difference. For example, at a sports game, you might encounter all of these: astroturf, kisscam, jumbotron, scoreboard, skybox. But the "kisscam" is a gag or concept, not an actual "thing" you can see, so it is the one word that is not in the set.
+Probably most frustrating, more than not seeing a connection even, is when you have **5 words** with the same connection, and you don't know which should be left out. In this case, start by looking for a subtle difference. For example, at a sports game, you might encounter all of these: astroturf, kisscam, jumbotron, scoreboard, skybox. But the "kisscam" is a gag or concept, not an actual "thing" you can see, so it is the one word that is not in the set.
 
 Other times, all five words belong without any difference. In this case, I feel you should be able to solve the puzzle from the easiest set (yellow) to hardest set (purple), and the extra word will get used up before you have to decide which 4 of the 5 words is the Connection. Unfortunately, the authors of Connections do always see things the way that I do.
 
