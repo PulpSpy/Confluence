@@ -12,27 +12,17 @@ Connections allows only 4 wrong guesses. However if a wrong guess includes 3 of 
 
 Now that hundreds of puzzles have been released, we can look at the patterns used and determine that most sets fall into a few categories. Knowing this is not enough to solve the puzzle, but it gives you a list that you can work through when looking for connections.
 
-| Pattern                              | Example                                                |
-| ------------------------------------ | ------------------------------------------------------ |
-| Mean the same thing                  | fall, slip, spill, trip                                |
-| Types of the same thing              | bowtie, elbow, tube, wheel (pasta shapes)              |
-| ____ Word                            | blue, computer, poker, potato (____ chip)              |
-| Pop culture reference                | ball, prince, pumpkin, slipper (cinderella)            |
-| First letters mean something         | army, colony, livery, shiny (body parts + y)           |
-| Words are first letters of something | mass, kent, wash, mary (start of state names)          |
-| Palidrones                           | bib, eye, gag, pop                                     |
-| Homophones for something             | are, queue, sea, why (homophones for alphabet letters) |
-| Share a common property              | mood, record, table, volleyball (things you can "set") |
-|                                      |                                                        |
-|                                      |                                                        |
-|                                      |                                                        |
-|                                      |                                                        |
-|                                      |                                                        |
-|                                      |                                                        |
-|                                      |                                                        |
-|                                      |                                                        |
-|                                      |                                                        |
-|                                      |                                                        |
+| Pattern                              | Set                             | Explaination                    |
+| ------------------------------------ | ------------------------------- | ------------------------------- |
+| Mean the same thing                  | fall, slip, spill, trip         | Synonyms                        |
+| Types of the same thing              | bowtie, elbow, tube, wheel      | Pasta shapes                    |
+| ____ Word                            | blue, computer, poker, potato   | ____ chip                       |
+| Pop culture reference                | ball, prince, pumpkin, slipper  | Cinderella                      |
+| First letters mean something         | army, colony, livery, shiny     | Body part + y                   |
+| Words are first letters of something | mass, kent, wash, mary          | Start of State names            |
+| Palidrones                           | bib, eye, gag, pop              | Same spelt backward             |
+| Homophones for something             | are, queue, sea, why            | Homophones for alphabet letters |
+| Share a common property              | mood, record, table, volleyball | Things you can "set"            |
 
 ---
 
