@@ -11,7 +11,7 @@ Things Provisions does not solve well:
 - PoA requires a hot wallet, can we cert chain to an ephemeral key?
   - Risky for lending assets between insolvent exchanges
 - Exchange profiles users who check and who do not
-  - Offer PoL checks as ciphertexts, users fetch via (trivial or no trivial) PIR
+  - Offer PoL checks as ciphertexts, users fetch via (trivial or no trivial) PIR + encryption
   - Third party host
 - Augment with complete knowledge to prevent encumbering keys to share them?
 - Does offering incentives for checking work
@@ -20,4 +20,5 @@ Things Provisions does not solve well:
 - Two insolvent exchanges share assets through an encumbered key
 - Does not solve rug pull
 - In Merkle tree model, length of path (user check) leaks max size of tree -> sparse trees
-- 
+- Assets can be used as collateral for a loan or other things that will not show up in the PoL -> PoA does not prove asset is unencumbered off-chain or on-chain (e.g., staked in a way that can be slashed)
+
