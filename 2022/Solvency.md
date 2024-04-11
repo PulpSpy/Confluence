@@ -19,4 +19,5 @@ Things Provisions does not solve well:
   - Psychologically though, an explicit incentive rather than implicit one might work better
 - Two insolvent exchanges share assets through an encumbered key
 - Does not solve rug pull
-- In Merkle tree model, length of path (user check) leaks max size of tree 
+- In Merkle tree model, length of path (user check) leaks max size of tree -> sparse trees
+- 
