@@ -85,13 +85,15 @@ Or homophones (words that are **pronounced the same as another word**):
 
 ---
 
-The category I find the hardest are when the four words **share a common property**:
+The category I find the **hardest** are when the four words **share a common property**:
 
 * corset, diabolo, hourglass, wasp (things cinched in the middle)
 
 * atm, casino, schedule, spatula (things with slots)
 
 * mood, record, table, volleyball (things you can set)
+
+* ancestry, broth, cattle, merchandise (what "stock" might mean)
 
 ---
 

@@ -1,6 +1,20 @@
-# Craig Wright Legal Actions
+# Code is Law?
+
+| Defendant                | Nature                                                       | Jurisdiction  | Outcome                                                      |
+| ------------------------ | ------------------------------------------------------------ | ------------- | ------------------------------------------------------------ |
+| John Kane                | Exploited bug in Game King video lottery machines around Las Vegas (2009) | United States | Kane filed motion to dismiss on main charges, which was granted by judge. All other charges eventually dropped. |
+| Andean (Andy) Medjedovic | Exploited Indexed Finance DeFi protocol for $16M (2021)      | Canada        | Fugitive from arrest warrant                                 |
+| Avi Eisenberg            | Exploited Mango DeFi protocol, $115M (2022)                  | United States | Convicted by jury of fraud and market manipulation           |
+|                          |                                                              |               |                                                              |
+|                          |                                                              |               |                                                              |
+|                          |                                                              |               |                                                              |
+|                          |                                                              |               |                                                              |
+|                          |                                                              |               |                                                              |
+|                          |                                                              |               |                                                              |
 
 
+
+# Craig Wright
 
 | Plaintiff                      | Defendant                   | Nature                                                       | Jurisdiction   | Outcome                                      |
 | ------------------------------ | --------------------------- | ------------------------------------------------------------ | -------------- | -------------------------------------------- |

@@ -87,3 +87,17 @@ Materials:
 * Check in with me and I'll explain copy constraints in more detail
 * Checkpoint: draft a Plonk explainer: written and/or video 
 
+
+
+## Advanced Primitives
+
+* Proof carrying data (PCD) is a generalization of incremental verifiable computation (IVC). Sometimes known as recursive SNARKs.
+  * $\mathsf{state}_i=f(x_i,\mathsf{state}_{i-1})$ and proof $\pi_i$ that $f$ is correctly applied and $\pi_{i-1}$ is correct
+  * Example: Halo, Halo2, Halo Infinite
+  * Use-case: constant size blockchain (Mina)
+  * Red tape: 
+* Folding schemes
+  * Assume a subcomponent of your circuit is repeated across your circuit in $n$ different places. Is there some optimization you can do? There are some repeated elements: the selectors are the same, the wiring is the same. The difference is the values on the wires.
+  * Visually, a folding scheme stacks the circuit components on top of each other, and for each stack of wires, it merges them to a single value using a mathematical formula. Putting these merged values through the circuit should result in an output matching the merger of the output wires. So essentially you prove all $n$ subcomponents at once.
+  * From an efficiency perspective, this can reduce prover effort from $n$ to 1 for the subcomponent, however they also have to prove the merge (folding) was done correctly. This will be $n$ for each wire and so over-all, it does not save. However if the folding can be done as pre-computation, then it is worth doing to save time later.
+  * Example: Nova 
