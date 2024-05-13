@@ -153,33 +153,40 @@ Materials:
       * You don't know $y$
   
         * $rock+y*randa=paper+y*randb$ has two unknowns (y, randb)
-  
         * Binding!
-  
         * I give you (rock,randa,paper, randb) -> both produce the same commitment
-  
           * Solve for $y$
-  
           * If I can break binding of a Pedersen commitment, I can can computer discrete log between $g$ and $h$
-  
           * Black box -> Pedersen breaking box -> g,h -> m1,r1,m2,r2 -> DL breaking box
-  
           * $a$ and $b$
-  
             * DL(a,b)?
-  
             * $c1=a^{r1} b^{r2}$
-  
             * $c2=a^{r2} b^{r3}$​
-  
             * Root(q) complexity
-  
             * Double the bitlength of q -> x (NIST: 128)
   
-              
+      * Opening
   
+        * ca=g^rock (g^y)^randa 
+        * Alice: ca, rock, randa
+        * Bob: recomputes commitment
   
-          
+      * Multi-commitment (vector commitment)
+  
+        * $c=\mathsf{Comm}(m_0,m_1,m_2)=g_0^{m_0} g_1^{m_1} g_2^{m_2} h^{r}$
+        * $c$ is constant-size -> "succinct"
+        * "Proof"
+          * Prover time
+          * Verifier time <- sub-linear (fast) 
+          * Proof size <- succinct (short)
+  
+        * Sigma protocols -> O(n) size, O(n) verifier
+        * Bulletproofs -> O(1) size, O(log n)
+        * Polynomials (Poly-IOP) -> O(1) size, O(1) verifier time, prover time O(n*log n), "universal trusted setup"
+  
+        
+  
+        
   
   
     
