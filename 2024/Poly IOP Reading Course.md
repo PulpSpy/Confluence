@@ -57,7 +57,146 @@ It is important to learn at least one number theoretic setting where you can do 
 Materials:
 
 * Week 7 of my crypto course: https://www.pulpspy.com/courses/crypto/index.html
+* Write Mathematica code to generate a table for all Zp:
+  * Addition table
+  * Multiplication table
+  * Exponentiation table
+    * g^(a mod q)^b=g^(ab)
+    * g^(w^(x+y mod ord(a)))
+
+  * Identify important structures: multiplicative subgroups, quadratic residues
+  * Exponent groups: what is the order?
+
 * Check in with me to go over
+* Modify Mathematica code for Gq instead of Zp
+
+
+
+## Commitment Functions
+
+* Lectures 00-12 of my blockchain course: https://www.pulpspy.com/courses/blockchain/index.html
+
+* Hash-based commitments
+  * Are they hiding?
+  * Are they binding?
+  * Merkle trees
+  * m0, m1, m2, m3
+  * H(m0, m1, m2, m3)
+  * y0=H(m0)
+  * y1=H(m0, m1)
+  * y2=H(m0, m1, m2)
+  * y3=H(m0, m1, m2, m3)
+  * y0=H(m0)
+  * y1=H(y0, m1)
+  * y2=H(y1, m2)
+  * y3=H(y2, m3)
+  * H(m0),H(m1), H(m2), H(m3)
+  
+* Coin tossing
+  
+  * Commitments
+  
+    * Alice->Bob: ca=H(Rock||randa) 
+    * Bob->Alice: cb=H(Paper||randb)
+    * ===
+    * Alice->Bob: Open(Rock,ca=?H(Rock||Randa))
+    * Bob->Alice: Open(Paper,Randb,cb=?H(Paper||Randb))
+    * Hiding -> Works -> Pre-image resistance -> red tape 
+    * Binding -> Works -> (Weak) collision resistance 
+  
+  * Feldman commitments
+  
+    * Alice->Bob: g, ca=g^(Rock)  (g in Gq and m in Zq)
+    * Bob->Alice: g, cb=g^(Paper)
+    * Hiding -> not hiding when exhaustive search of the message space is possible
+    * Biding -> PERFECT 
+    * Extra features -> additively homomorphic com(x)*com(y)=com(x+y)
+    * Fix hiding
+    * ca=g^(Rock+Randa) 
+      * Biding -> no!
+      * Paper+???=Rock+randa -> ???=Rock+randa-paper
+  
+  * Pedersen commitments
+  
+    * Hint: we two generators g,h in Gq
+  
+    * ca=(g^rock)*(h^randa)
+  
+      * $g^y=h$
+  
+    * Hiding
+  
+      * As hiding as Feldman but is it better?
+      * randa is 1:1 with h^randa
+      * ca=g^rock*h^randa is 1:1 with randa
+      * Perfect!
+        * Theorem: a commitment scheme can be perfectly binding or perfectly hiding but not both
+        * Crypto scale: Perfect, statistical, computational 
+        * Everlasting privacy, unconditionally private
+  
+    * Binding
+  
+      * Concern
+  
+      * ca=g^rock (g^y)^randa
+  
+      * ca=g^(rock+y*randa)
+  
+        * $a=rock+y*randa$ 
+        * $a=paper+y*randb$​
+        * $rock+y*randa=paper+y*randb$​
+        * $randb=(rock+y*randa-paper)y^{-1}$​
+        * $y^{q-1}=y^{-1}$
+  
+      * Not binding!
+  
+      * You don't know $y$
+  
+        * $rock+y*randa=paper+y*randb$ has two unknowns (y, randb)
+  
+        * Binding!
+  
+        * I give you (rock,randa,paper, randb) -> both produce the same commitment
+  
+          * Solve for $y$
+  
+          * If I can break binding of a Pedersen commitment, I can can computer discrete log between $g$ and $h$
+  
+          * Black box -> Pedersen breaking box -> g,h -> m1,r1,m2,r2 -> DL breaking box
+  
+          * $a$ and $b$
+  
+            * DL(a,b)?
+  
+            * $c1=a^{r1} b^{r2}$
+  
+            * $c2=a^{r2} b^{r3}$​
+  
+            * Root(q) complexity
+  
+            * Double the bitlength of q -> x (NIST: 128)
+  
+              
+  
+  
+          
+  
+  
+    
+  
+* Feldman commitments
+  * Are they hiding?
+  * Are they binding?
+
+* Pedersen commitments
+  * Are they hiding?
+  * Are they binding? 
+    * Prove it!
+    * Connection to DL solving algorithms
+  * Homomorphic properties
+  * Multi-commitments
+
+* Up next will be polynomial commitments but first, bilinear pairings
 
 
 
