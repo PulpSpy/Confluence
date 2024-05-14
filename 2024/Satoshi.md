@@ -8,17 +8,17 @@
 
 The cryptocurrency Bitcoin was created by an individual, or collection of individuals, using the name Satoshi Nakamoto. In October 2018, Satoshi released a whitepaper describing the Bitcoin protocol. A few months later, he released a software package for running the protocol. He then spent around two years maintaining the software, communicating with developers, and promoting the project over email, mailing lists, online forums and IRC. After two years, Satoshi unceremoniously promoted Gavin Andresen to lead developer and left the project. 
 
-| Year | Candidate                  | Publication                                                  | Basis                             | Notes             |
-| ---- | -------------------------- | ------------------------------------------------------------ | --------------------------------- | ----------------- |
-| 2011 | Michael Clear              | J. Davis (*The New Yorker*)                                  | Circumstantial                    |                   |
-| 2011 | N. King, V. Oksmas, C. Bry | A. Penenberg (*Fast Company*)                                | Stylometry                        |                   |
-| 2013 | Ross Ulbritch              | D. Ron, A. Shamir (Academic Paper, *Financial Cryptography*) | Blockchain Forensics              | Retracted         |
-| 2014 | Dorian Nakamoto            | L. McGrath Goodman (*Newsweek*)                              | Circumstantial; Network Forensics | Reaffirmed (2020) |
-| 2014 | Hal Finney                 | A. Greenberg (*Forbes*)                                      | Circumstantial; Network Forensics | Retracted         |
-| 2014 | Nick Szabo                 | N. Popper (*NY Times*); R. Wile (*Business Insider*)         | Circumstantial                    |                   |
-| 2015 | Craig Wright               | A. Greenberg, Gwern (*Wired*); S. Biddle, A. Cush (*Gizmodo*) | Access to Keys; Anecdotal         | Disproven         |
-| 2016 | Adam Back                  | I. Kaminska (*Financial Times*)                              | Circumstantial                    |                   |
-| 2021 | Len Sassaman               | E. Hatch (Self Published, *Medium*)                          | Circumstantial                    |                   |
+| Year | Candidate                  | Author & Publication                                         | Basis                             | Author Followup                            |
+| ---- | -------------------------- | ------------------------------------------------------------ | --------------------------------- | ------------------------------------------ |
+| 2011 | Michael Clear              | J. Davis (*The New Yorker*)                                  | Circumstantial                    | Retracted [SV18]                           |
+| 2011 | N. King, V. Oksmas, C. Bry | A. Penenberg (*Fast Company*)                                | Stylometry                        |                                            |
+| 2013 | Ross Ulbritch              | D. Ron, A. Shamir (Academic Paper, *Financial Cryptography*) | Blockchain Forensics              | Retracted [RS13]                           |
+| 2014 | Dorian Nakamoto            | L. McGrath Goodman (*Newsweek*)                              | Circumstantial; Network Forensics | Reaffirmed [SV18,MG20]                     |
+| 2014 | Hal Finney                 | A. Greenberg (*Forbes*)                                      | Circumstantial; Network Forensics | Retracted [GV14]                           |
+| 2014 | Nick Szabo                 | N. Popper (*NY Times*); R. Wile (*Business Insider*)         | Circumstantial                    | Circumspect [SV18]                         |
+| 2015 | Craig Wright               | A. Greenberg, Gwern (*Wired*); S. Biddle, A. Cush (*Gizmodo*) | Access to Keys; Anecdotal         | Retracted [SV18]; Legally Disproven [Cite] |
+| 2016 | Adam Back                  | I. Kaminska (*Financial Times*)                              | Circumstantial                    |                                            |
+| 2021 | Len Sassaman               | E. Hatch (Self Published, *Medium*)                          | Circumstantial                    |                                            |
 
 Against Satohsi's best wishes ("I wish you wouldn’t keep talking about me as a mysterious shadowy figure, the press just turns that into a pirate currency angle"), the media has been captivated by the question of who Satoshi really is. Many guesses, with varying degrees of journalistic evidence, have been made in print by reputable journalists working for the *New York Times*, *Newsweek*, *The New Yorker*, *Wired*, *Forbes*, *Fast Company*, and others. A few notable examples are provided in the Table above, along with primary basis (beyond basic demographics and technical expertise) for their conclusion. Each type of evidence will be examined later in this article.
 
@@ -406,6 +406,8 @@ For vetting someone claiming to be Satoshi, the production of early unknown comm
 
 [Gao21] Z.M. Gao, "Mathematical proof that Dr. Craig S. Wright is Satoshi Nakamoto," 2021. Online: https://web.archive.org/web/20220206233842/https://zemgao.com/a-mathematical-proof-that-craig-s-wright-is-satoshi-nakamoto
 
+[GV14] A. Goldman and PJ Vogt (Guest: C. Neary, A. Greenberg), "A Bitcoin Story for People Who Don't Care About Bitcoin," *TLDR Podcast*, 2014.
+
 [Gwe09] Gwern, "Who Wrote The <em>Death Note</em> Script?," *gwern.net*, 2009. Online: https://gwern.net/death-note-script
 
 [Hil14] K. Hill, "The Outing of Bitcoin Creator Satoshi Nakamoto Is Important Journalism," *Forbes*, 2014. Online: https://www.forbes.com/sites/kashmirhill/2014/03/06/the-outing-of-bitcoin-creator-satoshi-nakamoto-is-brilliant-journalism/?sh=378f781a5ba5
@@ -414,7 +416,7 @@ For vetting someone claiming to be Satoshi, the production of early unknown comm
 
 [Lop23] J. Lopp, "Hal Finney is not Satoshi," *blog.lopp.net*, 2023. Online: https://blog.lopp.net/hal-finney-was-not-satoshi-nakamoto/
 
-[MG20] L. McGrath Goodman (guest) and Anthony “*Pomp*” Pompliano (host), *The Pomp Podcast*, 2020. Online: https://podcasts.apple.com/ca/podcast/the-pomp-podcast/id1434060078
+[MG20] J (guest) and Anthony “*Pomp*” Pompliano (host), *The Pomp Podcast*, 2020. Online: https://podcasts.apple.com/ca/podcast/the-pomp-podcast/id1434060078
 
 [McG14] P. McGuire, "The Satoshi Nakamoto Email Hacker Says He's Negotiating with the Bitcoin Founder," *Vice*, 2014. Online: https://www.vice.com/en/article/jp5dk8/the-satoshi-nakamoto-email-hacker-says-hes-negotiating-with-the-bitcoin-founder
 
@@ -422,9 +424,13 @@ For vetting someone claiming to be Satoshi, the production of early unknown comm
 
 [Pen11] A. Penenberg, "The Bitcoin Crypto-Currency Mystery Reopened," *Fast Company*, 2011. Online: https://www.fastcompany.com/1785445/bitcoin-crypto-currency-mystery-reopened
 
+[RS12] D. Ron, A. Shamir, "Quantitative Analysis of the Full Bitcoin Transaction Graph," *Financial Cryptography*, 2013.
+
 [Sau18] E. Saund, "Did Kavanaugh Do It?. Math Helps Us Decide," *Medium*, 2018. Online: https://medium.com/@saund/did-kavenaugh-do-it-9fb3e08bb2a3
 
 [Sir15] E.G. Sirer, "How to Spot Bitcoin Inventor Satoshi Nakamoto," *MIT Technology Review*, 2015.
+
+[SV18] B. Stone and J. Verhage (Guests: J. David, L. McGrath Goodman, A. Greenberg, et al.), "The Hunt for Bitcoin’s Creator," *Decrypted Podcast,* 2018.
 
 
 
