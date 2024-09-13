@@ -32,7 +32,7 @@ Generally, academics have maintained an aversion to the subject of Satoshi's ide
 | Friends & Family | Families of more than one candidate, in particular candidates who are no longer living, report unwelcome inquiries from Bitcoin enthusiasts. |
 | Investors        | A business deal between nCrypt and C. Wright was reported to be contingent on Wright being able to prove claim of being Satoshi. |
 | Retail Investors | Some users report investing savings in blockchain technologies and tokens associated with Satoshi candidates. |
-| Experts          | Experts (e.g., G. Andresen & N. Courtois) have been retained to assess a candidate's claim to being Satoshi and to sever as expert witnesses in legal matters (e.g.,  S. Meiklejohn). |
+| Experts          | Experts (e.g., G. Andresen & N. Courtois) have been retained to assess a candidate's claim to being Satoshi and to serve as expert witnesses (e.g.,  S. Meiklejohn) in legal matters. |
 | Courts           | A six week trial gave legal consideration to ownership of Bitcoin's technology vis-a-vis whether a candidate is Satoshi; finding the candidate is overwhelmingly not, on balance of probabilities. |
 | Journalists      | L. McGrath Goodman reports threats of violence in retaliation for her article identify a Satoshi candidate. |
 
