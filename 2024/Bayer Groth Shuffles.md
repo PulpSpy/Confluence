@@ -36,16 +36,6 @@ This is called a vector commitment. It maintains its homomorphic properties:
 
 
 
-
-
-## Neff Shuffle
-
-Before explaining the Bayer-Groth shuffle, we will explain a building block: the Neff shuffle. 
-
-
-
-
-
 ## Bayer-Groth Shuffle
 
 We start with an input list of ciphertexts:
@@ -56,9 +46,9 @@ The output will be re-randomized (not shown) and shuffled (shown):
 
 * $\langle \mathsf{Enc}(m_1), \mathsf{Enc}(m_0), \mathsf{Enc}(m_3), \mathsf{Enc}(m_2), \mathsf{Enc}(m_4) \rangle$
 
-Alice will commit to the permutation she used:
+Alice will commit to the permutation $\pi$ she used:
 
-* Permutation: $\langle 1, 0, 3, 2, 4 \rangle$
+* $\pi$: $\langle 1, 0, 3, 2, 4 \rangle$
 
 * $\mathsf{Commit}(\langle 1, 0, 3, 2, 4 \rangle)$
 
@@ -66,4 +56,44 @@ The verifier will generate a random challenge $\alpha$ and send it to Alice. Ali
 
 * $\mathsf{Commit}(\langle \alpha^1, \alpha^0, \alpha^3, \alpha^2, \alpha^4 \rangle)$
 
-Alice will need to prove she did this correctly, which we will return to. 
+Alice will need to prove she did this correctly. Considering:
+
+1. $\mathsf{Commit}(\langle 0, 1, 2, 3, 4 \rangle)$
+2. $\mathsf{Commit}(\langle 1, 0, 3, 2, 4 \rangle)$
+3. $\mathsf{Commit}(\langle \alpha^0, \alpha^1, \alpha^2, \alpha^3, \alpha^4 \rangle)$
+4. $\mathsf{Commit}(\langle \alpha^1, \alpha^0, \alpha^3, \alpha^2, \alpha^4 \rangle)$
+
+The verifier can create (1) and (3). The prover proves that they know $\pi$ a (undisclosed) permutation that turns (1) into (2), and this is the same as the permutation from (3) to (4). 
+
+Toward showing this, the prover combines the values in (1) and (3), and does the same for (2) and (4). To combine, the verifier chooses a random $\beta$ and the prover computes:
+
+5. $\mathsf{Commit}(\langle 0\beta+\alpha^0, 1\beta+\alpha^1, 2\beta+\alpha^2, 3\beta+\alpha^3, 4\beta+\alpha^4 \rangle)$
+6. $\mathsf{Commit}(\langle 1\beta+\alpha^1, 0\beta+\alpha^0, 3\beta+\alpha^3, 2\beta+\alpha^2, 4\beta+\alpha^4 \rangle)$
+
+For a random $\beta$, the same permutation $\pi$ turns (5) into (6). 
+
+Next, the prover computes (7) which is the values of (5) programmed into the roots of a polynomial, and likewise (8) are the values of (6). These polynomials are the same if and only if the roots are the same:
+
+7. $\mathsf{Commit}(P_1(\gamma))=\mathsf{Commit}(\prod (i \beta  + \alpha^i)-\gamma)$
+8. $\mathsf{Commit}(P_2(\gamma))=\mathsf{Commit}(\prod (\pi(i)\beta  + \alpha^{\pi(i)})-\gamma)$
+
+To check, the verifier selects a random $\gamma$ and the prover opens both polynomials. If the polynomials open to the same value, we can reason all the way back to (2) beings $\pi$ of (1) and (4) being $\pi$ of (3):
+
+* If $P_1(\gamma)=P_2(\gamma)$ at a random point $\gamma$, the set of roots of the polynomials are the same.
+* If the set of roots are the same, then the elements of (5) and (6) are permuted by some permutation value $\pi$.
+* If the elements of (5) and (6) are random ($\beta$) linear combinations of (1,3) and (2,4), then (1) and (2) are permuted by $\pi$ and (3) and (4) are also permuted by $\pi$.
+
+Using (3) and (4), we can now bring in the ciphertexts and compute:
+
+9. $\langle \mathsf{Enc}(m_0\cdot\alpha^0), \mathsf{Enc}(m_1\cdot\alpha^1), \mathsf{Enc}(m_2\cdot\alpha^2), \mathsf{Enc}(m_3\cdot\alpha^3), \mathsf{Enc}(m_4\cdot\alpha^4) \rangle$
+
+10. $\langle \mathsf{Enc}(m_1\cdot\alpha^1), \mathsf{Enc}(m_0\cdot\alpha^0), \mathsf{Enc}(m_3\cdot\alpha^3), \mathsf{Enc}(m_2\cdot\alpha^2), \mathsf{Enc}(m_4\cdot\alpha^4) \rangle$
+
+The prover shows the values exponentiated in match (3) and (4). Finally we sum up (9) and (10) homomorphically can show they encrypt the same value:
+
+11. $\mathsf{Enc}(m_0\cdot\alpha^0+m_1\cdot\alpha^1+m_2\cdot\alpha^2+m_3\cdot\alpha^3+m_4\cdot\alpha^4)=\mathsf{Enc}(m_1\cdot\alpha^1+m_0\cdot\alpha^0+m_3\cdot\alpha^3+m_2\cdot\alpha^2+m_4\cdot\alpha^4)$
+
+
+
+
+
