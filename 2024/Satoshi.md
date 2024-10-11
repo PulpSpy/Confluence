@@ -247,6 +247,10 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 
 * “The idiosyncratic construction of Bitcoin’s code also suggests that Satoshi had an academic background. It has been described as “brilliant but sloppy”, eschewing conventional software development practices like unit testing but exhibiting cutting-edge security architecture and an expert understanding of academic cryptography and economics.” Source
 
+* "When I first saw their code, I thought "Satoshi is not a programmer" because of how weird it was. He didn't follow normal code practices that were modern at that time. He made big use of locks when it was out of fashion. He used Hungarian notation which was no longer used. He made spaghetti function recursion and never used objects to encapsulate processes. He also targeted Windows. All of this indicate an older person, possibly not a software dev but from a close domain like engineering or physics. His whitepaper hinted at a background with a practical focus but not a mathematician." Amir Taaki
+
+* "
+
 * C++ developer experience  Described as "brilliant but sloppy"
 * Crypto: "But EC-DSA can't encrypt messages like RSA, it can only be used to verify signatures." SN
 * [MG20] additional evidence
@@ -260,6 +264,8 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 ### Access to web accounts
 
 * Satoshi used a variety of accounts for web-based email including:  satoshi@anonymousspeech.com (Aug 2008–), satoshi@vistomail.com (Oct 2009–), satoshin@gmx.com (April 2009–), and. He maintained accounts at sourceforge (at least two) and accounts at online forums, such as one at the P2P Foundation message board (registered with the gmx email account). This latter account was used to post "I am not Dorian Nakamoto" on 7 Mar 2014 (the day after the *Newsweek* article on Dorian Nakamoto, and around 3 years after Satoshi's last known communication). Later in Fall 2014, the gmx account was determined to have been hijacked [McG14]. It is unknown if the hijacking started before or after the Dorian post (access to the email address was sufficient to reset the P2P Foundation account), how the hijacking occurred exactly, or to what extent Satoshi had wiped the account's contents before it was compromised. As of 10 years later, no new information about Satoshi's identity or early communications has become public as a result of this compromise.
+
+
 
 * For vetting someone claiming to be Satoshi, the production of early unknown communications (confirmed by the other parties to it) would be strong evidence. The possibility and observations of account compromises increase the marginal likelihood of this evidence, so it cannot be conclusive that the communication is being produced by Satoshi, as opposed an imposture who gained access to the accounts, however it is still highly suggestive evidence. 
 
@@ -308,7 +314,7 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 * Beware of correlation implying causation
   * Good ecosystem for developing ideas like Bitcoin
   * One of the largest cities in the world
-  * 
+* Other link: https://cointelegraph.com/news/bitcoin-code-reveals-satoshi-nakamoto-used-a-russian-proxy
 
 
 #### UK culture  [tk]
@@ -328,6 +334,7 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 
 * P2P Foundation account registered with birthdate of 5 April 1975
 * LMG on Dorian: younger than he seemed
+* Nick Szabo's birthday is listed on Wikipedia as 5 April 1964
 
 #### Software [tk]
 
