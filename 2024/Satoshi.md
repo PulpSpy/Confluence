@@ -19,6 +19,7 @@ The cryptocurrency Bitcoin was created by an individual, or collection of indivi
 | 2015 | Craig Wright               | A. Greenberg, Gwern (*Wired*); S. Biddle, A. Cush (*Gizmodo*) | Access to Keys; Anecdotal         | Retracted [SV18]; Legally Disproven [Cite] |
 | 2016 | Adam Back                  | I. Kaminska (*Financial Times*)                              | Circumstantial                    |                                            |
 | 2021 | Len Sassaman               | E. Hatch (Self Published, *Medium*)                          | Circumstantial                    |                                            |
+| 2024 | Peter Todd                 | C. Hoback (*HBO* aired documentary)                          | Circumstantial; Confrontation     |                                            |
 
 Against Satohsi's best wishes ("I wish you wouldn’t keep talking about me as a mysterious shadowy figure, the press just turns that into a pirate currency angle"), the media has been captivated by the question of who Satoshi really is. Many guesses, with varying degrees of journalistic evidence, have been made in print by reputable journalists working for the *New York Times*, *Newsweek*, *The New Yorker*, *Wired*, *Forbes*, *Fast Company*, and others. A few notable examples are provided in the Table above, along with primary basis (beyond basic demographics and technical expertise) for their conclusion. Each type of evidence will be examined later in this article.
 
@@ -449,31 +450,31 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 
 ### Timeline
 
-| Date        | Event                                                        |
-| ----------- | ------------------------------------------------------------ |
-| ~Jan 2007   | Start? ...2 years of development before release...           |
-| ~Jan 2008   | Start? ...after 18 months development...                     |
-| 18 Aug 2008 | Bitcoin.org registered                                       |
-| 31 Oct 2008 | Bitcoin whitepaper                                           |
-| 10 Dec 2008 | bitcoin-list                                                 |
-| 3 Jan 2009  | Genesis block, Times of London                               |
-| 9 Jan 2009  | Software release, Block 1                                    |
-| 10 Jan 2009 | IP address                                                   |
-| Mar 2009    | Blackout #1 begins                                           |
-| 21 Jul 2009 | "Pretty busy with work"                                      |
-| 21 Jul 2009 | "Hal isn't currently actively involved."                     |
-| 16 Oct 2009 | "It's good to be coding again!"                              |
-| Nov 2009    | Blackout #1 ends                                             |
-| 07 Mar 2010 | Blackout #2 begins                                           |
-| 16 May 2010 | "I've also been busy with other things for the last month and a half." |
-| 16 May 2010 | "I just now downloaded my e-mail since the beginning of April." |
-| 16 May 2010 | Blackout #2 ends                                             |
-| Apr 2010    | "moved on to other things"                                   |
-|             |                                                              |
-|             |                                                              |
-|             |                                                              |
-|             |                                                              |
-|             |                                                              |
-|             |                                                              |
+| Date        | Offset | Event                                                        |
+| ----------- | ------ | ------------------------------------------------------------ |
+| ~Jan 2007   | -24    | Start? ...2 years of development before release...           |
+| ~Jan 2008   | -18    | Start? ...after 18 months development...                     |
+| 18 Aug 2008 | -2     | Bitcoin.org registered                                       |
+| 31 Oct 2008 | 0      | Bitcoin whitepaper                                           |
+| 10 Dec 2008 | +2     | bitcoin-list                                                 |
+| 3 Jan 2009  | +3     | Genesis block, Times of London                               |
+| 9 Jan 2009  | +3     | Software release, Block 1                                    |
+| 10 Jan 2009 | +3     | IP address                                                   |
+| Mar 2009    | +5     | Blackout #1 begins                                           |
+| 21 Jul 2009 | +9     | "Pretty busy with work"                                      |
+| 21 Jul 2009 | +9     | "Hal isn't currently actively involved."                     |
+| 16 Oct 2009 | +12    | "It's good to be coding again!"                              |
+| Nov 2009    | +13    | Blackout #1 ends                                             |
+| 07 Mar 2010 | +17    | Blackout #2 begins                                           |
+| 23 Apr 2010 | +18    | "moved on to other things"                                   |
+| 16 May 2010 | +19    | "I've also been busy with other things for the last month and a half." |
+| 16 May 2010 | +19    | "I just now downloaded my e-mail since the beginning of April." |
+| 16 May 2010 | +19    | Blackout #2 becomes permanent                                |
+|             |        |                                                              |
+|             |        |                                                              |
+|             |        |                                                              |
+|             |        |                                                              |
+|             |        |                                                              |
+|             |        |                                                              |
 
   
