@@ -315,7 +315,8 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 * Beware of correlation implying causation
   * Good ecosystem for developing ideas like Bitcoin
   * One of the largest cities in the world
-* Other link: https://cointelegraph.com/news/bitcoin-code-reveals-satoshi-nakamoto-used-a-russian-proxy
+* Other link: https://cointelegraph.com/news/bitcoin-code-reveals-satoshi-nakamoto-used-a-russian-proxy'
+* Used Tor to access website (Popper as told by Martii Malmi)
 
 
 #### UK culture  [tk]
@@ -465,12 +466,12 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 | 21 Jul 2009 | +9     | "Hal isn't currently actively involved."                     |
 | 16 Oct 2009 | +12    | "It's good to be coding again!"                              |
 | Nov 2009    | +13    | Blackout #1 ends                                             |
+| Dec 2010    | +14    | Gavin's email replaces Satoshi's on website                  |
 | 07 Mar 2010 | +17    | Blackout #2 begins                                           |
 | 23 Apr 2010 | +18    | "moved on to other things"                                   |
 | 16 May 2010 | +19    | "I've also been busy with other things for the last month and a half." |
 | 16 May 2010 | +19    | "I just now downloaded my e-mail since the beginning of April." |
 | 16 May 2010 | +19    | Blackout #2 becomes permanent                                |
-|             |        |                                                              |
 |             |        |                                                              |
 |             |        |                                                              |
 |             |        |                                                              |
