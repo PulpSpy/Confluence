@@ -1,0 +1,16 @@
+# Transitioning Bitcoin or Ethereum
+
+A bunch of BTC and ETH are sitting in addresses protected by a private key. If a quantum computer (QC) can compute the private key, the person with the QC can steal the coins.
+
+This is because the person with the QC and the true owner of the address are equal in what they know. So the system no longer distinguish them. 
+
+When can a QC determine the private key? The answer is when the corresponding public key is known. Bitcoin and Ethereum can't really do anything about these coins. 
+
+However there are another set of coins for which only the hash of the public key is known, and the actual public key value is not known. These coins are safe from QCs as long as they sit dominant, but in order to spend (which includes moving them to a new address, say one that is protected by a post-quantum digital signature algorithm), you need to broadcast a transaction. And because transactions go into a mempool and then into a partially confirmed block, there is a chance of a person with a QC seeing your transaction, breaking the cryptography and recovering the private key, creating a competing transaction that moves the BTC to their own address, and trying to front-run you.
+
+How can this be fixed? 
+
+1. ZKPs. Use (quantum safe, such as zk-STARKs) zero knowledge proofs (ZKPs) when spending a coin. You prove you know a secret key that maps into the existing hash of the public key. Specifically you know $\mathsf{sk}$ such that $\mathsf{pk}\leftarrow\mathsf{KeyGen}(\mathsf{sk})$ and $\mathsf{addr}\leftarrow\mathcal{H}(\mathsf{pk})$. In fact, it is sufficient to just prove you know any pre-image to $\mathcal{H}(\mathsf{pk})$ as you cannot find any other pre-images (if $\mathcal{H}$ is collision-resistant) and in this post-quantum world, knowing $\mathsf{pk}$ is the same as knowing $\mathsf{sk}$. This would require stronger scripting capabilities around transactions. 
+2. Use private mempools. The problem here is that even with a private mempool, transactions are not confirmed fully until they are 6 blocks deep. So if you transaction ends up in a block, that block might be re-organized and you could still be front-runned by an attacker with a forged transaction on the other fork. This could be done without any changes to the protocol. 
+3. Two-stage spends. Anyone could "stage" a transaction where all the details would be committed to and the transaction would be locked for a period of time. Then during the lock period, the public key and signature is revealed, but it can only finalize the transaction that is committed to.  Note that without a signature, anyone can do the first stage (you cannot limit it to just the owner) so an adversary can lock you out by repeatedly sending commitments for your address. Second, the adversary could try to censor your second reveal message long enough for the address to unlock, and then use your secret key to stage/reveal its own spend of your coins. This can be compared with [Fawkescoin](https://jbonneau.com/doc/BM14-SPW-fawkescoin.pdf). 
+4. There may be a variant of (3) that uses verifiable delay functions (VDFs) to provide a locking period based in cryptography (although with the caveat that the VDF itself would have to be post-quantum).

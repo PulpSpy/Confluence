@@ -350,6 +350,19 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 
 * Aware of linked timestamping and hashcash; unaware initially of b-money, bit gold, and reusable proof of work (RPOW).
 
+  * Evidence against someone like Peter Todd or Nick Szabo
+
+  * b-money and bit gold use similar terminology but are not the same design as Bitcoin. In Bitcoin there is one common ledger and the updating operation is decentralized. In b-money and bit gold, the ledger entries themselves are decentralized. The term decentralized in b-money and bit gold is closer to the modern notion of "sharding" as opposed to "decentralization" as Bitcoin means it. 
+
+* Paper written in open office, not formal at all, low on citations, probably non-academic
+
+  * Evidence against someone like Len Assassin
+
+* Satoshi write up on BFT seems very amateur
+
+  * Unaware of BFT
+  * Wrote based on Wikipedia
+
 * Most citations are relevant or provenance (conversations about citing specific papers)
 
   Citation [2] is a curious case:
@@ -377,6 +390,28 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 * So probably either: (i) Satoshi obtained a paper copy of it and read it; or (ii) he read an uncited paper that in turn cited [2] and he copied the citation. In case (i), it is also interesting that An overview of the conference (1980--2023) is available and includes small (~1 page) summaries of electronic payments, followed by time-stamping. The latter cites [2] but nothing else in it seems tied to Satoshi's writings. 
 
 * I checked my notes from “the long road to Bitcoin” and found I had actually puzzled over this but came to a reasonable explanation and then forgot about it until now. In 2008, Wikipedia for cryptography was terrible. If you tried to fix things, zealous editors would remove your fixes if you could not precisely cite a source that a non-crypto person could compare to your edit. Luckily there was (and still is) a moderately popular “Encyclopedia of Cryptography and Security.” At the time, in my grad school crypto group, many of us knew and used it. It has 800 citations today. The encyclopedia has an article on time-stamping, co-written by Haber [3-5] and Massias [2]. Crucially, after explaining Merkle trees, [2] is cited as an example. A reasonable explanation is as follows: Satoshi learned time-stamping from somewhere. It was used by Surety in the NYT, discussed a lot on the crypto and cypherpunk mailing lists, maybe this article, etc. When he wrote the whitepaper, he wanted references and maybe some hints on how to write it up well. He found the article in the encyclopedia and the citation. Maybe he never obtained the original paper (which is hard to obtain). Or maybe he went through some effort to obtain it, but he didn’t have any particular pre-existing connection to Benelux universities. This is a theory that still has some gaps. The encyclopedia article cites 3 of the 4 papers Satoshi cites, but does not cite the CCS 97 paper from Haber and Stornetta (despite the article being co-written by Haber). BTW this CCS paper is great because it actually has a picture of a “blockchain” way back in 1997. The second mystery is that when [2] is cited in the encyclopedia article, it is cited alongside a second paper (Buldas, et al) which Satoshi does not cite. Google Scholar failed to show me the encyclopedia article when I queried papers citing [2] from pre-Bitcoin, which is why I missed rediscovering this a few a days ago. It also fails to index a PDF of [2] which, after all this, is actually online now and you can read it: https://nakamotoinstitute.org/static/docs/secure-timestamping-service.pdf It seems too clean to be a scan of the original, so it is probably a recompile from the authors.
+
+#### Ideology [tk]
+
+* Add this to the main chart
+
+* Wired Magazine (Louis Rossetto) forwarded a technocratic libertarianism that was broadly adopted in tech circles
+
+* Cryptographers fought the US government and NSA for strong cryptography
+
+* Cyperpunks had a more extreme crypto-anarchism that was adopted by some on mailing lists like the cryptography mailing list
+
+* Satoshi is pro-freedom, privacy and anonymity
+
+* When libertarians are suggested as a potential supporting group, Satoshi is sympathetic but refers to libertarians as an outside group, "the other," rather than something he is
+
+* Satoshi vocalizes support for the EFF, Tor, and P2P file sharing.
+
+* The genesis block of Bitcoin includes the quote: "chancellor on brink of second bailout for banks," which is taken as a criticism of bailouts. Such a position aligns with both populism and libertarianism---bailouts were pursued by both the chancellor's left-leaning Labour Party in the UK and the right-leaning Republican Party in the US over the same time-period.
+
+* Satoshi finds "gold bugs" too libertarian: lamented those who are so "anti-fiat-money that anything short of gold isn't good enough."
+
+  
 
 
 #### Blockchain forensics  [tk]
