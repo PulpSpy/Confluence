@@ -8,18 +8,18 @@
 
 The cryptocurrency Bitcoin was created by an individual, or collection of individuals, using the name Satoshi Nakamoto. In October 2008, Satoshi released a whitepaper describing the Bitcoin protocol. A few months later, he released a software package for running the protocol. He then spent around two years maintaining the software, communicating with developers, and promoting the project over email, mailing lists, online forums and IRC. After two years, Satoshi unceremoniously promoted Gavin Andresen to lead developer and left the project. 
 
-| Year | Candidate                  | Author & Publication                                         | Basis                             | Author Followup                            |
-| ---- | -------------------------- | ------------------------------------------------------------ | --------------------------------- | ------------------------------------------ |
-| 2011 | Michael Clear              | J. Davis (*The New Yorker*)                                  | Circumstantial                    | Retracted [SV18]                           |
-| 2011 | N. King, V. Oksmas, C. Bry | A. Penenberg (*Fast Company*)                                | Stylometry                        |                                            |
-| 2013 | Ross Ulbritch              | D. Ron, A. Shamir (Academic Paper, *Financial Cryptography*) | Blockchain Forensics              | Retracted [RS13]                           |
-| 2014 | Dorian Nakamoto            | L. McGrath Goodman (*Newsweek*)                              | Circumstantial; Network Forensics | Reaffirmed [SV18,MG20]                     |
-| 2014 | Hal Finney                 | A. Greenberg (*Forbes*)                                      | Circumstantial; Network Forensics | Retracted [GV14]                           |
-| 2014 | Nick Szabo                 | N. Popper (*NY Times*); R. Wile (*Business Insider*)         | Circumstantial                    | Circumspect [SV18]                         |
-| 2015 | Craig Wright               | A. Greenberg, Gwern (*Wired*); S. Biddle, A. Cush (*Gizmodo*) | Access to Keys; Anecdotal         | Retracted [SV18]; Legally Disproven [Cite] |
-| 2016 | Adam Back                  | I. Kaminska (*Financial Times*)                              | Circumstantial                    |                                            |
-| 2021 | Len Sassaman               | E. Hatch (Self Published, *Medium*)                          | Circumstantial                    |                                            |
-| 2024 | Peter Todd                 | C. Hoback (*HBO* aired documentary)                          | Circumstantial; Confrontation     |                                            |
+| Year | Candidate                  | Author & Publication                                         | Basis                             | Author Followup                                              |
+| ---- | -------------------------- | ------------------------------------------------------------ | --------------------------------- | ------------------------------------------------------------ |
+| 2011 | Michael Clear              | J. Davis (*The New Yorker*)                                  | Circumstantial                    | Retracted [SV18]                                             |
+| 2011 | N. King, V. Oksmas, C. Bry | A. Penenberg (*Fast Company*)                                | Stylometry                        |                                                              |
+| 2013 | Ross Ulbritch              | D. Ron, A. Shamir (Academic Paper, *Financial Cryptography*) | Blockchain Forensics              | Retracted [RS13]                                             |
+| 2014 | Dorian Nakamoto            | L. McGrath Goodman (*Newsweek*)                              | Circumstantial; Network Forensics | Reaffirmed [SV18,MG20]                                       |
+| 2014 | Hal Finney                 | A. Greenberg (*Forbes*)                                      | Circumstantial; Network Forensics | Retracted [GV14]                                             |
+| 2014 | Nick Szabo                 | N. Popper (*NY Times*); R. Wile (*Business Insider*)         | Circumstantial                    | Circumspect [SV18]                                           |
+| 2015 | Craig Wright               | A. Greenberg, Gwern (*Wired*); S. Biddle, A. Cush (*Gizmodo*) | Access to Keys; Anecdotal         | Retracted [SV18]; Legally Disproven [Cite]                   |
+| 2016 | Adam Back                  | I. Kaminska (*Financial Times*)                              | Circumstantial                    |                                                              |
+| 2021 | Len Sassaman               | E. Hatch (Self Published, *Medium*)                          | Circumstantial                    |                                                              |
+| 2024 | Peter Todd                 | C. Hoback (*HBO* aired documentary)                          | Circumstantial; Confrontation     | Reaffirmed [[CH](https://www.dlnews.com/articles/people-culture/peter-todd-and-hoback-clash-over-hbo-satoshi-bitcoin-claim/] |
 
 Against Satohsi's best wishes ("I wish you wouldn’t keep talking about me as a mysterious shadowy figure, the press just turns that into a pirate currency angle"), the media has been captivated by the question of who Satoshi really is. Many guesses, with varying degrees of journalistic evidence, have been made in print by reputable journalists working for the *New York Times*, *Newsweek*, *The New Yorker*, *Wired*, *Forbes*, *Fast Company*, and others. A few notable examples are provided in the Table above, along with primary basis (beyond basic demographics and technical expertise) for their conclusion. Each type of evidence will be examined later in this article.
 
