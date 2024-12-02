@@ -19,7 +19,7 @@ The cryptocurrency Bitcoin was created by an individual, or collection of indivi
 | 2015 | Craig Wright               | A. Greenberg, Gwern (*Wired*); S. Biddle, A. Cush (*Gizmodo*) | Access to Keys; Anecdotal         | Retracted [SV18]; Legally Disproven [Cite]                   |
 | 2016 | Adam Back                  | I. Kaminska (*Financial Times*)                              | Circumstantial                    |                                                              |
 | 2021 | Len Sassaman               | E. Hatch (Self Published, *Medium*)                          | Circumstantial                    |                                                              |
-| 2024 | Peter Todd                 | C. Hoback (*HBO* aired documentary)                          | Circumstantial; Confrontation     | Reaffirmed [[CH](https://www.dlnews.com/articles/people-culture/peter-todd-and-hoback-clash-over-hbo-satoshi-bitcoin-claim/] |
+| 2024 | Peter Todd                 | C. Hoback (*HBO* aired documentary)                          | Circumstantial; Confrontation     | Reaffirmed [[CH](https://www.dlnews.com/articles/people-culture/peter-todd-and-hoback-clash-over-hbo-satoshi-bitcoin-claim/)] |
 
 Against Satohsi's best wishes ("I wish you wouldn’t keep talking about me as a mysterious shadowy figure, the press just turns that into a pirate currency angle"), the media has been captivated by the question of who Satoshi really is. Many guesses, with varying degrees of journalistic evidence, have been made in print by reputable journalists working for the *New York Times*, *Newsweek*, *The New Yorker*, *Wired*, *Forbes*, *Fast Company*, and others. A few notable examples are provided in the Table above, along with primary basis (beyond basic demographics and technical expertise) for their conclusion. Each type of evidence will be examined later in this article.
 
@@ -216,29 +216,29 @@ While the name has been changed, this in fact describes a real person (an author
 
 Additionally, some evidence (such as cryptography or C++ proficiency) are strong requirements, while other evidence (such as a tie to Japan due to the name Satoshi Nakamoto) are less important, with alternative explanations that are easy to make. Consider the case where a witness testified to walking in on a Satoshi candidate dressed like a ninja (implying a connection to the Japanese name). The same candidate had earlier failed, under oath, to explain what a uint is in C++. If the first detail is more memorable, memorable, interesting, and vivid (i.e., *salient*), while the second is more important to the case, it would be biased to emphasize the first. 
 
-### Unfalsifiable subterfuge [tk]
+### Unfalsifiable subterfuge
 
-* It is commonly held that certain facts about Satoshi Nakamoto are fake, such as the name Satoshi Nakamoto or the birthdate provided by Satoshi when registering an online account. 
-* Cherry picking can be enhanced by dismissing any of the evidence about a candidate that does not match the evidence about Satoshi as being subterfuge, used by Satoshi to throw people off his trail.
-* Consider an example of this in action:
+It is commonly held that certain facts about Satoshi Nakamoto are fake, such as the name Satoshi Nakamoto or the birthdate (5 April 1975) and residence (Japan) provided by Satoshi when registering an online account (P2P Foundation message board). To maintain anonymity while being able to register accounts requires supplying fake information. In simpler terms, Satoshi had no choice but to lie. The act of *subterfuge* goes a step further. It involves going out of your way to lie, purposely inserting false details to throw off investigations. The degree to which Satoshi used subterfuge is unknown and it expands our uncertainty about any Satoshi candidate. 
+
+For those that want to convince people that a candidate is Satoshi, the fact that Satoshi might have used subterfuge leads to an advanced form of cherrypicking. Any evidence that points in the direction of the candidate is considered real evidence, while any evidence that points away from the candidate is considered subterfuge. Consider an example:
 
 > Many people point to the fact that there are conversational email threads back and forth between Hal Finney and Satoshi Nakamoto as the main reason why it simply can't be Hal. From my standpoint, that is exactly why it is Hal. If Hal Finney was going to create the Satoshi Nakamoto character, the best thing he could do to throw people off the scent of it being him is to send the emails back and forth. (V. Armani quoted in [Kem23]).
 
-* The result of this line of reasoning is that there is no bad evidence. Any puzzle pieces that do not fit can be discarded with an argument of this type.
-* Mostly... there are some evidentiary pieces that are essential to Satoshi. For example, if a candidate had little or no experience in C++, it is hard to argue they are still a plausible candidate because maybe Satoshi was just throwing people off by designing and deploying Bitcoin in C++, a language he did not know. 
+In this case, the fact that Satoshi and Hal Finney had discussions on message boards, by email, and on IRC would suggest they are not the same person. However this inconvenient fact can be dismissed by claiming Satoshi was using subterfuge. Hal Finney was also documented running a marathon at the same time Satoshi was sending emails, but this too could be an elaborate piece of subterfuge by Hal (as Satoshi) through automated emails.
 
-### Base-rate neglect  [tk]
+The result of this line of reasoning is that there is no bad evidence. Any puzzle pieces that do not fit can be discarded with an argument of this type. It is *unfalsifiable*. Investigators first argue what criteria they are using to decide if each piece of evidence is real or fake, and if they dismiss key pieces of evidence, there should be a self-consistent rational for why that piece of evidence is dismissible but other evidence is not.
 
-* Imagine a medical test that determines if someone has a really rare disease. Say it is so rare that only one person on earth has it. Say the medical test in 99.99% accurate and we somehow manage to test everyone on earth with it. Everyone who tests positive is put in a room. That room will include the person who has it but it will also include many people with a false test result. How many? In fact, the will not fit in a room. It will be 700,000, similar in number to all the people living in Portland. Put a different way, let's say Alice tests positive. What is the probability she actually has the disease? It is infinitesimal at well under one-thousandth of one percent. This is counter-intuitive as Kahneman and Tversky demonstrated by creating similar scenarios for experts (like doctors) to study—they routinely thought positive tests were a strong (but not perfect) indication of having the disease (this was part of a research program that was awarded a Noble prize in 2002).
-* Recall the *prior* or *base-rate* is one portion of Bayesian inference. If this number is small (such 1 in 7 billion for Satoshi), the evidence must be very persuasive to move it toward 100%. The types of things known about Satoshi are somewhat specific (C++ proficiency, cryptography expertise, word choice, suspected locations) but they are like the 99.99% accurate test: they fail to pick Satoshi out of a haystack that includes the global population.
+### Base-rate neglect
 
+Imagine a medical test that determines if someone has a really rare disease. Say it is so rare that only one person on earth has it. Say the medical test in 99.99% accurate and we somehow manage to test everyone on earth with it. Everyone who tests positive is put in a room. That room will include the person who has it but it will also include many people with a false test result. How many? In fact, the will not fit in a room. It will be 700,000, similar in number to all the people living in Portland. Put a different way, let's say Alice tests positive. What is the probability she actually has the disease? It is infinitesimal at well under one-thousandth of one percent. This is counter-intuitive as Kahneman and Tversky demonstrated by creating similar scenarios for experts (like doctors) to study—they routinely thought positive tests were a strong (but not perfect) indication of having the disease (this was part of a research program that was awarded a Noble prize in 2002).
 
+Recall the *prior* or *base-rate* is one portion of Bayesian inference. If this number is small (such 1 in 7 billion for Satoshi), the evidence must be very persuasive to move it toward 100%. The types of things known about Satoshi are somewhat specific (C++ proficiency, cryptography expertise, word choice, suspected locations) but they are like the 99.99% accurate test: they fail to pick Satoshi out of a haystack that includes the global population.
 
 ## Evidence analysis
 
-### Basic demographics  [tk]
+### Basic demographics
 
-* Discussion of potential age
+Satoshi Nakamoto was of an age to be computer literature in 2008, and lived in a part of the world with internet connectivity. Beyond that, not much can be determined for sure. When registering for an account, Satoshi listed his birthday as 5 April 1975 and listed his location as Japan, however these details could be fake. Proposed Satoshi candidates have been born between 1949 (Dorian Nakamoto) and 1985 (Peter Todd).
 
 ### Basic expertise  [tk]
 
@@ -247,6 +247,10 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 * “Kaminsky ticked off the skills Nakamoto would need to pull it off. “He’s a world-class programmer, with a deep understanding of the C++ programming language,” he said. “He understands economics, cryptography, and peer-to-peer networking. Either there’s a team of people who worked on this,” Kaminsky said, “or this guy is a genius.” Source
 
 * “The idiosyncratic construction of Bitcoin’s code also suggests that Satoshi had an academic background. It has been described as “brilliant but sloppy”, eschewing conventional software development practices like unit testing but exhibiting cutting-edge security architecture and an expert understanding of academic cryptography and economics.” Source
+
+* 
+
+  Andresen also said he believed Satoshi to “be a smart, reclusive computer scientist who was brilliant but sloppy in his coding style.”
 
 * "When I first saw their code, I thought "Satoshi is not a programmer" because of how weird it was. He didn't follow normal code practices that were modern at that time. He made big use of locks when it was out of fashion. He used Hungarian notation which was no longer used. He made spaghetti function recursion and never used objects to encapsulate processes. He also targeted Windows. All of this indicate an older person, possibly not a software dev but from a close domain like engineering or physics. His whitepaper hinted at a background with a practical focus but not a mathematician." Amir Taaki
 
@@ -390,6 +394,10 @@ Additionally, some evidence (such as cryptography or C++ proficiency) are strong
 * So probably either: (i) Satoshi obtained a paper copy of it and read it; or (ii) he read an uncited paper that in turn cited [2] and he copied the citation. In case (i), it is also interesting that An overview of the conference (1980--2023) is available and includes small (~1 page) summaries of electronic payments, followed by time-stamping. The latter cites [2] but nothing else in it seems tied to Satoshi's writings. 
 
 * I checked my notes from “the long road to Bitcoin” and found I had actually puzzled over this but came to a reasonable explanation and then forgot about it until now. In 2008, Wikipedia for cryptography was terrible. If you tried to fix things, zealous editors would remove your fixes if you could not precisely cite a source that a non-crypto person could compare to your edit. Luckily there was (and still is) a moderately popular “Encyclopedia of Cryptography and Security.” At the time, in my grad school crypto group, many of us knew and used it. It has 800 citations today. The encyclopedia has an article on time-stamping, co-written by Haber [3-5] and Massias [2]. Crucially, after explaining Merkle trees, [2] is cited as an example. A reasonable explanation is as follows: Satoshi learned time-stamping from somewhere. It was used by Surety in the NYT, discussed a lot on the crypto and cypherpunk mailing lists, maybe this article, etc. When he wrote the whitepaper, he wanted references and maybe some hints on how to write it up well. He found the article in the encyclopedia and the citation. Maybe he never obtained the original paper (which is hard to obtain). Or maybe he went through some effort to obtain it, but he didn’t have any particular pre-existing connection to Benelux universities. This is a theory that still has some gaps. The encyclopedia article cites 3 of the 4 papers Satoshi cites, but does not cite the CCS 97 paper from Haber and Stornetta (despite the article being co-written by Haber). BTW this CCS paper is great because it actually has a picture of a “blockchain” way back in 1997. The second mystery is that when [2] is cited in the encyclopedia article, it is cited alongside a second paper (Buldas, et al) which Satoshi does not cite. Google Scholar failed to show me the encyclopedia article when I queried papers citing [2] from pre-Bitcoin, which is why I missed rediscovering this a few a days ago. It also fails to index a PDF of [2] which, after all this, is actually online now and you can read it: https://nakamotoinstitute.org/static/docs/secure-timestamping-service.pdf It seems too clean to be a scan of the original, so it is probably a recompile from the authors.
+
+* "I think he's an academic, maybe a post-doc, maybe a professor who just doesn't want the attention," said Gavin Andresen in an interview at his one-man office in Amherst, Mass., last month. "And that's why he's proven anonymous."
+
+* "you need a decentralized "central" database of all the hashcash that's been minted. Unworkable. !@#$ spend-twice problem. :(" Peter Todd
 
 #### Ideology [tk]
 
