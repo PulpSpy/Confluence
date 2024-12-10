@@ -8,3 +8,4 @@ Covers the creativity and methodology behind research, rather than the research 
 * Collaboration: how do you work with students? With outside collaborators? What works? What are some things that do not work?
 * Page length
 * Peer review, responses, shepherding, 
+* Innovation through ignorance
