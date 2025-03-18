@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connections Solver</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px auto; width: 50%; }
+        .word { padding: 15px; background: lightgray; cursor: pointer; border: 1px solid black; }
+        .selected { background: yellow; }
+        .btn { margin: 10px; padding: 10px; cursor: pointer; }
+        .log { margin-top: 20px; text-align: left; max-width: 50%; margin-left: auto; margin-right: auto; }
+    </style>
+</head>
+<body>
+    <h1>Connections Solver</h1>
+    <div id="wordGrid" class="grid"></div>
+    <button class="btn" onclick="submitSelection('correct')">Correct</button>
+    <button class="btn" onclick="submitSelection('one away')">One Away</button>
+    <button class="btn" onclick="submitSelection('no hint')">No Hint</button>
+    <button class="btn" onclick="clearAll()">Clear</button>
+    
+    <h2>Possible Solutions Left:</h2>
+    <div id="remainingSolutions"></div>
+    
+    <h2>Action Log:</h2>
+    <div id="actionLog" class="log"></div>
+
+    <script>
+        let words = ["01", "02", "03", "04", "05", "06", "07", "08"];
+        let selected = [];
+        let initialPossibilities = [];
+        let log = [];
+
+        // Generate all possible combinations of 8 choose 4
+        function generateCombinations(arr, k, start, current) {
+            if (current.length === k) {
+                initialPossibilities.push([...current]);
+                return;
+            }
+            for (let i = start; i < arr.length; i++) {
+                current.push(arr[i]);
+                generateCombinations(arr, k, i + 1, current);
+                current.pop();
+            }
+        }
+
+        generateCombinations([0,1,2,3,4,5,6,7], 4, 0, []);
+        let possibilities = [...initialPossibilities];
+
+        function renderWords() {
+            let grid = document.getElementById("wordGrid");
+            grid.innerHTML = "";
+            words.forEach((word, index) => {
+                let div = document.createElement("div");
+                div.classList.add("word");
+                div.textContent = word;
+                div.onclick = () => toggleSelection(index);
+                if (selected.includes(index)) div.classList.add("selected");
+                grid.appendChild(div);
+            });
+        }
+
+        function toggleSelection(index) {
+            if (selected.includes(index)) {
+                selected = selected.filter(i => i !== index);
+            } else if (selected.length < 4) {
+                selected.push(index);
+            }
+            renderWords();
+        }
+
+        function submitSelection(response) {
+            if (selected.length !== 4) return alert("Select 4 words first!");
+            let selectedSet = new Set(selected.sort());
+            
+            log.push(`Selected: ${selected.map(i => words[i]).join(", ")}, Response: ${response}`);
+            updateLog();
+            
+            if (response === "correct") {
+                alert("Solution found!");
+                return;
+            } else if (response === "one away") {
+                possibilities = possibilities.filter(set => {
+                    let matches = set.filter(i => selectedSet.has(i)).length;
+                    return matches === 3;
+                });
+            } else {
+                possibilities = possibilities.filter(set => {
+                    let matches = set.filter(i => selectedSet.has(i)).length;
+                    return matches < 3;
+                });
+            }
+            selected = [];
+            renderWords();
+            updateRemainingSolutions();
+        }
+
+        function updateRemainingSolutions() {
+            let container = document.getElementById("remainingSolutions");
+            container.innerHTML = "<p>" + possibilities.map(set => set.map(i => words[i]).join(", ")).join("<br>") + "</p>";
+        }
+
+        function updateLog() {
+            let logContainer = document.getElementById("actionLog");
+            logContainer.innerHTML = log.map(entry => `<p>${entry}</p>`).join("");
+        }
+
+        function clearAll() {
+            log = [];
+            possibilities = [...initialPossibilities];
+            selected = [];
+            updateLog();
+            updateRemainingSolutions();
+            renderWords();
+        }
+
+        renderWords();
+    </script>
+</body>
+</html>
