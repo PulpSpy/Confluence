@@ -1,12 +1,14 @@
 # FRI Polynomial Commitments
 
+> Alice FaceTimes Bob to see a large painting she’s thinking of buying from him. She asks how big it is, since she needs it to fit on a wall space with a 10-foot limit. Bob says it’s big — maybe too big — but he doesn’t know the exact dimensions. When she asks him to measure it, he says he only has a 30-centimeter wooden school ruler. He could measure it edge to edge, repositioning the ruler again and again, but that would take a while. Instead, Alice suggests a shortcut: “Just fold it in half, and keep folding it until it’s small enough to measure in one go. I’ll count the folds.” Bob folds it once, then again, and again, until the folded painting is small enough for the ruler. He measures one edge: 28 cm. Alice does the math. Given the number of folds (4), she can recover the full size — well over 10 feet. “Too big,” she says. “Shame,” Bob replies, "I ruined my painting for nothing."
+
 ## Negation Gadgets
 
-FRI works on univariate polynomials over a finite field $\mathbb{F}_q$. They work by evaluating the polynomial $P(\square)$ at a set of evaluation points and committing to these evaluations in a Merkle tree. The domain (set of $x$ coordinates to evaluate at) is fixed and known to the prover and verifier. If the domain size is $\kappa$, we evaluate at $\omega^i$ for $i=0$ to $\kappa-1$. $\omega$ is chosen so it has order $\kappa$ in $q$ and is closed under multiplication. In math, it is called a $\kappa$-root of unity of $q$. 
+FRI works on univariate polynomials over a finite field $\mathbb{F}_q$ for large prime $q$. They work by evaluating the polynomial $P(\square)$ at a set of evaluation points and committing to these evaluations in a Merkle tree. The domain (set of $x$ coordinates to evaluate at) is fixed and known to the prover and verifier. If the domain size is $\kappa$, we evaluate at $\omega^i$ for $i=0$ to $\kappa-1$. $\omega$ is chosen so it has order $\kappa$ in $q$ and is closed under multiplication. In math, it is called a $\kappa$-root of unity of $q$. 
 
 ### Negation of a Polynomial Evaluation Point
 
-Next it is important to understand some basic polynomial manipulations and what the result is. The first thing to consider is $P(-\square)$. Assume that degree $d$ is an even number just to simplify the notation a bit:
+Next it is important to understand some basic polynomial manipulations and what the result is. The first thing to consider is $P(-\square)$. Assume that the polynomial's degree $d$ is an even number just to simplify the notation a bit:
 
 * $P(\square) = a_0 + a_1 \square + a_2 \square^2 + a_3 \square^3 + \dots + a_d \square^d$
 * $P(-\square) = a_0 - a_1 \square + a_2 \square^2 - a_3 \square^3 + \dots + a_d \square^d$
@@ -19,7 +21,9 @@ This "selects" the even coefficients and gets rid of the the odd coefficients, b
 
 * $\frac{P(\square) + P(-\square)}{2} = a_0 + a_2 \square^2 + a_4 \square^4 + \dots + a_d \square^d$
 
-So the expression $\frac{P(\square) + P(-\square)}{2}$ actually just means take the even coefficients of $P(\square)$. If we want the odd part:
+So the expression $\frac{P(\square) + P(-\square)}{2}$ actually just means take the even coefficients of $P(\square)$.
+
+If we want the odd part:
 
 * $P(\square) - P(-\square) = 2a_1 \square + 2a_3 \square^3 + 2a_5 \square^5 + \dots + 2a_{d-1} \square^{d-1}$
 * $\frac{P(\square) - P(-\square)}{2} = a_1 \square + a_3 \square^3 + a_5 \square^5 + \dots + a_{d-1} \square^{d-1}$
